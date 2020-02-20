@@ -1,0 +1,12 @@
+{
+  "name": "testokur-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NazmiAltun/testokur-ui.git",
+  "author": "Nazmi Altun <nazmialtun@windowslive.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
