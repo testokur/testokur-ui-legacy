@@ -1,9 +1,5 @@
 import * as React from 'react';
 
 export const App = () => {
-  return (
-    <div>
-      Hello World!
-    </div>
-  );
+  return <div>Hello World!</div>;
 };

@@ -9,5 +9,6 @@
     "dist": true,
     ".rts2_cache_*": true,
     "storybook-static": true
-  }
+  },
+  "editor.formatOnSave": true
 }
