@@ -6,7 +6,30 @@
   "author": "Nazmi Altun <nazmialtun@windowslive.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.js",
+    "lint": "",
+    "test": ""
+  },
   "devDependencies": {
-    "typescript": "^3.7.5"
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^5.0.1",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "html-webpack-plugin": "^3.2.0",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1"
   }
 }
