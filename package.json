@@ -8,6 +8,7 @@
   "private": false,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.js",
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --color --progress",
     "format": "prettier \"./src/**/*.+(js|jsx|css|ts|tsx|md)\" --write",
     "lint": "tsc --noEmit && eslint --fix \"src/**\""
   },
