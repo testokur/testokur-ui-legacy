@@ -19,6 +19,7 @@
     "@babel/preset-typescript": "^7.8.3",
     "@testing-library/react": "^10.0.1",
     "@types/jest": "^25.1.4",
+    "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^5.0.1",
@@ -43,6 +44,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "loadash": "^1.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "styled-components": "^5.0.1"
