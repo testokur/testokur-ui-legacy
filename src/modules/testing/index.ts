@@ -6,7 +6,6 @@ const buildTestId = (root?: string, id?: string): string | undefined => {
   return `${root}-${id}`;
 };
 
-export const useBuildTestId = (rootTestId?: string) => {
-  return useCallback((id?: string) => buildTestId(rootTestId, id), [rootTestId]);
-};
+export const useBuildTestId = (rootTestId?: string) =>
+  useCallback((id?: string) => buildTestId(rootTestId, id), [rootTestId]);
 export type Testable = { 'data-testid'?: string };
