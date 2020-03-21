@@ -1,1 +1,1 @@
-export { component as InputField } from './component';
+export * as InputField from './component';

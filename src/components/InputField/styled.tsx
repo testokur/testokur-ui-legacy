@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// TODO: Use theming here
 
 export const Input = styled.input``;
 
@@ -11,20 +10,20 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
   border: 1px solid transparent;
   overflow: auto;
   min-height: 44px;
-  height: ${({ fullHeight }) => fullHeight && '100%'};
+  height: ${({ fullHeight }): string | undefined => (fullHeight ? '100%' : undefined)};
   padding: 12px;
   border-radius: 6px;
   box-shadow: inset 0 0 0 #eff2f5;
   background-color: #eff2f5;
-  color: ${({ disabled }) => (disabled ? '#BAC7D5' : '#252A31')};
+  color: ${({ disabled }): string => (disabled ? '#BAC7D5' : '#252A31')};
   font-size: 14px;
   line-height: 20px;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'text')};
+  cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'text')};
   transition: box-shadow 0.15s ease-in-out;
-  flex: ${({ fullHeight }) => fullHeight && '1'};
+  flex: ${({ fullHeight }): string | undefined => (fullHeight ? '1' : undefined)};
 
   &:hover {
-    box-shadow: ${({ disabled }) => !disabled && 'inset 0 0 0 1px'};
+    box-shadow: ${({ disabled }): string | undefined => (disabled ? undefined : 'inset 0 0 0 1px')};
   }
   &:focus {
     outline: none;
