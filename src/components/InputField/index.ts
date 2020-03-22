@@ -1,1 +1,1 @@
-export * as InputField from './component';
+export { default as InputField } from './component'; // eslint-disable-line

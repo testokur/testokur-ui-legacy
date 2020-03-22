@@ -6,6 +6,8 @@
 [![dependencies Status](https://david-dm.org/testokur/testokur-ui/status.svg)](https://david-dm.org/testokur/testokur-ui)
 [![devDependencies Status](https://david-dm.org/testokur/testokur-ui/dev-status.svg)](https://david-dm.org/testokur/testokur-ui?type=dev)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3789/badge)](https://bestpractices.coreinfrastructure.org/projects/3789)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4209434be795b3eccdbd/maintainability)](https://codeclimate.com/github/testokur/testokur-ui/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4209434be795b3eccdbd/test_coverage)](https://codeclimate.com/github/testokur/testokur-ui/test_coverage)
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=testokur_testokur-ui&metric=bugs)](https://sonarcloud.io/dashboard?id=testokur_testokur-ui)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=testokur_testokur-ui&metric=code_smells)](https://sonarcloud.io/dashboard?id=testokur_testokur-ui)

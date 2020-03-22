@@ -10,4 +10,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
   },
+  rules: {
+    'max-len': ['error', { code: 140 }],
+  },
 };

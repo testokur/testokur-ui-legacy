@@ -1,9 +1,11 @@
 import * as React from 'react';
 import * as _ from 'lodash';
-import { Testable } from '../../modules/testing';
-import { Input, TextArea } from './styled';
+import { randomId, Testable } from '../../modules';
+import {
+  Input, TextArea, Container, Label,
+} from './styled';
 
-export type Props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'defaultValue' | 'value'> &
+type Props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'defaultValue' | 'value'> &
 Testable & {
   label: string;
   value?: string | string[] | number;
@@ -11,18 +13,27 @@ Testable & {
   onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 };
 
-export const component = (props: Props): JSX.Element => {
-  const { rows, value } = props;
-
+const component = (props: Props): JSX.Element => {
+  const {
+    label, rows, value, onChange,
+  } = props;
+  const id = randomId('input-field');
   let innerComponent;
 
   if (!_.isUndefined(rows) && rows > 1) {
-    innerComponent = <TextArea rows={rows} value={value} />;
+    innerComponent = <TextArea id={id} rows={rows} value={value} onChange={onChange} placeholder={label} />;
   } else {
-    innerComponent = <Input value={value} />;
+    innerComponent = <Input id={id} value={value} onChange={onChange} placeholder={label} />;
   }
 
-  return <div>{innerComponent}</div>;
+  return (
+    <Container>
+      {innerComponent}
+      <Label htmlFor={id}>{label}</Label>
+    </Container>
+  );
 };
 
 component.displayName = 'InputField';
+
+export default component;
