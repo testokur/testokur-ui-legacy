@@ -39,7 +39,7 @@ const createTheme = (options: Partial<ThemeInput>): Theme => {
     duration,
     colors,
     fontFamily:
-      '‘Roboto’, -apple-system, ‘.SFNSText-Regular’, ‘San Francisco’, ‘Segoe UI’, ‘Helvetica Neue’, ‘Lucida Grande’, sans-serif',
+      "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
     lineHeight,
     fontSize,
   };

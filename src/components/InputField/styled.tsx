@@ -7,7 +7,7 @@ const sharedStyled = css<{ disabled?: boolean }>`
   width: 100%;
   padding: ${(props): string => props.theme.spacing.paddingTextareaNormal};
   border-radius: ${(props): string => props.theme.border.borderRadiusLarge};
-  box-shadow: ${(props): string => `inset 0 0 0 ${props.theme.cloudNormal}`};
+  box-shadow: ${(props): string => `inset 0 0 0 ${props.theme.palette.cloudNormal}`};
   background-color: ${(props): string => props.theme.palette.cloudNormal};
   color: ${(props): string => (props.disabled ? props.theme.colorTextInputDisabled : props.theme.colorTextInput)};
   font-size: ${(props): string => props.theme.fontSize.fontSizeInputNormal};
@@ -23,14 +23,14 @@ const sharedStyled = css<{ disabled?: boolean }>`
   &:hover {
     box-shadow: ${(props): string | undefined =>
       !props.disabled
-        ? `inset 0 0 0 ${props.theme.border.borderWidthInput} 
+        ? `inset 0 0 0 ${props.theme.border.borderWidthInput}
     ${props.theme.border.borderColorInputHover}`
         : undefined};
   }
 
   &:focus {
-    outline: 0;
-    box-shadow: 0;
+    outline: none;
+    box-shadow: ${(props): string => `inset 0 0 0 1px ${props.theme.colors.borderColorInputFocus}`};
   }
 `;
 

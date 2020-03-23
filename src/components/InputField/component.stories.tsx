@@ -18,6 +18,6 @@ storiesOf('InputField', module)
   .add('TextInput with initial value', () => (
     <InputField
       value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida sapien id magna rutrum condimentum. Sed aliquet vel nisi et placerat. Aliquam pellentesque posuere l..."
-      label="Empty input"
+      label="TextInput with initial value"
     />
   ));
