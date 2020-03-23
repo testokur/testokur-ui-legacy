@@ -1,17 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Input = styled.input``;
-
-export const Label = styled.label``;
-
-export const Container = styled.div``;
-
-export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boolean }>`
+const sharedStyled = css<{ disabled?: boolean }>`
   appearance: none;
   box-sizing: border-box;
   display: block;
   width: 100%;
-  height: ${({ fullHeight }): string | undefined => (fullHeight ? '100%' : undefined)};
   padding: ${(props): string => props.theme.spacing.paddingTextareaNormal};
   border-radius: ${(props): string => props.theme.border.borderRadiusLarge};
   box-shadow: ${(props): string => `inset 0 0 0 ${props.theme.cloudNormal}`};
@@ -22,9 +15,6 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
   cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'text')};
   font-family: ${(props): string => props.theme.fontFamily};
   transition: box-shadow ${(props): string => props.theme.duration.durationFast} ease-in-out;
-  min-height: 44px;
-  flex: ${({ fullHeight }): string | undefined => (fullHeight ? '1' : undefined)};
-  resize: none;
 
   &::placeholder {
     color: ${(props): string => (props.disabled ? props.theme.palette.inkLighter : props.theme.palette.inkLight)};
@@ -42,4 +32,21 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
     outline: 0;
     box-shadow: 0;
   }
+`;
+
+export const Input = styled.input`
+  ${sharedStyled}
+`;
+
+export const Label = styled.label``;
+
+export const Container = styled.div``;
+
+export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boolean }>`
+  ${sharedStyled}
+
+  height: ${({ fullHeight }): string | undefined => (fullHeight ? '100%' : undefined)};
+  min-height: 44px;
+  flex: ${({ fullHeight }): string | undefined => (fullHeight ? '1' : undefined)};
+  resize: none;
 `;
