@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import { InputField } from '.';
 
+/* eslint-disable max-len */
 storiesOf('InputField', module)
   .add('Multi row ( textarea) with  initial value', () => (
     <InputField
