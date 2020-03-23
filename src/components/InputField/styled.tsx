@@ -20,7 +20,8 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
   font-size: 14px;
   line-height: 20px;
   cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'text')};
-  font-family: "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif";
+  font-family: 'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue',
+    'Lucida Grande', sans-serif;
   transition: box-shadow 0.15s ease-in-out;
   min-height: 44px;
   flex: ${({ fullHeight }): string | undefined => (fullHeight ? '1' : undefined)};
