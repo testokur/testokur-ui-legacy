@@ -12,27 +12,30 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
   display: block;
   width: 100%;
   height: ${({ fullHeight }): string | undefined => (fullHeight ? '100%' : undefined)};
-  padding: '12px';
-  border-radius: '6px';
-  box-shadow: inset 0 0 0 '#EFF2F5';
-  background-color: '#EFF2F5';
-  color: ${({ disabled }): string => (disabled ? '#BAC7D5' : '#252A31')};
-  font-size: 14px;
-  line-height: 20px;
+  padding: ${(props): string => props.theme.spacing.paddingTextareaNormal};
+  border-radius: ${(props): string => props.theme.border.borderRadiusLarge};
+  box-shadow: ${(props): string => `inset 0 0 0 ${props.theme.cloudNormal}`};
+  background-color: ${(props): string => props.theme.palette.cloudNormal};
+  color: ${(props): string => (props.disabled ? props.theme.colorTextInputDisabled : props.theme.colorTextInput)};
+  font-size: ${(props): string => props.theme.fontSize.fontSizeInputNormal};
+  line-height: ${(props): string => props.theme.lineHeight.lineHeightTextNormal};
   cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'text')};
-  font-family: 'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue',
-    'Lucida Grande', sans-serif;
-  transition: box-shadow 0.15s ease-in-out;
+  font-family: ${(props): string => props.theme.fontFamily};
+  transition: box-shadow ${(props): string => props.theme.duration.durationFast} ease-in-out;
   min-height: 44px;
   flex: ${({ fullHeight }): string | undefined => (fullHeight ? '1' : undefined)};
   resize: none;
 
   &::placeholder {
-    color: ${({ disabled }): string => (disabled ? '#BAC7D5' : '#5F738C')};
+    color: ${(props): string => (props.disabled ? props.theme.palette.inkLighter : props.theme.palette.inkLight)};
   }
 
   &:hover {
-    box-shadow: ${({ disabled }): string | undefined => (!disabled ? 'inset 0 0 0 1px  "#A6B6C8"' : undefined)};
+    box-shadow: ${(props): string | undefined =>
+      !props.disabled
+        ? `inset 0 0 0 ${props.theme.border.borderWidthInput} 
+    ${props.theme.border.borderColorInputHover}`
+        : undefined};
   }
 
   &:focus {
