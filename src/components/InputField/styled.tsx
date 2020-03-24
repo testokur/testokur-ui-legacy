@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { device } from '../../modules';
 
 const sharedStyled = css<{ disabled?: boolean }>`
   appearance: none;
@@ -22,20 +23,38 @@ const sharedStyled = css<{ disabled?: boolean }>`
 
   &:hover {
     box-shadow: ${(props): string | undefined =>
-      !props.disabled
-        ? `inset 0 0 0 ${props.theme.border.borderWidthInput}
-    ${props.theme.border.borderColorInputHover}`
-        : undefined};
+    !props.disabled ? `inset 0 0 0 ${props.theme.border.borderWidthInput} ${props.theme.border.borderColorInputHover}` : 'inherit'};
   }
 
   &:focus {
     outline: none;
-    box-shadow: ${(props): string => `inset 0 0 0 1px ${props.theme.colors.borderColorInputFocus}`};
+  }
+
+  @media ${device.tablet} {
+    border-radius: ${(props): string => props.theme.border.borderRadiusNormal};
+    background-color: ${(props): string =>
+    props.disabled ? props.theme.colors.backgroundInputDisabled : props.theme.colors.backgroundInput};
   }
 `;
 
 export const Input = styled.input`
   ${sharedStyled}
+  flex: 1 1 20%;
+  border: none;
+  padding: ${(props): string => props.theme.spacing.paddingInputNormal};
+  font-size: inherit;
+  font-weight: 400;
+  color: inherit;
+  background-color: transparent;
+  height: 100%;
+  z-index: 2;
+  min-width: 0;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
 `;
 
 export const Label = styled.label``;
@@ -49,4 +68,8 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
   min-height: 44px;
   flex: ${({ fullHeight }): string | undefined => (fullHeight ? '1' : undefined)};
   resize: none;
+
+  &:focus {
+    box-shadow: ${(props): string => `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}`};
+  }
 `;

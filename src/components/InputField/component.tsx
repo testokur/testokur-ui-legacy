@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as _ from 'lodash';
 import { randomId, Testable } from '../../modules';
-import { Input, TextArea, Container, Label } from './styled';
+import {
+  Input, TextArea, Container, Label,
+} from './styled';
 
 type Props = Testable & {
   label: string;
@@ -11,7 +13,9 @@ type Props = Testable & {
 };
 
 const component = (props: Props): JSX.Element => {
-  const { label, rows, value, onChange } = props;
+  const {
+    label, rows, value, onChange,
+  } = props;
   const id = randomId('input-field');
   let innerComponent;
 
