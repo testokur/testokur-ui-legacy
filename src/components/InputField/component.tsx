@@ -3,13 +3,12 @@ import * as _ from 'lodash';
 import { randomId, Testable } from '../../modules';
 import { Input, TextArea, Container, Label } from './styled';
 
-type Props = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'defaultValue' | 'value'> &
-  Testable & {
-    label: string;
-    value?: string | string[] | number;
-    rows?: number;
-    onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
-  };
+type Props = Testable & {
+  label: string;
+  value?: string | string[] | number;
+  rows?: number;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+};
 
 const component = (props: Props): JSX.Element => {
   const { label, rows, value, onChange } = props;
