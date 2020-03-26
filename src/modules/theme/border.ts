@@ -3,6 +3,7 @@ export type Border = {
   borderRadiusNormal: string;
   borderWidthInput: string;
   borderColorInputHover: string;
+  borderColorInputFocus: string;
 };
 
 const border = {
