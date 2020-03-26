@@ -3,6 +3,7 @@ import { device, convertHexToRgba } from '../../modules';
 
 const sharedStyled = css<{ disabled?: boolean }>`
   appearance: none;
+  position: relative;
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -16,24 +17,31 @@ const sharedStyled = css<{ disabled?: boolean }>`
   cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'text')};
   font-family: ${(props): string => props.theme.fontFamily};
   transition: box-shadow ${(props): string => props.theme.duration.durationFast} ease-in-out;
+  z-index: 1500;
 
   &::placeholder {
-    color: ${(props): string => (props.disabled ? props.theme.palette.inkLighter : props.theme.palette.inkLight)};
+    color: transparent;
   }
 
   &:hover {
     box-shadow: ${(props): string | undefined =>
-    !props.disabled ? `inset 0 0 0 ${props.theme.border.borderWidthInput} ${props.theme.border.borderColorInputHover}` : 'inherit'};
+      !props.disabled ? `inset 0 0 0 ${props.theme.border.borderWidthInput} ${props.theme.border.borderColorInputHover}` : 'inherit'};
   }
 
   &:focus {
     outline: none;
   }
 
+  &:focus + label {
+    z-index: 2500;
+    padding: 0.75em;
+    transform: translate(0, -2em) scale(0.9);
+  }
+
   @media ${device.tablet} {
     border-radius: ${(props): string => props.theme.border.borderRadiusNormal};
     background-color: ${(props): string =>
-    props.disabled ? props.theme.colors.backgroundInputDisabled : props.theme.colors.backgroundInput};
+      props.disabled ? props.theme.colors.backgroundInputDisabled : props.theme.colors.backgroundInput};
   }
 `;
 
@@ -57,9 +65,19 @@ export const Input = styled.input`
   }
 `;
 
-export const Label = styled.label``;
+export const Label = styled.label`
+  position: absolute;
+  z-index: 1500;
+  top: 0.75em;
+  left: 0.75em;
+  padding: 0.75em;
+  transition: transform 0.25s, opacity 0.25s, padding 0.25s ease-in-out;
+  transform-origin: 0 0;
+`;
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  position: relative;
+`;
 
 export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boolean }>`
   ${sharedStyled}
@@ -71,9 +89,9 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
 
   &:focus {
     box-shadow: ${(props): string =>
-    `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px  ${convertHexToRgba(
-      props.theme.border.borderColorInputFocus,
-      15
-    )}`};
+      `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px  ${convertHexToRgba(
+        props.theme.border.borderColorInputFocus,
+        15
+      )}`};
   }
 `;
