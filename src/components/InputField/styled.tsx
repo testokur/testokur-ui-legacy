@@ -25,7 +25,7 @@ const sharedStyled = css<{ disabled?: boolean }>`
 
   &:hover {
     box-shadow: ${(props): string | undefined =>
-      !props.disabled ? `inset 0 0 0 ${props.theme.border.borderWidthInput} ${props.theme.border.borderColorInputHover}` : 'inherit'};
+    !props.disabled ? `inset 0 0 0 ${props.theme.border.borderWidthInput} ${props.theme.border.borderColorInputHover}` : 'inherit'};
   }
 
   &:focus {
@@ -41,7 +41,7 @@ const sharedStyled = css<{ disabled?: boolean }>`
   @media ${device.tablet} {
     border-radius: ${(props): string => props.theme.border.borderRadiusNormal};
     background-color: ${(props): string =>
-      props.disabled ? props.theme.colors.backgroundInputDisabled : props.theme.colors.backgroundInput};
+    props.disabled ? props.theme.colors.backgroundInputDisabled : props.theme.colors.backgroundInput};
   }
 `;
 
@@ -89,9 +89,9 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
 
   &:focus {
     box-shadow: ${(props): string =>
-      `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px  ${convertHexToRgba(
-        props.theme.border.borderColorInputFocus,
-        15
-      )}`};
+    `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px  ${convertHexToRgba(
+      props.theme.border.borderColorInputFocus,
+      15
+    )}`};
   }
 `;
