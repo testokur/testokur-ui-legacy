@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { device } from '../../modules';
+import { device, convertHexToRgba } from '../../modules';
 
 const sharedStyled = css<{ disabled?: boolean }>`
   appearance: none;
@@ -70,6 +70,10 @@ export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boole
   resize: none;
 
   &:focus {
-    box-shadow: ${(props): string => `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}`};
+    box-shadow: ${(props): string =>
+    `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px  ${convertHexToRgba(
+      props.theme.border.borderColorInputFocus,
+      15
+    )}`};
   }
 `;
