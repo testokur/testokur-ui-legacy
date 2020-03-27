@@ -32,10 +32,13 @@ const sharedStyled = css<{ disabled?: boolean }>`
     outline: none;
   }
 
-  &:focus + label {
+  &:focus + label,
+  :not(:placeholder-shown) + label {
     z-index: 2500;
     padding: 0.75em;
     transform: translate(0, -2em) scale(0.9);
+    color: ${(props): string => props.theme.palette.primary};
+    font-size: 1rem;
   }
 
   @media ${device.tablet} {
@@ -73,6 +76,7 @@ export const Label = styled.label`
   padding: 0.75em;
   transition: transform 0.25s, opacity 0.25s, padding 0.25s ease-in-out;
   transform-origin: 0 0;
+  background-color: ${(props): string => props.theme.colors.background};
 `;
 
 export const Container = styled.div`

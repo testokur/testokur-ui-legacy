@@ -5,6 +5,7 @@ import duration, { Duration } from './duration';
 import colors, { Colors } from './colors';
 import lineHeight, { LineHeight } from './lineHeight';
 import fontSize, { FontSize } from './fontSize';
+import globalStyle from './globalStyle';
 
 export interface Theme {
   palette: Palette;
@@ -44,4 +45,4 @@ const createTheme = (options: Partial<ThemeInput>): Theme => {
   };
 };
 
-export default createTheme;
+export { createTheme, globalStyle as GlobalStyle };

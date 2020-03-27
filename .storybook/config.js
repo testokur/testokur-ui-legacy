@@ -4,9 +4,14 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { ThemeProvider } from 'styled-components';
 
-import { createTheme } from '../src/modules';
+import { createTheme, GlobalStyle } from '../src/modules';
 
-addDecorator(renderStory => <ThemeProvider theme={createTheme()}>{renderStory()}</ThemeProvider>);
+addDecorator(renderStory => (
+  <ThemeProvider theme={createTheme()}>
+    <GlobalStyle />
+    {renderStory()}
+  </ThemeProvider>
+));
 
 addDecorator(
   withInfo({
