@@ -68,7 +68,7 @@ export const Input = styled.input`
   }
 `;
 
-export const Label = styled.label`
+export const Label = styled.label<{ disabled?: boolean }>`
   position: absolute;
   z-index: 1500;
   top: 0.75em;
@@ -76,11 +76,12 @@ export const Label = styled.label`
   padding: 0.75em;
   transition: transform 0.25s, opacity 0.25s, padding 0.25s ease-in-out;
   transform-origin: 0 0;
-  background-color: ${(props): string => props.theme.colors.background};
+  background-color: ${(props): string => (props.disabled ? 'transparent' : props.theme.colors.background)};
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<{ hasRows: boolean }>`
   position: relative;
+  height: ${(props): string => (props.hasRows ? 'auto' : props.theme.size.heightInputNormal)};
 `;
 
 export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boolean }>`

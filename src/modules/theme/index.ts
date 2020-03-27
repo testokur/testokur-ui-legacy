@@ -6,6 +6,7 @@ import colors, { Colors } from './colors';
 import lineHeight, { LineHeight } from './lineHeight';
 import fontSize, { FontSize } from './fontSize';
 import globalStyle from './globalStyle';
+import size, { Size } from './size';
 
 export interface Theme {
   palette: Palette;
@@ -16,6 +17,7 @@ export interface Theme {
   fontFamily: string;
   lineHeight: LineHeight;
   fontSize: FontSize;
+  size: Size;
 }
 
 export interface ThemeInput {
@@ -26,6 +28,7 @@ export interface ThemeInput {
   colors: Colors;
   lineHeight: LineHeight;
   fontSize: FontSize;
+  size: Size;
 }
 
 const createTheme = (options: Partial<ThemeInput>): Theme => {
@@ -42,6 +45,7 @@ const createTheme = (options: Partial<ThemeInput>): Theme => {
     fontFamily: "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
     lineHeight,
     fontSize,
+    size,
   };
 };
 

@@ -7,24 +7,27 @@ type Props = Testable & {
   label: string;
   value?: string | string[] | number;
   rows?: number;
+  disabled?: boolean;
   onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 };
 
 const component = (props: Props): JSX.Element => {
-  const { label, rows, value, onChange } = props;
+  const { label, rows, value, onChange, disabled } = props;
   const id = randomId('input-field');
   let innerComponent;
 
   if (!_.isUndefined(rows) && rows > 1) {
-    innerComponent = <TextArea id={id} rows={rows} value={value} onChange={onChange} placeholder={label} />;
+    innerComponent = <TextArea id={id} rows={rows} value={value} onChange={onChange} placeholder={label} disabled={disabled} />;
   } else {
     innerComponent = <Input id={id} value={value} onChange={onChange} placeholder={label} />;
   }
 
   return (
-    <Container>
+    <Container hasRows={!_.isUndefined(rows) && rows > 1}>
       {innerComponent}
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id} disabled={disabled}>
+        {label}
+      </Label>
     </Container>
   );
 };
