@@ -19,7 +19,7 @@ const component = (props: Props): JSX.Element => {
   if (!_.isUndefined(rows) && rows > 1) {
     innerComponent = <TextArea id={id} rows={rows} value={value} onChange={onChange} placeholder={label} disabled={disabled} />;
   } else {
-    innerComponent = <Input id={id} value={value} onChange={onChange} placeholder={label} />;
+    innerComponent = <Input id={id} value={value} onChange={onChange} placeholder={label} disabled={disabled} />;
   }
 
   return (
