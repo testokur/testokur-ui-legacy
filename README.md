@@ -13,3 +13,5 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=testokur_testokur-ui&metric=code_smells)](https://sonarcloud.io/dashboard?id=testokur_testokur-ui)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=testokur_testokur-ui&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=testokur_testokur-ui)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=testokur_testokur-ui&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=testokur_testokur-ui)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4bad67cabfc446cd91e7ad479e7888b0)](https://www.codacy.com/gh/testokur/testokur-ui?utm_source=github.com&utm_medium=referral&utm_content=testokur/testokur-ui&utm_campaign=Badge_Grade)
