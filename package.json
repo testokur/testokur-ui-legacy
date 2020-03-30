@@ -10,7 +10,9 @@
     "dev": "start-storybook -p 6006",
     "build": "rimraf dist storybook-static  && cross-env NODE_ENV=production webpack --color --progress",
     "format": "prettier \"./src/**/*.+(js|jsx|css|ts|tsx|md)\" --write",
-    "lint": "tsc --noEmit && eslint --fix \"src/**\" && stylelint \"src/**\""
+    "lint": "tsc --noEmit && eslint --fix \"src/**\" && stylelint \"src/**\"",
+    "test": "jest --env=jsdom --passWithNoTests",
+    "test:watch": "jest --watchAll --env=jsdom --passWithNoTests"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

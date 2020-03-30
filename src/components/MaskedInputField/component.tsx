@@ -1,6 +1,7 @@
 import React from 'react';
 import { InputField, InputFieldProps } from '../InputField';
 import doFormat from './doFormat';
+import getMaskDetails from './getMaskDetails';
 
 enum MaskingType {
   Phone = 'Phone',
@@ -11,23 +12,11 @@ type Props = Omit<InputFieldProps, 'rows'> & {
   maskingType: MaskingType;
 };
 
-const getMaskDetails = (maskingType: MaskingType): { mask: string; dataFormat: string } => {
-  let mask = '(___) ___-____';
-  let dataFormat = '(***) ***-****';
-
-  if (maskingType === MaskingType.DateTime) {
-    mask = 'GG.AA.YYYY SS:DD:ss';
-    dataFormat = '**.**.**** **:**:**';
-  }
-
-  return { mask, dataFormat };
-};
-
 const component = (props: Props): JSX.Element => {
   const { label, value, onChange, disabled, maskingType } = props;
 
   const format = (element: HTMLInputElement): void => {
-    const { mask, dataFormat } = getMaskDetails(maskingType);
+    const [mask, dataFormat] = getMaskDetails(maskingType);
     const formattedValue = doFormat(element.value, dataFormat, mask);
     /* eslint-disable no-param-reassign */
     element.value = formattedValue;
