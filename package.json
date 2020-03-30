@@ -58,7 +58,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "loadash": "^1.0.0",
+    "lodash": "^4.17.15",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "styled-components": "^5.0.1"

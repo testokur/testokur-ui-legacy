@@ -13,5 +13,11 @@ module.exports = {
   },
   rules: {
     'max-len': ['error', { code: 140 }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['**/*.stories.tsx'],
+      },
+    ],
   },
 };
