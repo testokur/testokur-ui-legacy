@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Icon } from './styled';
+import { Icon, Sizes } from './styled';
 import Props from './Props';
 
 const component = (props: Props): JSX.Element => {
@@ -11,6 +11,10 @@ const component = (props: Props): JSX.Element => {
     </Icon>
   );
 };
+
+component.defaultProps = {
+  size: Sizes.Medium,
+} as Props;
 
 component.displayName = 'Icon';
 

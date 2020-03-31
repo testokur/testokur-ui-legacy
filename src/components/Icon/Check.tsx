@@ -1,7 +1,6 @@
 import React from 'react';
 import Props from './Props';
 import Component from './component';
-import { Sizes } from './styled';
 
 const Check = (props: Omit<Props, 'children'>): JSX.Element => {
   const { size, color, ariaHidden, ariaLabel } = props;
@@ -15,9 +14,5 @@ const Check = (props: Omit<Props, 'children'>): JSX.Element => {
     </Component>
   );
 };
-
-Check.defaultProps = {
-  size: Sizes.Medium,
-} as Props;
 
 export default Check;
