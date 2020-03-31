@@ -16,7 +16,7 @@ const component = (props: Props): JSX.Element => {
   const { label, value, onChange, disabled, maskingType } = props;
 
   const format = (element: HTMLInputElement): void => {
-    const [mask, dataFormat] = getMaskDetails(maskingType);
+    const [mask, dataFormat] = getMaskDetails(maskingType.toString());
     const formattedValue = doFormat(element.value, dataFormat, mask);
     /* eslint-disable no-param-reassign */
     element.value = formattedValue;
