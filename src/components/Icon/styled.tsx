@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import styled from 'styled-components';
 import React from 'react';
 import { curry } from '../../modules';
@@ -37,16 +38,16 @@ const getColor = (theme: Theme): StringMappingLambda =>
     Warning: () => theme.colors.colorIconWarning,
   });
 
-const IconWithoutAtrrs = styled.svg<{ size: Sizes; color: Colors }>`
+const IconWithoutAtrrs = styled.svg<{ size: Sizes; color: Colors; customColor?: string }>`
   width: ${(props): string => getSize(props.theme)(props.size)};
   height: ${(props): string => getSize(props.theme)(props.size)};
   flex-shrink: 0;
   vertical-align: middle;
   fill: currentColor;
-  color: ${(props): string => getColor(props.theme)(props.color)};
+  color: ${(props): string => (_.isUndefined(props.customColor) ? getColor(props.theme)(props.color) : props.customColor)};
 `;
 
-export const Icon = styled(({ viewBox, children, ariaHidden, ariaLabel, size, color }) => (
+export const Icon = styled(({ viewBox, children, ariaHidden, ariaLabel, size, color, customColor }) => (
   <IconWithoutAtrrs
     size={size}
     color={color}
@@ -54,6 +55,7 @@ export const Icon = styled(({ viewBox, children, ariaHidden, ariaLabel, size, co
     preserveAspectRatio="xMidYMid meet"
     aria-hidden={ariaHidden ? 'true' : undefined}
     aria-label={ariaLabel}
+    customColor={customColor}
   >
     {children}
   </IconWithoutAtrrs>

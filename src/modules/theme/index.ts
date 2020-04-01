@@ -4,9 +4,10 @@ import spacing, { Spacing } from './spacing';
 import duration, { Duration } from './duration';
 import colors, { Colors } from './colors';
 import lineHeight, { LineHeight } from './lineHeight';
-import fontSize, { FontSize } from './fontSize';
+import font, { Font } from './font';
 import globalStyle from './globalStyle';
 import size, { Size } from './size';
+import opacity, { Opacity } from './opacity';
 
 export interface Theme {
   palette: Palette;
@@ -16,8 +17,9 @@ export interface Theme {
   colors: Colors;
   fontFamily: string;
   lineHeight: LineHeight;
-  fontSize: FontSize;
+  font: Font;
   size: Size;
+  opacity: Opacity;
 }
 
 export interface ThemeInput {
@@ -27,8 +29,9 @@ export interface ThemeInput {
   duration: Duration;
   colors: Colors;
   lineHeight: LineHeight;
-  fontSize: FontSize;
+  font: Font;
   size: Size;
+  opacity: Opacity;
 }
 
 const createTheme = (options: Partial<ThemeInput>): Theme => {
@@ -44,8 +47,9 @@ const createTheme = (options: Partial<ThemeInput>): Theme => {
     colors,
     fontFamily: "'Roboto', -apple-system, '.SFNSText-Regular', 'San Francisco', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
     lineHeight,
-    fontSize,
+    font,
     size,
+    opacity,
   };
 };
 

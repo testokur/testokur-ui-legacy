@@ -10,6 +10,10 @@ export type Colors = {
   colorIconSuccess: string;
   colorIconWarning: string;
   colorIconCritical: string;
+  colorInfoCheckBoxRadio: string;
+  colorFormLabel: string;
+  colorIconCheckboxRadio: string;
+  colorIconCheckboxRadioDisabled: string;
 };
 
 const color = {
@@ -24,6 +28,10 @@ const color = {
   colorIconSuccess: '#28A138',
   colorIconWarning: '#E98305',
   colorIconCritical: '##D21C1C',
+  colorInfoCheckBoxRadio: '#5F738C',
+  colorFormLabel: '#252A31',
+  colorIconCheckboxRadio: '#00A991',
+  colorIconCheckboxRadioDisabled: '#BAC7D5',
 };
 
 export default color;

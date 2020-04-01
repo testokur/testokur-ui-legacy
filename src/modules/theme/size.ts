@@ -3,6 +3,7 @@ export type Size = {
   widthIconSmall: string;
   widthIconMedium: string;
   widthIconLarge: string;
+  checkbox: string;
 };
 
 const size = {
@@ -10,6 +11,7 @@ const size = {
   widthIconSmall: '16px',
   widthIconMedium: '24px',
   widthIconLarge: '32px',
+  checkbox: '20px',
 };
 
 export default size;

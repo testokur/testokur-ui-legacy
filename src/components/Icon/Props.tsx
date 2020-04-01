@@ -5,9 +5,10 @@ type Props = Testable &
 React.SVGAttributes<SVGElement> & {
   children: React.ReactNode;
   size?: Sizes;
-  color: Colors;
-  ariaLabel: string;
+  color?: Colors;
+  ariaLabel?: string;
   ariaHidden?: boolean;
+  customColor?: string;
 };
 
 export default Props;

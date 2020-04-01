@@ -4,6 +4,10 @@ export type Border = {
   borderWidthInput: string;
   borderColorInputHover: string;
   borderColorInputFocus: string;
+  borderColorCheckboxRadio: string;
+  borderColorCheckboxRadioHover: string;
+  borderColorCheckboxRadioFocus: string;
+  borderColorCheckboxRadioActive: string;
 };
 
 const border = {
@@ -12,6 +16,10 @@ const border = {
   borderWidthInput: '1px',
   borderColorInputHover: '#A6B6C8',
   borderColorInputFocus: '#0172CB',
+  borderColorCheckboxRadio: '#BAC7D5',
+  borderColorCheckboxRadioHover: '#5F738C',
+  borderColorCheckboxRadioFocus: '#0172CB',
+  borderColorCheckboxRadioActive: '#252A31',
 };
 
 export default border;
