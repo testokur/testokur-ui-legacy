@@ -14,6 +14,7 @@ export type Colors = {
   colorFormLabel: string;
   colorIconCheckboxRadio: string;
   colorIconCheckboxRadioDisabled: string;
+  colorPlaceholderInput: string;
 };
 
 const color = {
@@ -32,6 +33,7 @@ const color = {
   colorFormLabel: '#252A31',
   colorIconCheckboxRadio: '#00A991',
   colorIconCheckboxRadioDisabled: '#BAC7D5',
+  colorPlaceholderInput: '#BAC7D5',
 };
 
 export default color;

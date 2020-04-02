@@ -6,7 +6,7 @@ import colors, { Colors } from './colors';
 import lineHeight, { LineHeight } from './lineHeight';
 import font, { Font } from './font';
 import globalStyle from './globalStyle';
-import size, { Size } from './size';
+import { size, Size } from './size';
 import opacity, { Opacity } from './opacity';
 import { TestOkurTheme } from './TestOkurTheme';
 

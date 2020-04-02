@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Icon, Sizes } from './styled';
+import Icon from './styled';
 import Props from './Props';
+import { Sizes } from '../../modules';
 
 const component = (props: Props): JSX.Element => {
   const { children, size, color, viewBox, ariaLabel, customColor } = props;

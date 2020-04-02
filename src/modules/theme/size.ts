@@ -1,17 +1,17 @@
 export type Size = {
   heightInputNormal: string;
-  widthIconSmall: string;
-  widthIconMedium: string;
-  widthIconLarge: string;
+  heightInputSmall: string;
+  iconSmall: string;
+  iconMedium: string;
+  iconLarge: string;
   checkbox: string;
 };
 
-const size = {
+export const size = {
   heightInputNormal: '44px',
-  widthIconSmall: '16px',
-  widthIconMedium: '24px',
-  widthIconLarge: '32px',
+  heightInputSmall: '32px',
+  iconSmall: '16px',
+  iconMedium: '24px',
+  iconLarge: '32px',
   checkbox: '20px',
 };
-
-export default size;

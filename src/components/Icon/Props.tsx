@@ -1,5 +1,4 @@
-import { Testable } from '../../modules';
-import { Sizes, Colors } from './styled';
+import { Testable, Sizes, Colors } from '../../modules';
 
 type Props = Testable &
 React.SVGAttributes<SVGElement> & {
