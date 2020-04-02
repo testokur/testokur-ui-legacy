@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import * as _ from 'lodash';
-import { Sizes, getSize } from '../../modules/common';
+import { Sizes, getSize, TestOkurTheme } from '../../modules';
 
 export const Label = styled.label<{ size: Sizes }>`
   position: relative;
   display: block;
   width: 100%;
-  margin-bottom: ${(props): string => (props.size == Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
+  margin-bottom: ${(props): string =>
+    props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal};
 `;
 
 export const Suffix = styled.div<{ disabled: boolean; size: Sizes }>`
@@ -45,8 +46,19 @@ export const SelectPrefix = styled.div<{ size: Sizes }>`
   z-index: 3;
   top: 0;
   padding: 12px;
-  height: ${(props): string => (props.size == Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
+  height: ${(props): string => (props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
 `;
+
+const getColorForCustomValue = (theme: TestOkurTheme, disabled?: boolean, filled?: boolean): string => {
+  if (disabled) {
+    return theme.palette.inkLighter;
+  }
+  if (filled) {
+    return theme.colors.colorTextInput;
+  }
+
+  return theme.colors.colorPlaceholderInput;
+};
 
 export const StyledCustomValue = styled.div<{ size: Sizes; disabled?: boolean; filled?: boolean }>`
   bottom: 0;
@@ -56,15 +68,18 @@ export const StyledCustomValue = styled.div<{ size: Sizes; disabled?: boolean; f
   z-index: 3;
   position: absolute;
   height: 100%;
-  font-size: ${(props): string => (props.size == Sizes.Small ? props.theme.font.fontSizeInputSmall : props.theme.font.fontSizeInputNormal)};
-  line-height: ${(props): string => (props.size == Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
-  color: ${(props): string =>
-    props.disabled
-      ? props.theme.palette.inkLighter
-      : props.filled
-      ? props.theme.colors.colorTextInput
-      : props.theme.colors.colorPlaceholderInput};
+  font-size: ${(props): string =>
+    props.size === Sizes.Small ? props.theme.font.fontSizeInputSmall : props.theme.font.fontSizeInputNormal};
+  line-height: ${(props): string => (props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
+  color: ${(props): string => getColorForCustomValue(props.theme, props.disabled, props.filled)};
 `;
+
+const getColorForSelect = (theme: TestOkurTheme, filled?: boolean, customValueText?: string): string => {
+  if (_.isUndefined(customValueText)) {
+    return 'transparent';
+  }
+  return filled ? theme.colors.colorTextInput : theme.palette.inkLight;
+};
 
 export const Select = styled.select<{ filled?: boolean; size: Sizes; customValueText: string }>`
   appearance: none;
@@ -75,10 +90,10 @@ export const Select = styled.select<{ filled?: boolean; size: Sizes; customValue
   background: ${(props): string => props.theme.palette.cloudNormal};
   border-radius: ${(props): string => props.theme.border.borderRadiusLarge};
   font-family: ${(props): string => props.theme.fontFamily};
-  color: ${(props): string => (props.filled ? props.theme.colors.colorTextInput : props.theme.palette.inkLight)};
-  font-size: ${(props): string => (props.size == Sizes.Small ? props.theme.font.fontSizeInputSmall : props.theme.font.fontSizeInputNormal)};
-  height: ${(props): string => (props.size == Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
-  color: ${(props): string => (_.isUndefined(props.customValueText) ? 'inherit' : 'transparent !important')};
+  color: ${(props): string => getColorForSelect(props.theme, props.filled, props.customValueText)};
+  font-size: ${(props): string =>
+    props.size === Sizes.Small ? props.theme.font.fontSizeInputSmall : props.theme.font.fontSizeInputNormal};
+  height: ${(props): string => (props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
   transition: box-shadow ${(props): string => props.theme.duration.durationFast} ease-in-out;
 
   > option {
