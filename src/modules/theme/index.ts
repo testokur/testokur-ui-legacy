@@ -1,4 +1,4 @@
-import createPalette, { Palette, PaletteInput } from './createPalette';
+import createPalette, { PaletteInput } from './createPalette';
 import border, { Border } from './border';
 import spacing, { Spacing } from './spacing';
 import duration, { Duration } from './duration';
@@ -8,19 +8,7 @@ import font, { Font } from './font';
 import globalStyle from './globalStyle';
 import size, { Size } from './size';
 import opacity, { Opacity } from './opacity';
-
-export interface Theme {
-  palette: Palette;
-  border: Border;
-  spacing: Spacing;
-  duration: Duration;
-  colors: Colors;
-  fontFamily: string;
-  lineHeight: LineHeight;
-  font: Font;
-  size: Size;
-  opacity: Opacity;
-}
+import { TestOkurTheme } from './TestOkurTheme';
 
 export interface ThemeInput {
   palette: PaletteInput;
@@ -34,7 +22,7 @@ export interface ThemeInput {
   opacity: Opacity;
 }
 
-const createTheme = (options: Partial<ThemeInput>): Theme => {
+const createTheme = (options: Partial<ThemeInput>): TestOkurTheme => {
   const { palette: paletteInput = {} } = options || {};
 
   const palette = createPalette(paletteInput);
@@ -53,4 +41,4 @@ const createTheme = (options: Partial<ThemeInput>): Theme => {
   };
 };
 
-export { createTheme, globalStyle as GlobalStyle };
+export { TestOkurTheme, createTheme, globalStyle as GlobalStyle };

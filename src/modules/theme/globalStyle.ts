@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
+import { TestOkurTheme } from './TestOkurTheme';
 
-const globalStyle = createGlobalStyle`
+const globalStyle = createGlobalStyle<{ theme: TestOkurTheme }>`
     :root{
         background: ${({ theme }): string => theme.colors.background};
     }

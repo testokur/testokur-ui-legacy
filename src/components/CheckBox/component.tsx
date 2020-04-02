@@ -4,22 +4,21 @@ import { Testable } from '../../modules';
 import { Check } from '../Icon';
 
 type Props = Testable &
-  React.InputHTMLAttributes<HTMLInputElement> & {
-    checked?: boolean;
-    disabled?: boolean;
-    label?: React.ReactNode;
-    value?: string;
-    info?: string;
-  };
+React.InputHTMLAttributes<HTMLInputElement> & {
+  checked?: boolean;
+  disabled?: boolean;
+  label?: React.ReactNode;
+  value?: string;
+  info?: string;
+};
 
-const component = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
-  // eslint-disable-next-line react/prop-types
+const component = React.forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
   const { checked, disabled, onChange, dataTestId, value, name, tabIndex, readOnly, info, label } = props;
   const preventOnClick = useCallback(ev => {
     ev.preventDefault();
   }, []);
 
-  /* TODO: Add ToolTip when it is ready*/
+  /* TODO: Add ToolTip when it is ready */
   return (
     <Label checked={checked} disabled={disabled}>
       <Input

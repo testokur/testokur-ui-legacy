@@ -1,8 +1,7 @@
 import * as _ from 'lodash';
 import styled from 'styled-components';
 import React from 'react';
-import { curry } from '../../modules';
-import { Theme } from '../../modules/theme';
+import { curry, TestOkurTheme } from '../../modules';
 
 export enum Sizes {
   Small = 'Small',
@@ -21,14 +20,14 @@ export enum Colors {
 
 type StringMappingLambda = (value: string) => string;
 
-const getSize = (theme: Theme): StringMappingLambda =>
+const getSize = (theme: TestOkurTheme): StringMappingLambda =>
   curry<string>({
     Small: () => theme.size.widthIconSmall,
     Medium: () => theme.size.widthIconMedium,
     Large: () => theme.size.widthIconLarge,
   });
 
-const getColor = (theme: Theme): StringMappingLambda =>
+const getColor = (theme: TestOkurTheme): StringMappingLambda =>
   curry<string>({
     Primary: () => theme.colors.colorIconPrimary,
     Critical: () => theme.colors.colorIconCritical,
