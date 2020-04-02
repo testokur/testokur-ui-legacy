@@ -12,7 +12,8 @@
     "format": "prettier \"./src/**/*.+(js|jsx|css|ts|tsx|md)\" --write",
     "lint": "tsc --noEmit && eslint --fix \"src/**\" && stylelint \"src/**\"",
     "test": "jest --env=jsdom --passWithNoTests --coverage",
-    "test:watch": "jest --watchAll --env=jsdom --passWithNoTests"
+    "test:watch": "jest --watchAll --env=jsdom --passWithNoTests",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -47,6 +48,7 @@
     "jest": "^25.2.4",
     "lint-staged": "^10.0.10",
     "prettier": "^2.0.2",
+    "semantic-release": "^17.0.4",
     "stylelint": "^13.2.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
