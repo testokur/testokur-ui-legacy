@@ -1,1 +1,3 @@
-export { default as Select } from './component'; // eslint-disable-line
+import Select from './component';
+
+export default Select;

@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { useState } from '@storybook/addons';
-import { CheckBox } from '.';
+import CheckBox from '.';
 
 storiesOf('CheckBox', module)
   .add('Default', () => {
