@@ -2,11 +2,7 @@ import React from 'react';
 import { InputField, InputFieldProps } from '../InputField';
 import doFormat from './doFormat';
 import getMaskDetails from './getMaskDetails';
-
-enum MaskingType {
-  Phone = 'Phone',
-  DateTime = 'DateTime',
-}
+import MaskingType from './const';
 
 type Props = Omit<InputFieldProps, 'rows'> & {
   maskingType: MaskingType;
