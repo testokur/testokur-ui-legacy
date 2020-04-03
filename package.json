@@ -67,5 +67,12 @@
   },
   "resolutions": {
     "@babel/preset-env": "^7.8.0"
-  }
+  },
+  "keywords": [
+    "testokur",
+    "components",
+    "ui",
+    "library",
+    "component"
+  ]
 }
