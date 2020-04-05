@@ -1,4 +1,4 @@
-import * as _ from 'lodash';
+import isUndefined from 'lodash/isUndefined';
 import styled from 'styled-components';
 import React from 'react';
 import { Sizes, getSize, Colors, getColor } from '../../modules';
@@ -9,7 +9,7 @@ const IconWithoutAtrrs = styled.svg<{ size: Sizes; color: Colors; customColor?: 
   flex-shrink: 0;
   vertical-align: middle;
   fill: currentColor;
-  color: ${(props): string => (_.isUndefined(props.customColor) ? getColor(props.theme)(props.color) : props.customColor)};
+  color: ${(props): string => (isUndefined(props.customColor) ? getColor(props.theme)(props.color) : props.customColor)};
 `;
 
 const Icon = styled(({ viewBox, children, ariaHidden, ariaLabel, size, color, customColor }) => (

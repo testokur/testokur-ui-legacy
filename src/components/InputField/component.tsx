@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as _ from 'lodash';
+import isUndefined from 'lodash/isUndefined';
 import { randomId, Testable } from '../../modules';
 import { Input, TextArea, Container, Label } from './styled';
 
@@ -15,7 +15,7 @@ const component = (props: Props): JSX.Element => {
   const id = randomId('input-field');
   let innerComponent;
 
-  if (!_.isUndefined(rows) && rows > 1) {
+  if (!isUndefined(rows) && rows > 1) {
     innerComponent = <TextArea id={id} rows={rows} value={value} onChange={onChange} placeholder={label} disabled={disabled} />;
   } else {
     innerComponent = (
@@ -24,7 +24,7 @@ const component = (props: Props): JSX.Element => {
   }
 
   return (
-    <Container hasRows={!_.isUndefined(rows) && rows > 1}>
+    <Container hasRows={!isUndefined(rows) && rows > 1}>
       {innerComponent}
       <Label htmlFor={id} disabled={disabled}>
         {label}

@@ -2,6 +2,7 @@ export type Border = {
   borderRadiusLarge: string;
   borderRadiusNormal: string;
   borderWidthInput: string;
+  borderColorInput: string;
   borderColorInputHover: string;
   borderColorInputFocus: string;
   borderColorCheckboxRadio: string;
@@ -14,6 +15,7 @@ const border = {
   borderRadiusLarge: '6px',
   borderRadiusNormal: '3px',
   borderWidthInput: '1px',
+  borderColorInput: '#BAC7D5',
   borderColorInputHover: '#A6B6C8',
   borderColorInputFocus: '#0172CB',
   borderColorCheckboxRadio: '#BAC7D5',

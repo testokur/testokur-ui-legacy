@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import * as _ from 'lodash';
-import { Sizes, getSize, TestOkurTheme } from '../../modules';
+import isUndefined from 'lodash/isUndefined';
+import { Sizes, getSize, convertHexToRgba, device, SpacingsAfter, getSpacing } from '../../modules';
+import { getColorForSelect, getColorForCustomValue } from './helpers';
 
-export const Label = styled.label<{ size: Sizes }>`
+export const Label = styled.label<{ spaceAfter: SpacingsAfter }>`
   position: relative;
   display: block;
   width: 100%;
-  margin-bottom: ${(props): string =>
-    props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal};
+  margin-bottom: ${(props): string => getSpacing(props.theme)(props.spaceAfter)};
 `;
 
-export const Suffix = styled.div<{ disabled: boolean; size: Sizes }>`
+export const SelectSuffix = styled.div<{ disabled?: boolean; size: Sizes }>`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -49,17 +49,6 @@ export const SelectPrefix = styled.div<{ size: Sizes }>`
   height: ${(props): string => (props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
 `;
 
-const getColorForCustomValue = (theme: TestOkurTheme, disabled?: boolean, filled?: boolean): string => {
-  if (disabled) {
-    return theme.palette.inkLighter;
-  }
-  if (filled) {
-    return theme.colors.colorTextInput;
-  }
-
-  return theme.colors.colorPlaceholderInput;
-};
-
 export const StyledCustomValue = styled.div<{ size: Sizes; disabled?: boolean; filled?: boolean }>`
   bottom: 0;
   font-family: ${(props): string => props.theme.fontFamily};
@@ -74,14 +63,7 @@ export const StyledCustomValue = styled.div<{ size: Sizes; disabled?: boolean; f
   color: ${(props): string => getColorForCustomValue(props.theme, props.disabled, props.filled)};
 `;
 
-const getColorForSelect = (theme: TestOkurTheme, filled?: boolean, customValueText?: string): string => {
-  if (_.isUndefined(customValueText)) {
-    return 'transparent';
-  }
-  return filled ? theme.colors.colorTextInput : theme.palette.inkLight;
-};
-
-export const Select = styled.select<{ filled?: boolean; size: Sizes; customValueText: string }>`
+export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; customValueText?: string }>`
   appearance: none;
   cursor: pointer;
   outline: none;
@@ -92,8 +74,8 @@ export const Select = styled.select<{ filled?: boolean; size: Sizes; customValue
   font-family: ${(props): string => props.theme.fontFamily};
   color: ${(props): string => getColorForSelect(props.theme, props.filled, props.customValueText)};
   font-size: ${(props): string =>
-    props.size === Sizes.Small ? props.theme.font.fontSizeInputSmall : props.theme.font.fontSizeInputNormal};
-  height: ${(props): string => (props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
+    props.elemSize === Sizes.Small ? props.theme.font.fontSizeInputSmall : props.theme.font.fontSizeInputNormal};
+  height: ${(props): string => (props.elemSize === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
   transition: box-shadow ${(props): string => props.theme.duration.durationFast} ease-in-out;
 
   > option {
@@ -107,45 +89,39 @@ export const Select = styled.select<{ filled?: boolean; size: Sizes; customValue
   &:hover {
     box-shadow: ${(props): string => `inset 0 0 0 ${props.theme.border.borderWidthInput} ${props.theme.border.borderColorInputHover}`};
   }
+
+  &:focus {
+    box-shadow: ${(props): string =>
+    `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px ${convertHexToRgba(
+      props.theme.border.borderColorInputFocus,
+      15
+    )}`};
+  }
+
+  &:disabled {
+    color: ${(props): string => props.theme.colors.colorTextInputDisabled};
+    cursor: not-allowed;
+    background: ${(props): string => props.theme.colors.backgroundInputDisabled};
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px ${(props): string => props.theme.border.borderColorInput};
+    }
+  }
+
+  ${(props): string | undefined => {
+    if (!isUndefined(props.customValueText)) {
+      return `&:-webkit-autofill,
+      &:-internal-autofill-selected {
+        -webkit-text-fill-color: transparent;
+      }`;
+    }
+    return undefined;
+  }};
+
+  @media ${device.mobileL} {
+    border-radius: ${(props): string => props.theme.border.borderRadiusNormal};
+    background-color: ${(props): string =>
+    props.disabled ? props.theme.colors.backgroundInputDisabled : props.theme.colors.backgroundInput};
+    box-shadow: inset 0 0 0 ${(props): string => props.theme.border.borderColorInput};
+  }
 `;
-
-//   &:focus {
-//     ${formElementFocus}
-//   }
-
-//   &:disabled {
-//     color: ${({ theme }) => theme.orbit.colorTextInputDisabled};
-//     background: ${({ theme }) => theme.orbit.backgroundInputDisabled};
-//     cursor: not-allowed;
-
-//     &:hover {
-//       box-shadow: inset 0 0 0 1px ${({ theme }) => theme.orbit.borderColorInput};
-//     }
-//   }
-
-//   /*
-//     This fix is needed for case where Select has customValueText and it's autofilled by webkit based browser.
-//     In that case autofilled value would be displayed, overflowing customValueText.
-//   */
-//   ${({ customValueText }) =>
-//     customValueText &&
-//     `
-//     &:-webkit-autofill,
-//     &:-internal-autofill-selected {
-//       -webkit-text-fill-color: transparent;
-//     }
-//   `}
-//   color: ${({ customValueText }) => customValueText && "transparent"} !important;
-
-//   ${media.largeMobile(css`
-//     color: ${({ customValueText }) => customValueText && "transparent"};
-//     background-color: ${({ disabled, theme }) =>
-//       disabled ? theme.orbit.backgroundInputDisabled : theme.orbit.backgroundInput};
-//     border-radius: ${({ theme }) => theme.orbit.borderRadiusNormal};
-//     box-shadow: inset 0 0 0
-//       ${({ theme, error }) =>
-//         `${theme.orbit.borderWidthInput} ${
-//           error ? theme.orbit.borderColorInputError : theme.orbit.borderColorInput
-//         }`};
-//   `)}
-// `;

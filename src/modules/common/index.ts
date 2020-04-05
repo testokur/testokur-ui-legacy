@@ -35,4 +35,25 @@ const getColor = (theme: TestOkurTheme): StringMappingLambda =>
     Warning: () => theme.colors.colorIconWarning,
   });
 
-export { Sizes, getSize, Colors, getColor };
+enum SpacingsAfter {
+  None = 'None',
+  Smallest = 'Smallest',
+  Small = 'Small',
+  Normal = 'Normal',
+  Medium = 'Medium',
+  Large = 'Large',
+  Largest = 'Largest',
+}
+
+const getSpacing = (theme: TestOkurTheme): StringMappingLambda =>
+  curry<string>({
+    None: () => '0',
+    Smallest: () => theme.spacing.spaceXXSmall,
+    Small: () => theme.spacing.spaceXSmall,
+    Normal: () => theme.spacing.spaceSmall,
+    Medium: () => theme.spacing.spaceMedium,
+    Large: () => theme.spacing.spaceLarge,
+    Largest: () => theme.spacing.spaceXLarge,
+  });
+
+export { Sizes, getSize, Colors, getColor, SpacingsAfter, getSpacing };
