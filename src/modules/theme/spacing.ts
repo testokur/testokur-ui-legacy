@@ -10,6 +10,9 @@ export type Spacing = {
   spaceXLarge: string;
   spaceXXLarge: string;
   spaceXXXLarge: string;
+  marginButtonIconLarge: string;
+  marginButtonIconNormal: string;
+  marginButtonIconSmall: string;
 };
 
 const spacing = {
@@ -24,6 +27,9 @@ const spacing = {
   spaceXLarge: '32px',
   spaceXXLarge: '40px',
   spaceXXXLarge: '52px',
+  marginButtonIconLarge: '12px',
+  marginButtonIconNormal: '8px',
+  marginButtonIconSmall: '8px',
 };
 
 export default spacing;
