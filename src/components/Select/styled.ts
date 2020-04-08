@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import isUndefined from 'lodash/isUndefined';
 import { Sizes, getSize, convertHexToRgba, SpacingsAfter, getSpacing } from '../../modules';
 import { getColorForSelect, getColorForCustomValue } from './helpers';
 
@@ -94,10 +93,10 @@ export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; c
 
   &:focus {
     box-shadow: ${(props): string =>
-    `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px ${convertHexToRgba(
-      props.theme.border.borderColorInputFocus,
-      15
-    )}`};
+      `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px ${convertHexToRgba(
+        props.theme.border.borderColorInputFocus,
+        15
+      )}`};
   }
 
   &:disabled {
@@ -111,7 +110,7 @@ export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; c
   }
 
   ${(props): string | undefined => {
-    if (!isUndefined(props.customValueText)) {
+    if (props.customValueText !== undefined) {
       return `&:-webkit-autofill,
       &:-internal-autofill-selected {
         -webkit-text-fill-color: transparent;

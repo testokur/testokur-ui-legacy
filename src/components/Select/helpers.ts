@@ -1,4 +1,3 @@
-import isUndefined from 'lodash/isUndefined';
 import { TestOkurTheme } from '../../modules';
 
 export const getColorForCustomValue = (theme: TestOkurTheme, disabled?: boolean, filled?: boolean): string => {
@@ -13,7 +12,7 @@ export const getColorForCustomValue = (theme: TestOkurTheme, disabled?: boolean,
 };
 
 export const getColorForSelect = (theme: TestOkurTheme, filled?: boolean, customValueText?: string): string => {
-  if (!isUndefined(customValueText)) {
+  if (customValueText !== undefined) {
     return 'transparent !important';
   }
   return filled ? theme.colors.colorTextInput : theme.palette.inkLight;

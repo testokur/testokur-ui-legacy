@@ -1,5 +1,3 @@
-import isUndefined from 'lodash/isUndefined';
-
 interface ConditionalDictionary<T> {
   [key: string]: () => T;
 }
@@ -7,7 +5,7 @@ interface ConditionalDictionary<T> {
 type DefaultCase<T> = (value: string) => T;
 
 function reduce<T>(value: string, conditionals: ConditionalDictionary<T>, defaultCase?: DefaultCase<T>): T {
-  if (isUndefined(value)) {
+  if (value === undefined) {
     return (undefined as unknown) as T;
   }
 
