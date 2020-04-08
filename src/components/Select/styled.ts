@@ -93,10 +93,10 @@ export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; c
 
   &:focus {
     box-shadow: ${(props): string =>
-      `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px ${convertHexToRgba(
-        props.theme.border.borderColorInputFocus,
-        15
-      )}`};
+    `inset 0 0 0 1px ${props.theme.border.borderColorInputFocus}, 0 0 0 3px ${convertHexToRgba(
+      props.theme.border.borderColorInputFocus,
+      15
+    )}`};
   }
 
   &:disabled {
