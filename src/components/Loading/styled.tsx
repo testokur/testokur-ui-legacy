@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import Type from './const';
 
 const LoaderAnimation = keyframes`
   0% {opacity: .3; transform:translateY(0px);}
@@ -33,14 +34,20 @@ export const StyledLoaderCircle = styled.div`
   }
 `;
 
-export const StyledLoadingText = styled.div`
+export const StyledLoadingText = styled.div<{ type: Type }>`
   font-family: ${(props): string => props.theme.fontFamily};
   font-size: ${(props): string => props.theme.font.fontSizeTextNormal};
   color: ${(props): string => props.theme.colors.colorTextLoading};
   line-height: ${(props): string => props.theme.lineHeight.lineHeightTextNormal};
+  margin-top: ${(props): string => (props.type === Type.PageLoader ? props.theme.spacing.spaceMedium : 'initial')};
+  margin-left: ${(props): string => (props.type !== Type.PageLoader ? props.theme.spacing.spaceSmall : 'initial')};
 `;
-// const StyledLoadingText = styled.div`
-//   margin-top: ${({ theme, type }) => type === TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceMedium};
-//   margin-${left}: ${({ theme, type }) =>
-//   type !== TYPE_OPTIONS.PAGE_LOADER && theme.orbit.spaceSmall};
-// `;
+
+export const StyledSpinnerCircle = styled.circle<{ type: Type }>`
+  fill: transparent;
+  stroke: ${(props): string => (props.type === Type.ButtonLoader ? 'currentColor' : props.theme.palette.inkLighter)};
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-dasharray: 128px;
+  stroke-dashoffset: 64px;
+`;
