@@ -16,4 +16,5 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4bad67cabfc446cd91e7ad479e7888b0)](https://www.codacy.com/gh/testokur/testokur-ui?utm_source=github.com&utm_medium=referral&utm_content=testokur/testokur-ui&utm_campaign=Badge_Grade)
 
-testokur-ui is a lightweight react ui component library to be used in testokur apps. Uses [styled-components](https://styled-components.com/) and inspired by [orbit kiwi](https://orbit.kiwi/)
+testokur-ui is a lightweight ui component library based on react and [styled-components](https://styled-components.com/).
+Inspired by [orbit kiwi](https://orbit.kiwi/)
