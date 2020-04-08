@@ -6,8 +6,8 @@ export const IconContainer = styled.span<{ size: Sizes; onlyIcon: boolean }>`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  transition: background ${(props): string => props.theme.durationFast} ease-in-out,
-    box-shadow ${(props): string => props.theme.durationFast} ease-in-out;
+  transition: background ${(props): string => props.theme.duration.durationFast} ease-in-out,
+    box-shadow ${(props): string => props.theme.duration.durationFast} ease-in-out;
 
   > svg {
     width: ${(props): string => getSize(props.theme)(props.size)};

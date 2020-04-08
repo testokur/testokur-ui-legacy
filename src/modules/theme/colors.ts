@@ -20,7 +20,7 @@ export type Colors = {
 const color = {
   colorTextInputDisabled: '#BAC7D5',
   colorTextInput: '#252A31',
-  backgroundInputDisabled: 'EFF2F5',
+  backgroundInputDisabled: '#EFF2F5',
   backgroundInput: '#FFFFFF',
   background: 'white',
   colorIconPrimary: '#252A31',

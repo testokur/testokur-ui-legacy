@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import isUndefined from 'lodash/isUndefined';
-import { Sizes, getSize, convertHexToRgba, device, SpacingsAfter, getSpacing } from '../../modules';
+import { Sizes, getSize, convertHexToRgba, SpacingsAfter, getSpacing } from '../../modules';
 import { getColorForSelect, getColorForCustomValue } from './helpers';
 
 export const Label = styled.label<{ spaceAfter: SpacingsAfter }>`
@@ -16,6 +16,7 @@ export const SelectSuffix = styled.div<{ disabled?: boolean; size: Sizes }>`
   justify-content: center;
   align-items: center;
   top: 0;
+  right: ${(props): string => props.theme.spacing.spaceXSmall};
   pointer-events: none;
   z-index: 3;
   height: 100%;
@@ -57,6 +58,7 @@ export const StyledCustomValue = styled.div<{ size: Sizes; disabled?: boolean; f
   z-index: 3;
   position: absolute;
   height: 100%;
+  left: ${(props): string => props.theme.spacing.spaceSmall};
   font-size: ${(props): string =>
     props.size === Sizes.Small ? props.theme.font.fontSizeInputSmall : props.theme.font.fontSizeInputNormal};
   line-height: ${(props): string => (props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
@@ -69,8 +71,8 @@ export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; c
   outline: none;
   width: 100%;
   z-index: 2;
-  background: ${(props): string => props.theme.palette.cloudNormal};
-  border-radius: ${(props): string => props.theme.border.borderRadiusLarge};
+  background: ${(props): string => props.theme.colors.backgroundInput};
+  border-radius: ${(props): string => props.theme.border.borderRadiusNormal};
   font-family: ${(props): string => props.theme.fontFamily};
   color: ${(props): string => getColorForSelect(props.theme, props.filled, props.customValueText)};
   font-size: ${(props): string =>
@@ -83,7 +85,7 @@ export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; c
   }
 
   border: 0;
-  box-shadow: ${(props): string => `inset 0 0 0 ${props.theme.border.borderWidthInput} ${props.theme.palette.cloudNormal}`};
+  box-shadow: ${(props): string => `inset 0 0 0 ${props.theme.border.borderWidthInput} ${props.theme.border.borderColorInput}`};
   padding: 0px 40px 0px 12px;
 
   &:hover {
@@ -117,11 +119,4 @@ export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; c
     }
     return undefined;
   }};
-
-  @media ${device.mobileL} {
-    border-radius: ${(props): string => props.theme.border.borderRadiusNormal};
-    background-color: ${(props): string =>
-    props.disabled ? props.theme.colors.backgroundInputDisabled : props.theme.colors.backgroundInput};
-    box-shadow: inset 0 0 0 ${(props): string => props.theme.border.borderColorInput};
-  }
 `;

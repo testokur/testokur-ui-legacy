@@ -29,7 +29,7 @@ const component = (props: Props): JSX.Element => {
             {customValueText}
           </StyledCustomValue>
         )}
-        <StyledSelect elemSize={size} filled={filled} customValueText={customValueText}>
+        <StyledSelect elemSize={size} filled={filled} customValueText={customValueText} disabled={disabled}>
           {options.map(option => (
             <option key={`option-${option.value}`} value={option.value} disabled={option.disabled}>
               {option.label}
