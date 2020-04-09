@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Sizes, getSize, convertHexToRgba, SpacingsAfter, getSpacing } from '../../modules';
 import { getColorForSelect, getColorForCustomValue } from './helpers';
+import { isUndefined } from '../../utils';
 
 export const Label = styled.label<{ spaceAfter: SpacingsAfter }>`
   position: relative;
@@ -110,7 +111,7 @@ export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; c
   }
 
   ${(props): string | undefined => {
-    if (props.customValueText !== undefined) {
+    if (!isUndefined(props.customValueText)) {
       return `&:-webkit-autofill,
       &:-internal-autofill-selected {
         -webkit-text-fill-color: transparent;

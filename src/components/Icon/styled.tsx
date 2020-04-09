@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import { Sizes, getSize, Colors, getColor } from '../../modules';
+import { isUndefined } from '../../utils';
 
 const IconWithoutAtrrs = styled.svg<{ size: Sizes; color: Colors; customColor?: string }>`
   width: ${(props): string => getSize(props.theme)(props.size)};
@@ -8,7 +9,7 @@ const IconWithoutAtrrs = styled.svg<{ size: Sizes; color: Colors; customColor?: 
   flex-shrink: 0;
   vertical-align: middle;
   fill: currentColor;
-  color: ${(props): string => (props.customColor === undefined ? getColor(props.theme)(props.color) : props.customColor)};
+  color: ${(props): string | undefined => (isUndefined(props.customColor) ? getColor(props.theme)(props.color) : props.customColor)};
 `;
 
 const Icon = styled(({ viewBox, children, ariaHidden, ariaLabel, size, color, customColor }) => (

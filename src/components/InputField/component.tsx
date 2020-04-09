@@ -14,7 +14,7 @@ const component = (props: Props): JSX.Element => {
   const id = randomId('input-field');
   let innerComponent;
 
-  if (rows !== undefined && rows > 1) {
+  if ((rows ?? 0) > 1) {
     innerComponent = <TextArea id={id} rows={rows} value={value} onChange={onChange} placeholder={label} disabled={disabled} />;
   } else {
     innerComponent = (
@@ -23,7 +23,7 @@ const component = (props: Props): JSX.Element => {
   }
 
   return (
-    <Container hasRows={rows !== undefined && rows > 1}>
+    <Container hasRows={(rows ?? 0) > 1}>
       {innerComponent}
       <Label htmlFor={id} disabled={disabled}>
         {label}
