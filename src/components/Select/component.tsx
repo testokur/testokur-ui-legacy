@@ -8,13 +8,13 @@ React.SelectHTMLAttributes<HTMLSelectElement> & {
   spaceAfter: SpacingsAfter;
   elemSize: Sizes;
   options: HTMLOptionElement[];
-  disabled: boolean | undefined;
-  filled: boolean | undefined;
-  customValueText: string | undefined;
+  disabled?: boolean;
+  filled?: boolean;
+  customValueText?: string;
 };
 
 const component = (props: Props): JSX.Element => {
-  const { spaceAfter, disabled, elemSize: size, prefix, filled, customValueText, options } = props;
+  const { spaceAfter, disabled, elemSize: size, prefix, filled, customValueText, options, onChange, value, placeholder } = props;
 
   return (
     <Label spaceAfter={spaceAfter}>
@@ -29,7 +29,19 @@ const component = (props: Props): JSX.Element => {
             {customValueText}
           </StyledCustomValue>
         )}
-        <StyledSelect elemSize={size} filled={filled} customValueText={customValueText} disabled={disabled}>
+        <StyledSelect
+          elemSize={size}
+          filled={filled}
+          customValueText={customValueText}
+          disabled={disabled}
+          onChange={onChange}
+          value={value}
+        >
+          {placeholder && (
+            <option label={placeholder} value="">
+              {placeholder}
+            </option>
+          )}
           {options.map(option => (
             <option key={`option-${option.value}`} value={option.value} disabled={option.disabled}>
               {option.label}
