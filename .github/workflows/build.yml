@@ -8,7 +8,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-18.04
-
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1.4.0
@@ -23,12 +23,12 @@ jobs:
 
       - name: Lint
         run: yarn lint
-    
+
   build:
     name: Build
     needs: test
     runs-on: ubuntu-18.04
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/production'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1.4.0
