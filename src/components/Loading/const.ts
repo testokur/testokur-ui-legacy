@@ -1,7 +1,19 @@
+import { curry } from '../../modules';
+
 enum Type {
-  ButtonLoader = 'buttonLoader',
-  BoxLoader = 'boxLoader',
-  PageLoader = 'pageLoader',
+  ButtonLoader = 'ButtonLoader',
+  BoxLoader = 'BoxLoader',
+  PageLoader = 'PageLoader',
+  SearchLoader = 'SearchLoader',
+  InlineLoader = 'InlineLoader',
 }
 
-export default Type;
+const getHeight = curry<string>({
+  InlineLoader: () => 'initial',
+  ButtonLoader: () => '100%',
+  SearchLoader: () => '40px',
+  BoxLoader: () => '80px',
+  PageLoader: () => '120px',
+});
+
+export { Type, getHeight };

@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import Select from '.';
 import { Sizes, SpacingsAfter } from '../../modules';
 
-storiesOf('Select', module).add('Default', () => {
+storiesOf('Select', module).add('Playground', () => {
   const placeHolder = text('placeHolder', 'Please Select An Item');
   const spaceAfter = select('SpaceAfter', Object.values(SpacingsAfter), SpacingsAfter.Small);
   const size = select('Size', Object.values(Sizes), Sizes.Medium);

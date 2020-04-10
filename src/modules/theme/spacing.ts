@@ -1,4 +1,5 @@
 export type Spacing = {
+  paddingLoading: string;
   paddingTextareaNormal: string;
   paddingInputNormal: string;
   spaceXXXSmall: string;
@@ -30,6 +31,7 @@ const spacing = {
   marginButtonIconLarge: '12px',
   marginButtonIconNormal: '8px',
   marginButtonIconSmall: '8px',
+  paddingLoading: '12px',
 };
 
 export default spacing;

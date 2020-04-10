@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import Type from './const';
+import { Type, getHeight } from './const';
 
 const LoaderAnimation = keyframes`
   0% {opacity: .3; transform:translateY(0px);}
@@ -21,8 +21,8 @@ export const StyledLoaderCircle = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  margin-left: 6px;
-  animation: ${LoaderAnimation} 1.25s infinite ease -in -out;
+  margin-right: 6px;
+  animation: ${LoaderAnimation} 1.25s infinite ease-in-out;
   background: ${(props): string => props.theme.palette.inkLighter};
 
   &:nth-child(2) {
@@ -50,4 +50,26 @@ export const StyledSpinnerCircle = styled.circle<{ type: Type }>`
   stroke-linecap: round;
   stroke-dasharray: 128px;
   stroke-dashoffset: 64px;
+`;
+
+export const StyledLoading = styled.div<{ type?: Type }>`
+  position: ${(props): string => (props.type === Type.ButtonLoader ? 'absolute' : 'initial')};
+  top: ${(props): string => (props.type === Type.ButtonLoader ? '0' : 'initial')};
+  width: ${(props): string => (props.type === Type.ButtonLoader ? '100%' : 'initial')};
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  justify-content: ${(props): string => (props.type === Type.SearchLoader ? 'start' : 'center')};
+  flex-direction: ${(props): string => (props.type === Type.PageLoader ? 'column' : 'row')};
+  display: ${(props): string => (props.type === Type.InlineLoader ? 'inline-flex' : 'flex')};
+  padding: ${(props): string => (props.type !== Type.InlineLoader ? props.theme.spacing.paddingLoading : 'initial')};
+  left: ${(props): string => (props.type === Type.ButtonLoader ? '0' : 'initial')};
+  min-height: ${(props): string => (props.type === Type.InlineLoader ? '19px' : 'initial')};
+  height: ${(props): string => getHeight(props.type as string)};
+`;
+
+export const StyledLoader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
