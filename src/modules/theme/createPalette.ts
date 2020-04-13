@@ -6,6 +6,11 @@ export interface Palette {
   cloudNormal: string;
   blueNormal: string;
   blueDark: string;
+  productNormal: string;
+  greenNormal: string;
+  orangeNormal: string;
+  redNormal: string;
+  inkNormal: string;
 }
 
 export type PaletteInput = {
@@ -21,6 +26,11 @@ const createPalette = (palette: PaletteInput): Palette => {
     cloudNormal = '#EFF2F5',
     blueNormal = '#0172CB',
     blueDark = '#005AA3',
+    productNormal = '#00A991',
+    greenNormal = '#1D7228',
+    orangeNormal = '#DC7C05',
+    redNormal = '#B91919',
+    inkNormal = '#252A31',
   } = palette;
 
   return {
@@ -31,6 +41,11 @@ const createPalette = (palette: PaletteInput): Palette => {
     cloudNormal,
     blueNormal,
     blueDark,
+    productNormal,
+    greenNormal,
+    orangeNormal,
+    redNormal,
+    inkNormal,
   };
 };
 

@@ -56,4 +56,4 @@ const getSpacing = (theme: TestOkurTheme): StringMappingLambda =>
     Largest: () => theme.spacing.spaceXLarge,
   });
 
-export { Sizes, getSize, Colors, getColor, SpacingsAfter, getSpacing };
+export { Sizes, getSize, Colors, getColor, SpacingsAfter, getSpacing, StringMappingLambda };

@@ -5,6 +5,18 @@ export type Size = {
   iconMedium: string;
   iconLarge: string;
   checkbox: string;
+  heightButtonSmall: string;
+  heightButtonNormal: string;
+  heightButtonLarge: string;
+  widthIconSmall: string;
+  widthIconNormal: string;
+  widthIconLarge: string;
+  heightIconMedium: string;
+  heightIconSmall: string;
+  heightIconLarge: string;
+  fontSizeButtonLarge: string;
+  fontSizeButtonSmall: string;
+  fontSizeButtonMedium: string;
 };
 
 export const size = {
@@ -14,4 +26,16 @@ export const size = {
   iconMedium: '24px',
   iconLarge: '32px',
   checkbox: '20px',
+  heightButtonSmall: '32px',
+  heightButtonNormal: '44px',
+  heightButtonLarge: '52px',
+  widthIconSmall: '16px',
+  widthIconNormal: '24px',
+  widthIconLarge: '32px',
+  heightIconMedium: '24px',
+  heightIconSmall: '16px',
+  heightIconLarge: '32px',
+  fontSizeButtonLarge: '16px',
+  fontSizeButtonSmall: '14px',
+  fontSizeButtonMedium: '12px',
 };
