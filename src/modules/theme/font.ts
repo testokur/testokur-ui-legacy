@@ -6,6 +6,7 @@ export type Font = {
   fontWeightNormal: number;
   fontWeightMedium: number;
   fontSizeFormLabel: string;
+  fontWeightBold: number;
 };
 
 const font = {
@@ -14,6 +15,7 @@ const font = {
   fontSizeFormFeedback: '12px',
   fontWeightNormal: 400,
   fontWeightMedium: 500,
+  fontWeightBold: 700,
   fontSizeFormLabel: '14px',
   fontSizeTextNormal: '14px',
 };

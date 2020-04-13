@@ -37,13 +37,13 @@ const getButtonBoxShadow = (
       box-shadow: inset 0 0 6px 3px ${convertHexToRgba(theme.palette.inkNormal, 15)};
     `;
   }
-
   if (state === ButtonStates.Focus) {
     return css`
-      ${!bordered &&
-      css`
-        box-shadow: 0 0 0 3px ${getColor(Tokens.borderColorButtonFocus, type, theme)};
-      `}
+      ${bordered
+    ? css``
+    : css`
+            box-shadow: 0 0 0 3px ${getColor(Tokens.borderColorButtonFocus, type, theme)};
+          `}
       &:active {
         ${bordered
     ? css`

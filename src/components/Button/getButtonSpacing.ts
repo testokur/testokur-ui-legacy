@@ -20,25 +20,25 @@ const getButtonSpacing = (theme: TestOkurTheme, onlyIcon: boolean, hasIconRight:
 
   const paddingButtonMapping = curry<string>({
     Small: () => theme.spacing.paddingButtonSmall,
-    Normal: () => theme.spacing.paddingButtonNormal,
+    Medium: () => theme.spacing.paddingButtonNormal,
     Large: () => theme.spacing.paddingButtonLarge,
   });
 
   const paddingButtonWithIconsMapping = curry<string>({
     Small: () => theme.spacing.paddingButtonSmallWithIcons,
-    Normal: () => theme.spacing.paddingButtonNormalWithIcons,
+    Medium: () => theme.spacing.paddingButtonNormalWithIcons,
     Large: () => theme.spacing.paddingButtonLargeWithIcons,
   });
 
   const paddingButtonWithLeftIconMapping = curry<string>({
     Small: () => theme.spacing.paddingButtonSmallWithLeftIcon,
-    Normal: () => theme.spacing.paddingButtonNormalWithLeftIcon,
+    Medium: () => theme.spacing.paddingButtonNormalWithLeftIcon,
     Large: () => theme.spacing.paddingButtonLargeWithLeftIcon,
   });
 
   const paddingButtonWithRightIconMapping = curry<string>({
     Small: () => theme.spacing.paddingButtonSmallWithRightIcon,
-    Normal: () => theme.spacing.paddingButtonNormalWithRightIcon,
+    Medium: () => theme.spacing.paddingButtonNormalWithRightIcon,
     Large: () => theme.spacing.paddingButtonLargeWithRightIcon,
   });
 

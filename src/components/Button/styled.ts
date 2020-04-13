@@ -79,7 +79,7 @@ export const StyledButton = styled.button<{
     props.circled ? getSizeToken(Tokens.heightButton, props.size, props.theme) : props.theme.border.borderRadiusNormal};
   min-width: ${(props): string => (props.circled ? getSizeToken(Tokens.heightButton, props.size, props.theme) : 'initial')};
   font-family: ${(props): string => props.theme.fontFamily};
-  font-weight: ${(props): string => `${props.theme.font.fontWeightNormal} !import`};
+  font-weight: ${(props): string => `${props.theme.font.fontWeightBold}`};
   font-size: ${(props): string => getSizeToken(Tokens.fontSizeButton, props.size, props.theme)};
   line-height: 1.4;
   cursor: ${(props): string => (props.disabled ? 'not-allowed' : 'pointer')};

@@ -6,11 +6,14 @@ import getColor from './getColor';
 
 const getFocus = (type: Types, bordered: boolean, disabled: boolean, theme: TestOkurTheme): FlattenSimpleInterpolation => {
   return css`
-    :focus,
-    :-moz-focusring,
+    :focus {
+      ${getButtonBoxShadow(ButtonStates.Focus, type, bordered, disabled, theme)};
+      background: ${bordered ? getColor(Tokens.backgroundButtonFocus, type, theme) : ''};
+    }
+
     :focus-visible {
       ${getButtonBoxShadow(ButtonStates.Focus, type, bordered, disabled, theme)};
-      background: ${bordered ? getColor(Tokens.backgroundButtonFocus, type, theme) : 'initial'};
+      background: ${bordered ? getColor(Tokens.backgroundButtonFocus, type, theme) : ''};
     }
 
     :focus:not(:focus-visible) {

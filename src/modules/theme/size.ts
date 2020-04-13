@@ -36,6 +36,6 @@ export const size = {
   heightIconSmall: '16px',
   heightIconLarge: '32px',
   fontSizeButtonLarge: '16px',
-  fontSizeButtonSmall: '14px',
-  fontSizeButtonMedium: '12px',
+  fontSizeButtonSmall: '12px',
+  fontSizeButtonMedium: '14px',
 };
