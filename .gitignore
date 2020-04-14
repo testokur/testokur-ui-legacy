@@ -3,3 +3,4 @@ node_modules
 coverage
 dist
 test-report.xml
+storybook-static
