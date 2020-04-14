@@ -5,6 +5,7 @@ import { text, select } from '@storybook/addon-knobs';
 import Button from '.';
 import { Sizes } from '../../modules';
 import { Types } from './const';
+import { Remove } from '../Icon';
 
 storiesOf('Button', module)
   .add('Default', () => {
@@ -20,5 +21,5 @@ storiesOf('Button', module)
     const size = select('Size', Object.values(Sizes), Sizes.Medium);
     const type = select('Type', Object.values(Types), Types.Primary);
 
-    return <Button onClick={action('clicked')} size={size} buttonType={type} iconLeft={IconLeft && <IconLeft />} circled title="Button" />;
+    return <Button onClick={action('clicked')} size={size} buttonType={type} iconLeft={<Remove />} circled title="Button" />;
   });

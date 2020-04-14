@@ -12,7 +12,7 @@ const IconWithoutAtrrs = styled.svg<{ size: Sizes; color: Colors; customColor?: 
   color: ${(props): string | undefined => (isUndefined(props.customColor) ? getColor(props.theme)(props.color) : props.customColor)};
 `;
 
-const Icon = styled(({ viewBox, children, ariaHidden, ariaLabel, size, color, customColor }) => (
+const StyledIcon = styled(({ viewBox, children, ariaHidden, ariaLabel, size, color, customColor }) => (
   <IconWithoutAtrrs
     size={size}
     color={color}
@@ -26,4 +26,4 @@ const Icon = styled(({ viewBox, children, ariaHidden, ariaLabel, size, color, cu
   </IconWithoutAtrrs>
 ))``;
 
-export default Icon;
+export default StyledIcon;
