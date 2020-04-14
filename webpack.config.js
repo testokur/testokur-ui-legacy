@@ -13,6 +13,7 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
   },
+  mode: 'production',
   optimization: {
     minimizer: [
       new TerserPlugin({

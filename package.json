@@ -8,7 +8,7 @@
   "private": false,
   "scripts": {
     "dev": "start-storybook -p 6006",
-    "build": "rimraf dist storybook-static  &&  webpack --mode production  --color --progress",
+    "build": "rimraf dist storybook-static  &&  webpack --color --progress",
     "format": "prettier \"./src/**/*.+(js|jsx|css|ts|tsx|md)\" --write",
     "lint": "tsc --noEmit && eslint --fix \"src/**\" && stylelint \"src/**\"",
     "test": "jest --env=jsdom --passWithNoTests --coverage",
