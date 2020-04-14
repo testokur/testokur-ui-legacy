@@ -12,12 +12,12 @@ type Props = Testable & {
 };
 
 const component = (props: Props): JSX.Element => {
-  const { children = <></>, loading = false, type = Type.PageLoader, text } = props;
+  const { children = <></>, loading = false, type = Type.PageLoader, text, dataTestId } = props;
 
   return !isUndefined(children) && !loading ? (
     children
   ) : (
-    <StyledLoading type={type}>
+    <StyledLoading type={type} data-testid={dataTestId}>
       {type === Type.BoxLoader || type === Type.SearchLoader || type === Type.InlineLoader ? (
         <StyledLoader>
           <StyledLoaderCircle />

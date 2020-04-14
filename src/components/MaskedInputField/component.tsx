@@ -9,7 +9,7 @@ type Props = Omit<InputFieldProps, 'rows'> & {
 };
 
 const component = (props: Props): JSX.Element => {
-  const { label, value, onChange, disabled, maskingType } = props;
+  const { label, value, onChange, disabled, maskingType, dataTestId } = props;
 
   const format = (element: HTMLInputElement): void => {
     const [mask, dataFormat] = getMaskDetails(maskingType.toString());
@@ -25,6 +25,7 @@ const component = (props: Props): JSX.Element => {
 
   return (
     <InputField
+      data-testid={dataTestId}
       label={label}
       value={value}
       onChange={onChange}

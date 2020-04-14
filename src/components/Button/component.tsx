@@ -7,26 +7,26 @@ import { Loading, LoadingTypes } from '../Loading';
 import { isUndefined } from '../../utils';
 
 type Props = Testable &
-React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children?: JSX.Element;
-  circled?: boolean;
-  bordered?: boolean;
-  fullWidth?: boolean;
-  loading?: boolean;
-  buttonType: Types;
-  size: Sizes;
-  submit?: boolean;
-  icon?: JSX.Element;
-  iconLeft?: JSX.Element;
-  iconRight?: JSX.Element;
-  tabIndex?: number;
-  ariaExpanded?: boolean;
-  ariaControls?: string;
-  title?: string;
-  spaceAfter?: SpacingsAfter;
-  role?: string;
-  width?: string;
-};
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    children?: JSX.Element;
+    circled?: boolean;
+    bordered?: boolean;
+    fullWidth?: boolean;
+    loading?: boolean;
+    buttonType: Types;
+    size: Sizes;
+    submit?: boolean;
+    icon?: JSX.Element;
+    iconLeft?: JSX.Element;
+    iconRight?: JSX.Element;
+    tabIndex?: number;
+    ariaExpanded?: boolean;
+    ariaControls?: string;
+    title?: string;
+    spaceAfter?: SpacingsAfter;
+    role?: string;
+    width?: string;
+  };
 
 const component = (props: Props): JSX.Element => {
   const {
@@ -50,6 +50,7 @@ const component = (props: Props): JSX.Element => {
     role,
     circled,
     width,
+    dataTestId,
   } = props;
 
   const hasLeftIcon = !isUndefined(iconLeft) || !isUndefined(icon);
@@ -79,6 +80,7 @@ const component = (props: Props): JSX.Element => {
       onlyIcon={onlyIcon}
       disabled={isDisabled}
       type={type}
+      data-testid={dataTestId}
     >
       {loading ? <Loading type={LoadingTypes.ButtonLoader} /> : <></>}
       <StyledButtonContent loading={loading}>

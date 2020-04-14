@@ -4,20 +4,32 @@ import { Label, SelectContainer, SelectPrefix, StyledCustomValue, SelectSuffix, 
 import { ChevronDown } from '../Icon';
 
 type Props = Testable &
-React.SelectHTMLAttributes<HTMLSelectElement> & {
-  spaceAfter: SpacingsAfter;
-  elemSize: Sizes;
-  options: HTMLOptionElement[];
-  disabled?: boolean;
-  filled?: boolean;
-  customValueText?: string;
-};
+  React.SelectHTMLAttributes<HTMLSelectElement> & {
+    spaceAfter: SpacingsAfter;
+    elemSize: Sizes;
+    options: HTMLOptionElement[];
+    disabled?: boolean;
+    filled?: boolean;
+    customValueText?: string;
+  };
 
 const component = (props: Props): JSX.Element => {
-  const { spaceAfter, disabled, elemSize: size, prefix, filled, customValueText, options, onChange, value, placeholder } = props;
+  const {
+    spaceAfter,
+    disabled,
+    elemSize: size,
+    prefix,
+    filled,
+    customValueText,
+    options,
+    onChange,
+    value,
+    placeholder,
+    dataTestId,
+  } = props;
 
   return (
-    <Label spaceAfter={spaceAfter}>
+    <Label spaceAfter={spaceAfter} data-testid={dataTestId}>
       <SelectContainer>
         {prefix && (
           <SelectPrefix prefix={prefix} size={size}>
