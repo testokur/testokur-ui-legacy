@@ -3,11 +3,11 @@ import { randomId, Testable } from '../../modules';
 import { Input, TextArea, Container, Label } from './styled';
 
 type Props = Testable &
-  React.InputHTMLAttributes<HTMLInputElement> & {
-    label: string;
-    rows?: number;
-    onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
-  };
+React.InputHTMLAttributes<HTMLInputElement> & {
+  label: string;
+  rows?: number;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+};
 
 const component = (props: Props): JSX.Element => {
   const { label, rows, value, onChange, disabled, onKeyUp, onKeyDown, dataTestId } = props;

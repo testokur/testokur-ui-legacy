@@ -13,13 +13,13 @@ const component = (props: Props): JSX.Element => {
 
   const format = (element: HTMLInputElement): void => {
     const [mask, dataFormat] = getMaskDetails(maskingType.toString());
-    const formattedValue = doFormat(element.value, dataFormat, mask);
+    const [formattedValue, caretPosition] = doFormat(element.value, dataFormat, mask);
     /* eslint-disable no-param-reassign */
     element.value = formattedValue;
 
     if (element.selectionStart) {
       element.focus();
-      element.setSelectionRange(formattedValue.length, formattedValue.length);
+      element.setSelectionRange(caretPosition, caretPosition);
     }
   };
 

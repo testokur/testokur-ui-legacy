@@ -4,14 +4,14 @@ import { Label, SelectContainer, SelectPrefix, StyledCustomValue, SelectSuffix, 
 import { ChevronDown } from '../Icon';
 
 type Props = Testable &
-  React.SelectHTMLAttributes<HTMLSelectElement> & {
-    spaceAfter: SpacingsAfter;
-    elemSize: Sizes;
-    options: HTMLOptionElement[];
-    disabled?: boolean;
-    filled?: boolean;
-    customValueText?: string;
-  };
+React.SelectHTMLAttributes<HTMLSelectElement> & {
+  spaceAfter: SpacingsAfter;
+  elemSize: Sizes;
+  options: HTMLOptionElement[];
+  disabled?: boolean;
+  filled?: boolean;
+  customValueText?: string;
+};
 
 const component = (props: Props): JSX.Element => {
   const {
