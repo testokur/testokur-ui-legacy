@@ -3,7 +3,13 @@ import React from 'react';
 import { Sizes, getSize, Colors, getColor } from '../../modules';
 import { isUndefined } from '../../utils';
 
-const IconWithoutAtrrs = styled.svg<{ size: Sizes; color: Colors; customColor?: string }>`
+type StyledIconProps = {
+  size: Sizes;
+  color: Colors;
+  customColor?: string;
+};
+
+const IconWithoutAtrrs = styled.svg<StyledIconProps>`
   width: ${(props): string => getSize(props.theme)(props.size)};
   height: ${(props): string => getSize(props.theme)(props.size)};
   flex-shrink: 0;

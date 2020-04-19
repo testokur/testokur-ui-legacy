@@ -10,7 +10,14 @@ import getFocus from './getFocus';
 import getButtonBoxShadow from './getButtonBoxShadow';
 import getButtonSpacing from './getButtonSpacing';
 
-export const IconContainer = styled.span<{ size: Sizes; type: Types; onlyIcon: boolean; bordered?: boolean }>`
+type IconContainerProps = {
+  size: Sizes;
+  type: Types;
+  onlyIcon: boolean;
+  bordered?: boolean;
+};
+
+export const IconContainer = styled.span<IconContainerProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,7 +36,11 @@ export const IconContainer = styled.span<{ size: Sizes; type: Types; onlyIcon: b
   }
 `;
 
-export const StyledButtonContent = styled.span<{ loading?: boolean }>`
+type StyledButtonContentProps = {
+  loading?: boolean;
+};
+
+export const StyledButtonContent = styled.span<StyledButtonContentProps>`
   visibility: ${(props): string => (props.loading ? 'hidden' : 'inherirt')};
   height: 100%;
   display: flex;
@@ -42,7 +53,7 @@ export const StyledButtonContentChildren = styled.span`
   display: inline-block;
 `;
 
-export const StyledButton = styled.button<{
+type StyledButtonProps = {
   buttonType: Types;
   size: Sizes;
   fullWidth?: boolean;
@@ -54,7 +65,9 @@ export const StyledButton = styled.button<{
   spaceAfter: SpacingsAfter;
   hasRightIcon: boolean;
   hasLeftIcon: boolean;
-}>`
+};
+
+export const StyledButton = styled.button<StyledButtonProps>`
   position: relative;
   display: flex;
   justify-content: center;

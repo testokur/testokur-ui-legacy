@@ -1,7 +1,11 @@
 import styled, { css } from 'styled-components';
 import { device, convertHexToRgba } from '../../modules';
 
-export const Label = styled.label<{ disabled?: boolean }>`
+type LabelProps = {
+  disabled?: boolean;
+};
+
+export const Label = styled.label<LabelProps>`
   position: absolute;
   z-index: 1500;
   top: 0.4em;
@@ -13,7 +17,11 @@ export const Label = styled.label<{ disabled?: boolean }>`
   color: ${(props): string => (props.disabled ? props.theme.palette.inkLighter : props.theme.palette.inkLight)};
 `;
 
-const sharedStyled = css<{ disabled?: boolean }>`
+type SharedStyledProps = {
+  disabled?: boolean;
+};
+
+const sharedStyled = css<SharedStyledProps>`
   appearance: none;
   position: relative;
   box-sizing: border-box;
@@ -81,13 +89,22 @@ export const Input = styled.input`
   }
 `;
 
-export const Container = styled.div<{ hasRows: boolean }>`
+type ContainerProps = {
+  hasRows: boolean;
+};
+
+export const Container = styled.div<ContainerProps>`
   position: relative;
   min-height: 44px;
   height: ${(props): string => (props.hasRows ? 'auto' : props.theme.size.heightInputNormal)};
 `;
 
-export const TextArea = styled.textarea<{ fullHeight?: boolean; disabled?: boolean }>`
+type TextAreaProps = {
+  fullHeight?: boolean;
+  disabled?: boolean;
+};
+
+export const TextArea = styled.textarea<TextAreaProps>`
   ${sharedStyled}
 
   height: ${({ fullHeight }): string | undefined => (fullHeight ? '100%' : undefined)};

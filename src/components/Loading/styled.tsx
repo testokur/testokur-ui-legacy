@@ -34,7 +34,11 @@ export const StyledLoaderCircle = styled.div`
   }
 `;
 
-export const StyledLoadingText = styled.div<{ type: Type }>`
+type StyledLoadingTextProps = {
+  type: Type;
+};
+
+export const StyledLoadingText = styled.div<StyledLoadingTextProps>`
   font-family: ${(props): string => props.theme.fontFamily};
   font-size: ${(props): string => props.theme.font.fontSizeTextNormal};
   color: ${(props): string => props.theme.colors.colorTextLoading};
@@ -43,7 +47,11 @@ export const StyledLoadingText = styled.div<{ type: Type }>`
   margin-left: ${(props): string => (props.type !== Type.PageLoader ? props.theme.spacing.spaceSmall : 'initial')};
 `;
 
-export const StyledSpinnerCircle = styled.circle<{ type: Type }>`
+type StyledSpinnerCircleProps = {
+  type: Type;
+};
+
+export const StyledSpinnerCircle = styled.circle<StyledSpinnerCircleProps>`
   fill: transparent;
   stroke: ${(props): string => (props.type === Type.ButtonLoader ? 'currentColor' : props.theme.palette.inkLighter)};
   stroke-width: 3px;
@@ -52,7 +60,11 @@ export const StyledSpinnerCircle = styled.circle<{ type: Type }>`
   stroke-dashoffset: 64px;
 `;
 
-export const StyledLoading = styled.div<{ type?: Type }>`
+type StyledLoadingProps = {
+  type?: Type;
+};
+
+export const StyledLoading = styled.div<StyledLoadingProps>`
   position: ${(props): string => (props.type === Type.ButtonLoader ? 'absolute' : 'initial')};
   top: ${(props): string => (props.type === Type.ButtonLoader ? '0' : 'initial')};
   width: ${(props): string => (props.type === Type.ButtonLoader ? '100%' : 'initial')};

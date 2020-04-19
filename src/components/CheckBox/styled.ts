@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { device, convertHexToRgba } from '../../modules';
 
-export const IconContainer = styled.div<{ checked?: boolean }>`
+type IconContainerProps = {
+  checked?: boolean;
+};
+
+export const IconContainer = styled.div<IconContainerProps>`
   position: relative;
   box-sizing: border-box;
   flex: 0 0 auto;
@@ -32,7 +36,12 @@ export const IconContainer = styled.div<{ checked?: boolean }>`
   }
 `;
 
-export const Label = styled.label<{ disabled?: boolean; checked?: boolean }>`
+type LabelProps = {
+  disabled?: boolean;
+  checked?: boolean;
+};
+
+export const Label = styled.label<LabelProps>`
   font-family: ${(props): string => props.theme.fontFamily};
   display: flex;
   width: 100%;

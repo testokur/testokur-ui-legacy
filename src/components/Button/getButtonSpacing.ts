@@ -1,4 +1,4 @@
-import { Sizes, TestOkurTheme, curry, StringMappingLambda } from '../../modules';
+import { Sizes, TestOkurTheme, curry, Func } from '../../modules';
 import { Tokens } from './const';
 
 const getButtonSpacing = (theme: TestOkurTheme, onlyIcon: boolean, hasIconRight: boolean, hasIconLeft: boolean, size: Sizes): string => {
@@ -42,7 +42,7 @@ const getButtonSpacing = (theme: TestOkurTheme, onlyIcon: boolean, hasIconRight:
     Large: () => theme.spacing.paddingButtonLargeWithRightIcon,
   });
 
-  const tokens = curry<StringMappingLambda>({
+  const tokens = curry<Func<string>>({
     paddingButton: () => paddingButtonMapping,
     paddingButtonWithIcons: () => paddingButtonWithIconsMapping,
     paddingButtonWithLeftIcon: () => paddingButtonWithLeftIconMapping,

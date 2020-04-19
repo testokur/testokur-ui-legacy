@@ -1,4 +1,4 @@
-import { TestOkurTheme, Sizes, curry, StringMappingLambda } from '../../modules';
+import { TestOkurTheme, Sizes, curry, Func } from '../../modules';
 
 const getSizeToken = (name: string, size: Sizes, theme: TestOkurTheme): string => {
   const heightButtonMapping = curry<string>({
@@ -25,7 +25,7 @@ const getSizeToken = (name: string, size: Sizes, theme: TestOkurTheme): string =
     Large: () => theme.size.fontSizeButtonLarge,
   });
 
-  const tokens = curry<StringMappingLambda>({
+  const tokens = curry<Func<string>>({
     heightButton: () => heightButtonMapping,
     loadingWidth: () => loadingWidthMapping,
     loadingHeight: () => loadingHeightMapping,

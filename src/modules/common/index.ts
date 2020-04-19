@@ -7,9 +7,9 @@ enum Sizes {
   Large = 'Large',
 }
 
-type StringMappingLambda = (value: string) => string;
+type Func<T> = (value: string) => T;
 
-const getSize = (theme: TestOkurTheme): StringMappingLambda =>
+const getSize = (theme: TestOkurTheme): Func<string> =>
   curry<string>({
     Small: () => theme.size.iconSmall,
     Medium: () => theme.size.iconMedium,
@@ -25,7 +25,7 @@ enum Colors {
   Critical = 'Critical',
 }
 
-const getColor = (theme: TestOkurTheme): StringMappingLambda =>
+const getColor = (theme: TestOkurTheme): Func<string> =>
   curry<string>({
     Primary: () => theme.colors.colorIconPrimary,
     Critical: () => theme.colors.colorIconCritical,
@@ -45,7 +45,7 @@ enum SpacingsAfter {
   Largest = 'Largest',
 }
 
-const getSpacing = (theme: TestOkurTheme): StringMappingLambda =>
+const getSpacing = (theme: TestOkurTheme): Func<string> =>
   curry<string>({
     None: () => '0',
     Smallest: () => theme.spacing.spaceXXSmall,
@@ -56,4 +56,4 @@ const getSpacing = (theme: TestOkurTheme): StringMappingLambda =>
     Largest: () => theme.spacing.spaceXLarge,
   });
 
-export { Sizes, getSize, Colors, getColor, SpacingsAfter, getSpacing, StringMappingLambda };
+export { Sizes, getSize, Colors, getColor, SpacingsAfter, getSpacing, Func };

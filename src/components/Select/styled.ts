@@ -3,14 +3,23 @@ import { Sizes, getSize, convertHexToRgba, SpacingsAfter, getSpacing } from '../
 import { getColorForSelect, getColorForCustomValue } from './helpers';
 import { isUndefined } from '../../utils';
 
-export const Label = styled.label<{ spaceAfter: SpacingsAfter }>`
+type LabelProps = {
+  spaceAfter: SpacingsAfter;
+};
+
+export const Label = styled.label<LabelProps>`
   position: relative;
   display: block;
   width: 100%;
   margin-bottom: ${(props): string => getSpacing(props.theme)(props.spaceAfter)};
 `;
 
-export const SelectSuffix = styled.div<{ disabled?: boolean; size: Sizes }>`
+type SelectSuffixProps = {
+  disabled?: boolean;
+  size: Sizes;
+};
+
+export const SelectSuffix = styled.div<SelectSuffixProps>`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -39,7 +48,11 @@ export const SelectContainer = styled.div`
   background: ${(props): string => props.theme.colors.backgroundInput};
 `;
 
-export const SelectPrefix = styled.div<{ size: Sizes }>`
+type SelectPrefixProps = {
+  size: Sizes;
+};
+
+export const SelectPrefix = styled.div<SelectPrefixProps>`
   display: flex;
   align-items: center;
   position: absolute;
@@ -50,7 +63,13 @@ export const SelectPrefix = styled.div<{ size: Sizes }>`
   height: ${(props): string => (props.size === Sizes.Small ? props.theme.size.heightInputSmall : props.theme.size.heightInputNormal)};
 `;
 
-export const StyledCustomValue = styled.div<{ size: Sizes; disabled?: boolean; filled?: boolean }>`
+type StyledCustomValueProps = {
+  size: Sizes;
+  disabled?: boolean;
+  filled?: boolean;
+};
+
+export const StyledCustomValue = styled.div<StyledCustomValueProps>`
   bottom: 0;
   font-family: ${(props): string => props.theme.fontFamily};
   pointer-events: none;
@@ -65,7 +84,13 @@ export const StyledCustomValue = styled.div<{ size: Sizes; disabled?: boolean; f
   color: ${(props): string => getColorForCustomValue(props.theme, props.disabled, props.filled)};
 `;
 
-export const StyledSelect = styled.select<{ filled?: boolean; elemSize: Sizes; customValueText?: string }>`
+type StyledSelectProps = {
+  filled?: boolean;
+  elemSize: Sizes;
+  customValueText?: string;
+};
+
+export const StyledSelect = styled.select<StyledSelectProps>`
   appearance: none;
   cursor: pointer;
   outline: none;

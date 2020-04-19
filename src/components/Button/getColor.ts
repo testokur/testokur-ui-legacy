@@ -1,4 +1,4 @@
-import { TestOkurTheme, curry, convertHexToRgba, StringMappingLambda } from '../../modules';
+import { TestOkurTheme, curry, convertHexToRgba, Func } from '../../modules';
 import { Types } from './const';
 
 const getColor = (name: string, type: Types, theme: TestOkurTheme): string => {
@@ -155,7 +155,7 @@ const getColor = (name: string, type: Types, theme: TestOkurTheme): string => {
     Critical: () => convertHexToRgba(theme.palette.redNormal, 50),
   });
 
-  const getToken = curry<StringMappingLambda>({
+  const getToken = curry<Func<string>>({
     backgroundButton: () => backgroundButtonMappings,
     backgroundButtonHover: () => backgroundButtonHoverMappings,
     backgroundButtonActive: () => backgroundButtonActiveMappings,
