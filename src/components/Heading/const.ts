@@ -1,4 +1,4 @@
-export const enum Elements {
+export enum Elements {
   H1 = 'h1',
   H2 = 'h2',
   H3 = 'h3',
@@ -8,7 +8,7 @@ export const enum Elements {
   Div = 'div',
 }
 
-export const enum Types {
+export enum Types {
   PageTitle = 'PageTitle',
   PageSubtitle = 'PageSubtitle',
   Title1 = 'Title1',
