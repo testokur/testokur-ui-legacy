@@ -53,7 +53,7 @@ export const StyledButtonContentChildren = styled.span`
   display: inline-block;
 `;
 
-type StyledButtonProps = {
+export type StyledButtonProps = {
   buttonType: Types;
   size: Sizes;
   fullWidth?: boolean;

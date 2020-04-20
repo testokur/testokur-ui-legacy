@@ -1,31 +1,20 @@
 import * as React from 'react';
 import { Testable, Sizes, SpacingsAfter } from '../../modules';
 import { Types } from './const';
-import { StyledButton, StyledButtonContent, IconContainer, StyledButtonContentChildren } from './styled';
+import { StyledButton, StyledButtonContent, IconContainer, StyledButtonContentChildren, StyledButtonProps } from './styled';
 
 import { Loading, LoadingTypes } from '../Loading';
 import { isUndefined } from '../../utils';
 
 type Props = Testable &
+StyledButtonProps &
 React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children?: JSX.Element;
-  circled?: boolean;
-  bordered?: boolean;
-  fullWidth?: boolean;
   loading?: boolean;
-  buttonType: Types;
-  size: Sizes;
-  submit?: boolean;
   icon?: JSX.Element;
   iconLeft?: JSX.Element;
   iconRight?: JSX.Element;
-  tabIndex?: number;
   ariaExpanded?: boolean;
   ariaControls?: string;
-  title?: string;
-  spaceAfter?: SpacingsAfter;
-  role?: string;
-  width?: string;
 };
 
 const component = (props: Props): JSX.Element => {
