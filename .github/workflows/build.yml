@@ -28,7 +28,7 @@ jobs:
     name: Build
     needs: test
     runs-on: ubuntu-18.04
-    if: github.ref == 'refs/heads/master' 
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1.4.0
@@ -42,6 +42,14 @@ jobs:
         run: |
           yarn build
           yarn build-storybook
+
+      - name: UI tests
+          if: github.ref == 'refs/heads/master'
+          run: |
+            yarn build-storybook
+            yarn percy exec -- cypress run -e CI=true
+          env:
+            PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
       - name: Deploy to GitHub Pages
         continue-on-error: true
