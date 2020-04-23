@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Test and Lint
+    name: Test, Build And Deploy
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
