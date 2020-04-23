@@ -1,14 +1,13 @@
-name: Build
+name: Build, Test and Deploy App
 
 on:
   push:
   pull_request:
 
 jobs:
-  test:
-    name: Test
+  build-and-deploy:
+    name: Test and Lint
     runs-on: ubuntu-18.04
-    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1.4.0
@@ -31,26 +30,14 @@ jobs:
       #   env:
       #     PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
-  build:
-    name: Build
-    needs: test
-    runs-on: ubuntu-18.04
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1.4.0
-        with:
-          node-version: 12.x
-
-      - name: Dependencies
-        run: yarn install --frozen-lockfile
-
       - name: Build
+        if: github.ref == 'refs/heads/master'
         run: |
           yarn build
           yarn build-storybook
 
       - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/master'
         continue-on-error: true
         uses: maxheld83/ghpages@v0.2.1
         env:
@@ -58,6 +45,7 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
 
       - name: Deploy to NPM
+        if: github.ref == 'refs/heads/master'
         run: yarn semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
