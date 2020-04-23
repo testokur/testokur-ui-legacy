@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
       - uses: actions/setup-node@v1.4.0
         with:
           node-version: 12.x
@@ -44,8 +45,9 @@ jobs:
           BUILD_DIR: storybook-static
           GH_PAT: ${{ secrets.GH_PAT }}
 
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
+      - name: Deploy to NPM
+        if: github.ref == 'refs/heads/master'
+        run: yarn semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }
