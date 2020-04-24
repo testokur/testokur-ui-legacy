@@ -1,13 +1,53 @@
-import '@percy/cypress';
-import { encode } from 'querystring';
+/// <reference types="cypress" />
 
-/* global Cypress, cy */
+Cypress.Commands.add('visitStorybook', () => {
+  return cy.visit('iframe.html');
+});
 
-Cypress.Commands.add('visitStory', (params, options) => {
-  const query = encode({ id: params.storyId, theme: params.themeName });
-  if (!!Cypress.env('CI')) {
-    return cy.visit(`./storybook-static/iframe.html?${query}`, options);
-  }
+Cypress.Commands.add('loadStory', (categorization, story) => {
+  const log = Cypress.log({
+    name: 'Load',
+    message: [categorization, story],
+    $el: Cypress.$('#root'),
+  });
+  log.snapshot('before');
 
-  return cy.visit(`http://localhost:6006/iframe.html?${query}`, options);
+  const win = cy.state('window');
+  const now = performance.now();
+  win.__setCurrentStory(categorization.replace(/[|/]/g, '-').toLowerCase(), story.replace(/\s/g, '-').toLowerCase());
+  log.set('consoleProps', () => ({
+    categorization,
+    story,
+    renderTime: performance.now() - now,
+  }));
+  log.snapshot('after');
+  log.end();
+
+  return Cypress.$('#root');
+});
+
+Cypress.Commands.add('changeKnob', (name, value) => {
+  const log = Cypress.log({
+    name: 'Knob',
+    message: [name, value],
+    $el: Cypress.$('#root'),
+  });
+
+  log.snapshot('before');
+
+  const win = cy.state('window');
+  const now = performance.now();
+
+  win.__changeKnob({ name, value });
+
+  log.set('consoleProps', () => ({
+    name,
+    value,
+    time: performance.now() - now,
+  }));
+
+  log.snapshot('after');
+  log.end();
+
+  return null;
 });

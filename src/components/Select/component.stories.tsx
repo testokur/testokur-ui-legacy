@@ -1,11 +1,14 @@
-import { storiesOf } from '@storybook/react';
 import { text, boolean, select } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
 import Select from '.';
 import { Sizes, SpacingsAfter } from '../../modules';
 
-storiesOf('Select', module).add('Playground', () => {
+export default {
+  title: 'Select',
+};
+
+export const Default = (): JSX.Element => {
   const placeHolder = text('placeHolder', 'Please Select An Item');
   const spaceAfter = select('SpaceAfter', Object.values(SpacingsAfter), SpacingsAfter.Small);
   const size = select('Size', Object.values(Sizes), Sizes.Medium);
@@ -30,4 +33,4 @@ storiesOf('Select', module).add('Playground', () => {
       spaceAfter={spaceAfter}
     />
   );
-});
+};
