@@ -12,6 +12,7 @@ describe('Checkbox', () => {
       cy.get('[data-testid="default"]').get('input').should('not.be.checked');
       cy.get('[data-testid="default"]').get('span').click();
       cy.get('[data-testid="default"]').get('input').should('be.checked');
+      cy.percySnapshot('Checkbox checked');
     });
   });
 });

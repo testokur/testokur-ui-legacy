@@ -14,7 +14,6 @@
     "test": "jest --env=jsdom --passWithNoTests --coverage",
     "test:watch": "jest --watchAll --env=jsdom --passWithNoTests",
     "clean": "rimraf .rts2_cache_cjs .rts2_cache_esm dist public storybook-static *.log stats.*",
-    "cypress": "cypress",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
