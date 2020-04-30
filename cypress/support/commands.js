@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 Cypress.Commands.add('visitStorybook', () => {
-  return cy.visit('iframe.html');
+  return cy.visit('./storybook-static/iframe.html');
 });
 
 Cypress.Commands.add('loadStory', (categorization, story) => {
