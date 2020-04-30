@@ -2,7 +2,8 @@ name: Build, Test and Deploy App
 
 on:
   push:
-  pull_request:
+    branches:
+      - master
 
 jobs:
   build-and-deploy:
@@ -24,6 +25,10 @@ jobs:
       - name: Lint
         run: yarn lint
 
+      - name: Build
+        run: |
+          yarn build
+
       - name: UI tests
         run: |
           yarn build-storybook
@@ -31,14 +36,7 @@ jobs:
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
-      - name: Build
-        if: github.ref == 'refs/heads/master'
-        run: |
-          yarn build
-          yarn build-storybook
-
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/master'
         continue-on-error: true
         uses: maxheld83/ghpages@v0.2.1
         env:
@@ -46,7 +44,6 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
 
       - name: Deploy to NPM
-        if: github.ref == 'refs/heads/master'
         run: yarn semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
