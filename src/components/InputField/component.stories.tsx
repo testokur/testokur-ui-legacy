@@ -45,3 +45,7 @@ export const TextInputWithInitialValue = (): JSX.Element => {
     />
   );
 };
+
+export const DateInput = (): JSX.Element => {
+  return <InputField onChange={action('change')} label="Enter date time" type="date" />;
+};
