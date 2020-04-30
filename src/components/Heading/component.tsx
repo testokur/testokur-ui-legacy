@@ -4,16 +4,16 @@ import { StyledHeadingProps, StyledHeading } from './styled';
 import { Elements, Types } from './const';
 
 type Props = Testable &
-StyledHeadingProps & {
-  element: Elements;
-  children?: JSX.Element;
-};
+  StyledHeadingProps & {
+    element: Elements;
+    children?: JSX.Element;
+  };
 
 const component = (props: Props): JSX.Element => {
-  const { element, type, spacingsAfter, children = <></> } = props;
+  const { element, type, spacingsAfter, children = <></>, dataTestId } = props;
 
   return (
-    <StyledHeading as={element as never} type={type} spacingsAfter={spacingsAfter}>
+    <StyledHeading data-testid={dataTestId} as={element as never} type={type} spacingsAfter={spacingsAfter}>
       {children}
     </StyledHeading>
   );
