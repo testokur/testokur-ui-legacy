@@ -5,8 +5,13 @@ describe('Checkbox', () => {
 
   context('given the Checkbox story is rendered', () => {
     beforeEach(() => {
-      cy.loadStory('Checkbox', 'Default');
+      cy.loadStory('checkbox', 'default');
     });
-    cy.get('[data-testid="default"]').should('not.be.checked');
+
+    it('when click on label input is checked', () => {
+      cy.get('[data-testid="default"]').get('input').should('not.be.checked');
+      cy.get('[data-testid="default"]').get('span').click();
+      cy.get('[data-testid="default"]').get('input').should('be.checked');
+    });
   });
 });

@@ -5,6 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { ThemeProvider } from 'styled-components';
 
 import { createTheme, GlobalStyle } from '../src/modules';
+import './react';
 
 addParameters({
   options: {
