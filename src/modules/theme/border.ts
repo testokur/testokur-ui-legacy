@@ -9,12 +9,14 @@ export type Border = {
   borderColorCheckboxRadioHover: string;
   borderColorCheckboxRadioFocus: string;
   borderColorCheckboxRadioActive: string;
+  borderRadiusBadge: string;
 };
 
 const border = {
   borderRadiusLarge: '6px',
   borderRadiusNormal: '3px',
   borderWidthInput: '1px',
+  borderRadiusBadge: '12px',
   borderColorInput: '#BAC7D5',
   borderColorInputHover: '#A6B6C8',
   borderColorInputFocus: '#0172CB',

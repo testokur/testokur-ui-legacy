@@ -21,6 +21,7 @@ export type Font = {
   fontSizeHeadingTitle3: string;
   fontSizeHeadingTitle4: string;
   fontSizeHeadingTitle5: string;
+  fontSizeTextSmall: string;
 };
 
 const font = {
@@ -46,6 +47,7 @@ const font = {
   fontSizeHeadingTitle3: '16px',
   fontSizeHeadingTitle4: '14px',
   fontSizeHeadingTitle5: '12px',
+  fontSizeTextSmall: '12px',
 };
 
 export default font;

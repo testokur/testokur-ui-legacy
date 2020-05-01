@@ -27,6 +27,7 @@ export type Spacing = {
   paddingButtonNormalWithRightIcon: string;
   paddingButtonSmallWithRightIcon: string;
   paddingButtonWithoutText: string;
+  paddingBadge: string;
 };
 
 const spacing = {
@@ -58,6 +59,7 @@ const spacing = {
   paddingButtonNormalWithRightIcon: '0 12px 0 16px',
   paddingButtonSmallWithRightIcon: '0 8px 0 12px',
   paddingButtonWithoutText: '0',
+  paddingBadge: '0 8px',
 };
 
 export default spacing;
