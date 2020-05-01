@@ -1,6 +1,7 @@
 # TestOkur UI
 
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/TestOkur/testokur-ui)
 [![BCH compliance](https://bettercodehub.com/edge/badge/testokur/testokur-ui?branch=master)](https://bettercodehub.com/)
 [![CodeFactor](https://www.codefactor.io/repository/github/testokur/testokur-ui/badge)](https://www.codefactor.io/repository/github/testokur/testokur-ui)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=testokur/testokur-ui)](https://dependabot.com)
