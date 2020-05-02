@@ -92,6 +92,7 @@ export type Colors = {
   borderColorButtonCriticalBorderedActive: string;
   borderColorButtonCriticalBorderedHover: string;
   colorHeading: string;
+  backgroundSeparator: string;
 };
 
 const color = {
@@ -188,6 +189,7 @@ const color = {
   borderColorButtonCriticalBorderedHover: '#B91919',
   borderColorButtonCriticalBorderedActive: '#9D1515',
   colorHeading: '#252A31',
+  backgroundSeparator: '#EFF2F5',
 };
 
 export default color;

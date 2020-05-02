@@ -18,6 +18,7 @@ export type Size = {
   fontSizeButtonSmall: string;
   fontSizeButtonMedium: string;
   heightBadge: string;
+  heightSeparator: string;
 };
 
 export const size = {
@@ -40,4 +41,5 @@ export const size = {
   fontSizeButtonSmall: '12px',
   fontSizeButtonMedium: '14px',
   heightBadge: '24px',
+  heightSeparator: '1px',
 };
