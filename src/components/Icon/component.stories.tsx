@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChevronDown } from '.';
+import { ChevronDown, Email } from '.';
 import Check from './Check';
 import { Colors, Sizes } from '../../modules';
 
@@ -13,4 +13,8 @@ export const ChevronDownLargeSuccess = (): JSX.Element => {
 
 export const CheckPrimaryMedium = (): JSX.Element => {
   return <Check color={Colors.Primary} ariaLabel="Check" />;
+};
+
+export const EmailPrimary = (): JSX.Element => {
+  return <Email color={Colors.Info} ariaLabel="Check" />;
 };

@@ -4,3 +4,4 @@ export { default as Remove } from './Remove';
 export { default as AccountCircle } from './AccountCircle';
 export { default as PlusCircle } from './PlusCircle';
 export { default as Search } from './Search';
+export { default as Email } from './Email';
