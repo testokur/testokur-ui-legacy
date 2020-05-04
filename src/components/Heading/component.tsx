@@ -6,7 +6,7 @@ import { Elements, Types } from './const';
 type Props = Testable &
 StyledHeadingProps & {
   element: Elements;
-  children?: JSX.Element;
+  children?: React.ReactNode;
 };
 
 const component = (props: Props): JSX.Element => {

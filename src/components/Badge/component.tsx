@@ -7,7 +7,7 @@ import getColor from './getColor';
 
 type Props = Testable & {
   type: Types;
-  children?: JSX.Element;
+  children?: React.ReactNode;
   icon?: JSX.Element;
   ariaLabel?: string;
 };
