@@ -12,7 +12,8 @@ module.exports = {
     'prettier',
   ],
   parserOptions: {
-    project: ['./tsconfig.json', './cypress/tsconfig.json'],
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json', './cypress/tsconfig.json'],  /* TODO: Fully support cypress */
   },
   rules: {
     'max-len': ['error', { code: 140 }],
