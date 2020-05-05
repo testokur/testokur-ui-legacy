@@ -2,9 +2,9 @@ import React from 'react';
 import { Testable } from '../../modules';
 import { StyledTab, StyledInput, StyledSpan } from './styled';
 
-type Props = Testable & React.InputHTMLAttributes<HTMLInputElement> & {};
+type Props = Testable & React.InputHTMLAttributes<HTMLInputElement>;
 
-const component = (props: Props): JSX.Element => {
+const tab = (props: Props): JSX.Element => {
   const { dataTestId, title, name, value, onChange, defaultChecked } = props;
 
   return (
@@ -15,4 +15,4 @@ const component = (props: Props): JSX.Element => {
   );
 };
 
-export default component;
+export default tab;

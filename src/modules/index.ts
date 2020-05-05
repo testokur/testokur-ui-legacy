@@ -1,4 +1,4 @@
-export { default as randomId } from './randomId';
+export { randomId } from './randomId';
 export type { Testable } from './testing';
 export { TestOkurTheme, createTheme, GlobalStyle } from './theme';
 export { default as device } from './device';

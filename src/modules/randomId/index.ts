@@ -1,7 +1,10 @@
 import { useMemo } from 'react';
 
-const buildRandomId = (name: string): string => `${name + Math.floor(Math.random() * 100000)}-id-${Math.floor(Math.random() * 100000)}`;
+export const buildRandomId = (name: string): string => {
+  const array = new Uint32Array(2);
+  window.crypto.getRandomValues(array);
 
-const randomId = (name: string): string => useMemo(() => buildRandomId(name), []);
+  return `${name + Math.floor(array[0] * 100000)}-id-${Math.floor(array[1] * 100000)}`;
+};
 
-export default randomId;
+export const randomId = (name: string): string => useMemo(() => buildRandomId(name), []);
