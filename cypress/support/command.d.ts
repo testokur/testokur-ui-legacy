@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+// / <reference types="cypress" />
 
 declare namespace Cypress {
   interface Chainable<Subject> {
@@ -24,6 +24,6 @@ declare namespace Cypress {
      * @param name Name of the knob provided in the story
      * @param value Value of the knob. The type is not checked, so make sure it is valid for your story
      */
-    changeKnob(name: string, value: any): Cypress.Chainable<null>;
+    changeKnob(name: string, value: string | number): Cypress.Chainable<null>;
   }
 }

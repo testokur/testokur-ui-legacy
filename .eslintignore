@@ -1,0 +1,8 @@
+node_modules
+storybook-static
+coverage
+yarn.lock
+dist
+*.json
+*.config.js
+*.md
