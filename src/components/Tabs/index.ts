@@ -1,1 +1,3 @@
-export { default as Tabs } from './component';
+import Tabs from './component';
+
+export default Tabs;
