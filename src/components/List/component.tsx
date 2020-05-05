@@ -3,7 +3,7 @@ import { Testable } from '../../modules';
 import StyledList from './styled';
 
 type Props = Testable & {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 const component = (props: Props): JSX.Element => {

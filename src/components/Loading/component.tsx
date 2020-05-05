@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Testable } from '../../modules';
 import { Type } from './const';
 import { StyledLoading, StyledLoadingText, StyledLoaderCircle, StyledSpinnerCircle, StyledSpinner, StyledLoader } from './styled';
-import { isUndefined } from '../../utils';
 
 type Props = Testable & {
   type?: Type;
@@ -14,7 +13,7 @@ type Props = Testable & {
 const component = (props: Props): JSX.Element => {
   const { children = <></>, loading = false, type = Type.PageLoader, text, dataTestId } = props;
 
-  return !isUndefined(children) && !loading ? (
+  return !loading ? (
     children
   ) : (
     <StyledLoading type={type} data-testid={dataTestId}>
