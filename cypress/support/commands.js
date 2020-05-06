@@ -1,6 +1,9 @@
 /// <reference types="cypress" />
 
 Cypress.Commands.add('visitStorybook', () => {
+  if (Cypress.env('DEV')) {
+    return cy.visit('http://localhost:6006/iframe.html');
+  }
   return cy.visit('./storybook-static/iframe.html');
 });
 

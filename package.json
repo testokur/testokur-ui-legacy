@@ -15,6 +15,7 @@
     "test:watch": "jest --watchAll --env=jsdom --passWithNoTests",
     "clean": "rimraf .rts2_cache_cjs .rts2_cache_esm dist public storybook-static *.log stats.*",
     "build-storybook": "build-storybook",
+    "cypress": "cypress open -e DEV=true",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
