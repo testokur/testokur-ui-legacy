@@ -10,7 +10,7 @@
 [![devDependencies Status](https://img.shields.io/david/dev/testokur/testokur-ui.svg)](https://david-dm.org/testokur/testokur-ui?type=dev)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/4209434be795b3eccdbd/maintainability)](https://codeclimate.com/github/testokur/testokur-ui/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4209434be795b3eccdbd/test_coverage)](https://codeclimate.com/github/testokur/testokur-ui/test_coverage)
+[![codecov](https://codecov.io/gh/testokur/testokur-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/testokur/testokur-ui)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4bad67cabfc446cd91e7ad479e7888b0)](https://www.codacy.com/gh/testokur/testokur-ui?utm_source=github.com&utm_medium=referral&utm_content=testokur/testokur-ui&utm_campaign=Badge_Grade)
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=testokur_testokur-ui&metric=bugs)](https://sonarcloud.io/dashboard?id=testokur_testokur-ui)
