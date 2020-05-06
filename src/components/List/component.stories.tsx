@@ -7,7 +7,7 @@ export default {
 
 export const Default = (): JSX.Element => {
   return (
-    <List>
+    <List dataTestId="default">
       <ListItem>
         <span>Item-1</span>
       </ListItem>
