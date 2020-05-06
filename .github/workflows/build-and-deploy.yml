@@ -19,11 +19,11 @@ jobs:
       - name: Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Test
-        run: yarn test
-
       - name: Lint
         run: yarn lint
+
+      - name: Test
+        run: yarn test
 
       - name: Build
         run: |
