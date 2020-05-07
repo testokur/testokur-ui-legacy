@@ -6,6 +6,7 @@ describe('reduce', () => {
     One: () => 1,
     Two: () => 2,
     Three: () => 3,
+    Default: () => 0,
   };
 
   it('should reduce', () => {
@@ -19,7 +20,7 @@ describe('reduce', () => {
   });
 
   it('should return provided default value when value does not exist', () => {
-    const reducedNumber = reduce('Four', dictionary, () => 0);
+    const reducedNumber = reduce('Four', dictionary, 'Default');
     expect(reducedNumber).toBe(0);
   });
 });

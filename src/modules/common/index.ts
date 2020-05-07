@@ -10,11 +10,15 @@ enum Sizes {
 type Func<T> = (value: string) => T;
 
 const getSize = (theme: TestOkurTheme): Func<string> =>
-  curry<string>({
-    Small: () => theme.size.iconSmall,
-    Medium: () => theme.size.iconMedium,
-    Large: () => theme.size.iconLarge,
-  });
+  curry<string>(
+    {
+      Small: () => theme.size.iconSmall,
+      Medium: () => theme.size.iconMedium,
+      Large: () => theme.size.iconLarge,
+      Default: () => theme.size.iconMedium,
+    },
+    'Default'
+  );
 
 enum Colors {
   Primary = 'Primary',
@@ -26,14 +30,18 @@ enum Colors {
 }
 
 const getColor = (theme: TestOkurTheme): Func<string> =>
-  curry<string>({
-    Primary: () => theme.colors.colorIconPrimary,
-    Critical: () => theme.colors.colorIconCritical,
-    Info: () => theme.colors.colorIconInfo,
-    Secondary: () => theme.colors.colorIconSecondary,
-    Success: () => theme.colors.colorIconSuccess,
-    Warning: () => theme.colors.colorIconWarning,
-  });
+  curry<string>(
+    {
+      Primary: () => theme.colors.colorIconPrimary,
+      Critical: () => theme.colors.colorIconCritical,
+      Info: () => theme.colors.colorIconInfo,
+      Secondary: () => theme.colors.colorIconSecondary,
+      Success: () => theme.colors.colorIconSuccess,
+      Warning: () => theme.colors.colorIconWarning,
+      Default: () => theme.colors.colorIconPrimary,
+    },
+    'Default'
+  );
 
 enum SpacingsAfter {
   None = 'None',

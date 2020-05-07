@@ -1,22 +1,22 @@
+import { isUndefined } from '../../utils';
+
 interface ConditionalDictionary<T> {
   [key: string]: () => T;
 }
 
-type DefaultCase<T> = (value: string) => T;
-
-function reduce<T>(value: string, conditionals: ConditionalDictionary<T>, defaultCase?: DefaultCase<T>): T {
+function reduce<T>(value: string, conditionals: ConditionalDictionary<T>, defaultVal?: string): T {
   const retVal = conditionals[value];
   if (!retVal) {
-    if (defaultCase) {
-      return defaultCase(value);
+    if (!isUndefined(defaultVal)) {
+      return conditionals[defaultVal ?? '']();
     }
     throw new RangeError(`Invalid conditional value "${value}"`);
   }
   return retVal();
 }
 
-function curry<T>(conditionals: ConditionalDictionary<T>, defaultCase?: DefaultCase<T>): (value: string) => T {
-  return (value: string): T => reduce<T>(value, conditionals, defaultCase);
+function curry<T>(conditionals: ConditionalDictionary<T>, defaultVal?: string): (value: string) => T {
+  return (value: string): T => reduce<T>(value, conditionals, defaultVal);
 }
 
 export { reduce, curry };
