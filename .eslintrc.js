@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
   plugins: ['react', '@typescript-eslint', 'prettier', 'jsx-a11y', 'cypress'],
   extends: [
     'plugin:react/recommended',
@@ -17,11 +16,20 @@ module.exports = {
   },
   rules: {
     'max-len': ['error', { code: 140 }],
+    "@typescript-eslint/explicit-function-return-type": "off",
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['**/*.stories.tsx'],
+        devDependencies: ['**/*.stories.tsx', '**/*.test.ts', 'cypress/**'],
       },
     ],
   },
+  overrides: [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["error"]
+      }
+    }
+  ]
 };

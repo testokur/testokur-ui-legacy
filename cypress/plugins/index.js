@@ -1,5 +1,5 @@
-const percyHealthCheck = require('@percy/cypress/task');
+import percyHealthCheck from '@percy/cypress/task';
 
-module.exports = (on, config) => {
+module.exports = (on) => {
   on('task', percyHealthCheck);
 };

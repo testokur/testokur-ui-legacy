@@ -26,5 +26,5 @@ function changeKnob(changedKnob) {
   forceReRender();
 }
 
-window.__setCurrentStory = setCurrentStory;
-window.__changeKnob = changeKnob;
+window.setCurrentStory = setCurrentStory;
+window.changeKnob = changeKnob;

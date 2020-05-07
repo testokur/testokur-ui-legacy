@@ -2,7 +2,10 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
@@ -21,6 +24,10 @@
     "jsx": "react",
     "esModuleInterop": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

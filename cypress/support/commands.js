@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+// / <reference types="cypress" />
 
 Cypress.Commands.add('visitStorybook', () => {
   if (Cypress.env('DEV')) {
@@ -17,7 +17,7 @@ Cypress.Commands.add('loadStory', (categorization, story) => {
 
   const win = cy.state('window');
   const now = performance.now();
-  win.__setCurrentStory(categorization.replace(/[|/]/g, '-').toLowerCase(), story.replace(/\s/g, '-').toLowerCase());
+  win.setCurrentStory(categorization.replace(/[|/]/g, '-').toLowerCase(), story.replace(/\s/g, '-').toLowerCase());
   log.set('consoleProps', () => ({
     categorization,
     story,
@@ -41,7 +41,7 @@ Cypress.Commands.add('changeKnob', (name, value) => {
   const win = cy.state('window');
   const now = performance.now();
 
-  win.__changeKnob({ name, value });
+  win.changeKnob({ name, value });
 
   log.set('consoleProps', () => ({
     name,
