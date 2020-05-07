@@ -18,7 +18,7 @@ export enum Types {
   Title5 = 'Title5',
 }
 
-export const enum Tokens {
+export enum Tokens {
   WeightHeading = 'WeightHeading',
   SizeHeading = 'SizeHeading',
   LineHeight = 'LineHeight',
