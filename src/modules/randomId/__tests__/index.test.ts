@@ -1,4 +1,4 @@
-import { Crypto } from '@peculiar/webcrypto'; /* eslint-disable-line import/no-extraneous-dependencies */
+import { Crypto } from '@peculiar/webcrypto';
 import { buildRandomId } from '..';
 
 describe('buildRandomId', () => {
