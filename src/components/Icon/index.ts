@@ -5,3 +5,6 @@ export { default as AccountCircle } from './AccountCircle';
 export { default as PlusCircle } from './PlusCircle';
 export { default as Search } from './Search';
 export { default as Email } from './Email';
+export { default as Pending } from './Pending';
+export { default as ArrowRepeat } from './ArrowRepeat';
+export { default as Exclamation } from './Exclamation';

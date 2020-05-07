@@ -106,7 +106,7 @@ const color = {
   colorIconInfo: '#0172CB',
   colorIconSuccess: '#28A138',
   colorIconWarning: '#E98305',
-  colorIconCritical: '##D21C1C',
+  colorIconCritical: '#D21C1C',
   colorInfoCheckBoxRadio: '#5F738C',
   colorFormLabel: '#252A31',
   colorIconCheckboxRadio: '#00A991',
