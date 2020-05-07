@@ -1,5 +1,3 @@
-import { isUndefined } from '../../utils';
-
 interface ConditionalDictionary<T> {
   [key: string]: () => T;
 }
@@ -7,16 +5,12 @@ interface ConditionalDictionary<T> {
 type DefaultCase<T> = (value: string) => T;
 
 function reduce<T>(value: string, conditionals: ConditionalDictionary<T>, defaultCase?: DefaultCase<T>): T {
-  if (isUndefined(value)) {
-    return (undefined as unknown) as T;
-  }
-
   const retVal = conditionals[value];
   if (!retVal) {
     if (defaultCase) {
       return defaultCase(value);
     }
-    throw new Error(`Invalid conditional value "${value}"`);
+    throw new RangeError(`Invalid conditional value "${value}"`);
   }
   return retVal();
 }
