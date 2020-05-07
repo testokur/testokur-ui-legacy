@@ -1,2 +1,3 @@
 export { createTheme, GlobalStyle } from './modules';
-export { CheckBox, Check, ChevronDown, InputField, MaskedInputField, Select } from './components';
+export { Badge, Button, CheckBox, Divider, Heading, InputField, List, Loading, MaskedInputField, Select, Tabs } from './components';
+export { Check, ChevronDown, Remove, AccountCircle, PlusCircle, Search, Email, Pending, ArrowRepeat, Exclamation } from './components';
