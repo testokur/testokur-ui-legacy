@@ -2,7 +2,6 @@ node_modules
 *.log
 coverage
 dist
-test-report.xml
 storybook-static
 cypress/videos
 cypress/screenshots
