@@ -1618,12 +1618,13 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@peculiar/asn1-schema@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@peculiar/asn1-schema/-/asn1-schema-1.1.2.tgz#ee491b72aa387f61ec79dadb3ffb1bc2da922475"
-  integrity sha512-ntQ4UnUFgdjs0tfWR6YmEQm/x0glV4OFus/RjxLkaJUKfu/R7VilefBntyUO3MoKWdlCgib30KN+JpCY1HqU2A==
+"@peculiar/asn1-schema@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@peculiar/asn1-schema/-/asn1-schema-2.0.1.tgz#0a34210c88848ba0925de07eedff2ad20a66cc06"
+  integrity sha512-yqLtS3u2DquvM7db6Fdos4coeMe9X9pYRExkusLXrrkFuWrg8UQGKRWzwGZYm4DeLp6dVZ1bIeA6aR5/U1w0QQ==
   dependencies:
     asn1js "^2.0.26"
+    pvtsutils "^1.0.10"
     tslib "^1.11.1"
 
 "@peculiar/json-schema@^1.1.10":
@@ -1633,16 +1634,16 @@
   dependencies:
     tslib "^1.11.1"
 
-"@peculiar/webcrypto@^1.0.29":
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/@peculiar/webcrypto/-/webcrypto-1.0.29.tgz#ec3f866e1eae53687d5c6a12c2522fff196dd939"
-  integrity sha512-3e6CIpjZuj5WxPymGm0kCZA05XA9BSXwBEb/mU9KjBHAmEwMokT0yVIhxqwspCHSynlrTfUB+9KTNpseyB077A==
+"@peculiar/webcrypto@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@peculiar/webcrypto/-/webcrypto-1.1.0.tgz#19ffe0d040984acc79cbda8e3f49a285b5d0ebfd"
+  integrity sha512-hg87ivvX/grHj3w50SehUayXj9uhOoDezQFSvZO8PI9pH90dKQrDlGBWNteH+f1A7uh1bBsf5iGxDz2Vo6WQ2Q==
   dependencies:
-    "@peculiar/asn1-schema" "^1.1.2"
+    "@peculiar/asn1-schema" "^2.0.1"
     "@peculiar/json-schema" "^1.1.10"
     pvtsutils "^1.0.10"
-    tslib "^1.11.1"
-    webcrypto-core "^1.0.20"
+    tslib "^1.11.2"
+    webcrypto-core "^1.1.0"
 
 "@percy/agent@~0":
   version "0.26.2"
@@ -5488,7 +5489,7 @@ debug@^3.0.0, debug@^3.1.0, debug@^3.1.1, debug@^3.2.5:
   dependencies:
     ms "^2.1.1"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha1-qiT/uaw9+aI1GDfPstJ5NgzXhJI=
@@ -8117,7 +8118,7 @@ import-local@^3.0.2:
     pkg-dir "^4.2.0"
     resolve-cwd "^3.0.0"
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
@@ -9816,11 +9817,6 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-  integrity sha1-/lK1OhxnYeQmGNZU5KJXie1hgiw=
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -9829,32 +9825,10 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-  integrity sha1-5THCdkTPi1epnhftlbNcdIeJOS4=
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-  integrity sha1-PcaayCSY0u5ePOVgkbr9Ktx73pI=
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  integrity sha1-VtagZAF2JeeevKa4AY4XRAvc8JM=
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha1-D0ZZ+7CddRlPqeK4imZE02PJ/iY=
-
-lodash._getnative@*, lodash._getnative@^3.0.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
-  integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
 
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
@@ -9910,11 +9884,6 @@ lodash.once@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
   integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
-
-lodash.restparam@*:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
-  integrity sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU=
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
@@ -15000,7 +14969,7 @@ ts-pnp@^1.1.2:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-tslib@^1, tslib@^1.10.0, tslib@^1.11.1, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1, tslib@^1.10.0, tslib@^1.11.1, tslib@^1.11.2, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.2.tgz#9c79d83272c9a7aaf166f73915c9667ecdde3cc9"
   integrity sha512-tTSkux6IGPnUGUd1XAZHcpu85MOkIl5zX49pO+jfsie3eP0B6pyhOlLXm3cAC6T7s+euSDDUUV+Acop5WmtkVg==
@@ -15598,16 +15567,16 @@ wcwidth@^1.0.0, wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webcrypto-core@^1.0.20:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/webcrypto-core/-/webcrypto-core-1.0.21.tgz#3f045fbea05d00c26f893e743e0b407f4bf28cc4"
-  integrity sha512-PcSD8Ga3u344LXEcI/1UbGv3dv5rZ8pzkeJIrMf/JOnEq8H5hSMmdTrRIp2WFYYnMNdKQbP564v560ZmERT2HQ==
+webcrypto-core@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/webcrypto-core/-/webcrypto-core-1.1.0.tgz#b33d662cec9a6c5bd6e873a5ab2bf0a00475e358"
+  integrity sha512-nsqtUoG0CWgLCDnNxJ9QEABTewjx12yIRCYppaHBCe7EJIuUQwviBU6JwOiq7mra9Ue3RejCfLb8Mv8kzd0L1g==
   dependencies:
-    "@peculiar/asn1-schema" "^1.1.2"
+    "@peculiar/asn1-schema" "^2.0.1"
     "@peculiar/json-schema" "^1.1.10"
     asn1js "^2.0.26"
     pvtsutils "^1.0.10"
-    tslib "^1.11.1"
+    tslib "^1.11.2"
 
 webidl-conversions@^4.0.2:
   version "4.0.2"
