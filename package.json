@@ -1,7 +1,10 @@
 {
   "name": "testokur-ui",
+  "description": "testokur react components",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/es/index.js",
+  "jsnext:main": "dist/es/index.js",
   "repository": "https://github.com/NazmiAltun/testokur-ui.git",
   "author": "Nazmi Altun <nazmialtun@windowslive.com>",
   "license": "MIT",
