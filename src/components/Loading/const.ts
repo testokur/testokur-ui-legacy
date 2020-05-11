@@ -1,4 +1,4 @@
-import { curry } from '../../modules';
+import { curry } from 'testokur-utils';
 
 enum Type {
   ButtonLoader = 'ButtonLoader',

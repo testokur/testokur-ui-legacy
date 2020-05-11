@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { isUndefined } from '../../utils';
+import { isUndefined } from 'testokur-utils';
 
 export type StyledBadgeProps = {
   background: string;

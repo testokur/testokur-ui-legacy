@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
+import { isUndefined } from 'testokur-utils';
 import { Sizes, getSize, Colors, getColor } from '../../modules';
-import { isUndefined } from '../../utils';
 
 type StyledIconProps = {
   size: Sizes;

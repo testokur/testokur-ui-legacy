@@ -1,5 +1,5 @@
+import { isUndefined } from 'testokur-utils';
 import { Sizes, TestOkurTheme } from '../../modules';
-import { isUndefined } from '../../utils';
 import getSizeToken from './getSizeToken';
 import { Tokens } from './const';
 

@@ -1,4 +1,5 @@
-import { Sizes, TestOkurTheme, curry, Func } from '../../modules';
+import { curry } from 'testokur-utils';
+import { Sizes, TestOkurTheme, Func } from '../../modules';
 import { Tokens } from './const';
 
 const getButtonSpacing = (theme: TestOkurTheme, onlyIcon: boolean, hasIconRight: boolean, hasIconLeft: boolean, size: Sizes): string => {

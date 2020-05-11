@@ -1,5 +1,5 @@
+import { isUndefined } from 'testokur-utils';
 import { TestOkurTheme } from '../../modules';
-import { isUndefined } from '../../utils';
 
 export const getColorForCustomValue = (theme: TestOkurTheme, disabled?: boolean, filled?: boolean): string => {
   if (disabled) {

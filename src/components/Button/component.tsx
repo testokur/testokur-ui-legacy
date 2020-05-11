@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { isUndefined } from 'testokur-utils';
 import { Testable, Sizes, SpacingsAfter } from '../../modules';
 import { Types } from './const';
 import { StyledButton, StyledButtonContent, IconContainer, StyledButtonContentChildren, StyledButtonProps } from './styled';
 
 import { Loading, LoadingTypes } from '../Loading';
-import { isUndefined } from '../../utils';
 
 type Props = Testable &
 StyledButtonProps &

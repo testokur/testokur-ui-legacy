@@ -1,4 +1,5 @@
-import { TestOkurTheme, curry, convertHexToRgba, Func } from '../../modules';
+import { curry } from 'testokur-utils';
+import { TestOkurTheme, convertHexToRgba, Func } from '../../modules';
 import { Types } from './const';
 
 const getColor = (name: string, type: Types, theme: TestOkurTheme): string => {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { isUndefined } from 'testokur-utils';
 import { Sizes, getSize, convertHexToRgba, SpacingsAfter, getSpacing } from '../../modules';
 import { getColorForSelect, getColorForCustomValue } from './helpers';
-import { isUndefined } from '../../utils';
 
 type LabelProps = {
   spaceAfter: SpacingsAfter;

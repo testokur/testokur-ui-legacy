@@ -1,5 +1,5 @@
+import { curry } from 'testokur-utils';
 import { TestOkurTheme } from '../theme';
-import { curry } from '../reduce';
 
 enum Sizes {
   Small = 'Small',

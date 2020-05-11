@@ -67,7 +67,8 @@
   "dependencies": {
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "testokur-utils": "^1.2.12"
   },
   "resolutions": {
     "@babel/preset-env": "^7.8.0"

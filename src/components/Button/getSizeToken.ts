@@ -1,4 +1,5 @@
-import { TestOkurTheme, Sizes, curry, Func } from '../../modules';
+import { curry } from 'testokur-utils';
+import { TestOkurTheme, Sizes, Func } from '../../modules';
 
 const getSizeToken = (name: string, size: Sizes, theme: TestOkurTheme): string => {
   const heightButtonMapping = curry<string>({

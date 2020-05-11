@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { isUndefined } from 'testokur-utils';
 import StyledListItem from './styled';
 import { Testable } from '../../../modules';
-import { isUndefined } from '../../../utils';
 
 type Props = Testable & {
   children?: React.ReactNode;

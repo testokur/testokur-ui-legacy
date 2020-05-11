@@ -1,4 +1,4 @@
-import { curry } from '../../modules';
+import { curry } from 'testokur-utils';
 
 const getMaskDetails = curry<[string, string]>({
   Phone: () => ['(___) ___-____', '(***) ***-****'],

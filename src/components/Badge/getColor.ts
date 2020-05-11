@@ -1,4 +1,5 @@
-import { curry, TestOkurTheme, Func } from '../../modules';
+import { curry } from 'testokur-utils';
+import { TestOkurTheme, Func } from '../../modules';
 
 const getColor = (theme: TestOkurTheme, token: string, type: string): string => {
   const backgroundMapping = curry<string>({

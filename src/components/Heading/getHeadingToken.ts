@@ -1,5 +1,6 @@
+import { curry } from 'testokur-utils';
 import { Types } from './const';
-import { curry, TestOkurTheme, Func } from '../../modules';
+import { TestOkurTheme, Func } from '../../modules';
 
 const getHeadingToken = (name: string, theme: TestOkurTheme, type: Types): string | number => {
   const weightHeadingMapping = curry<number>({
