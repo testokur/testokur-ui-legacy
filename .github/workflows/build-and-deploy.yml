@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: bahmutov/npm-install@v1
       - uses: actions/setup-node@v1.4.0
         with:
           node-version: 12.x
+
+      - uses: bahmutov/npm-install@v1
 
       - name: Dependencies
         run: yarn install --frozen-lockfile
