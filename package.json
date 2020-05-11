@@ -11,7 +11,6 @@
   "private": false,
   "scripts": {
     "dev": "start-storybook -p 6006",
-    "build": "rimraf dist storybook-static  &&  webpack --color --progress",
     "format": "prettier \"./src/**/*.+(js|jsx|css|ts|tsx|md)\" --write",
     "lint": "tsc --noEmit && eslint --fix \"**\" && stylelint \"src/**\"",
     "test": "jest --env=jsdom --passWithNoTests --coverage",
@@ -39,7 +38,7 @@
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-react-app": "^9.1.1",
     "cross-env": "^7.0.2",
@@ -63,9 +62,7 @@
     "stylelint-processor-styled-components": "^1.10.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack": "^4.42.0"
   },
   "dependencies": {
     "react": "^16.13.0",

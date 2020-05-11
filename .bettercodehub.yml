@@ -1,6 +1,6 @@
 component_depth: 2
 languages:
-    - typescript
-    - javascript
+  - typescript
+  - javascript
 exclude:
-    - .*/webpack.config\.js
+  - .*/webpack.config\.js
