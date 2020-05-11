@@ -7,3 +7,4 @@ dist
 *.config.js
 *.md
 *.log
+*.sh
