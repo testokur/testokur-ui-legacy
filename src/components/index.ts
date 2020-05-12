@@ -9,4 +9,4 @@ export { LoadingTypes, Loading, StyledSpinner } from './Loading';
 export { MaskedInputField, MaskingType } from './MaskedInputField';
 export { default as Select } from './Select';
 export { default as Tabs } from './Tabs';
-export { Check, ChevronDown, Remove, AccountCircle, PlusCircle, Search, Email, Pending, ArrowRepeat, Exclamation } from './Icon';
+export * from './Icon';

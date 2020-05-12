@@ -8,7 +8,8 @@
     "**/node_modules": true,
     "dist": true,
     ".rts2_cache_*": true,
-    "storybook-static": true
+    "storybook-static": true,
+    "yarn.lock": true
   },
   "editor.formatOnSave": true,
   "typescript.preferences.importModuleSpecifier": "relative",
