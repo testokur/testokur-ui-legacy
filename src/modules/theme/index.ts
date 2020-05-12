@@ -22,7 +22,7 @@ export interface ThemeInput {
   opacity: Opacity;
 }
 
-const createTheme = (options: Partial<ThemeInput>): TestOkurTheme => {
+const createTheme = (options?: Partial<ThemeInput>): TestOkurTheme => {
   const { palette: paletteInput = {} } = options || {};
 
   const palette = createPalette(paletteInput);
