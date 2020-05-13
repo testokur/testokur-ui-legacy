@@ -2,7 +2,7 @@ export { default as Badge } from './Badge';
 export { default as Button } from './Button';
 export { default as CheckBox } from './CheckBox';
 export { default as Divider } from './Divider';
-export { default as Heading } from './Heading';
+export * from './Heading';
 export { InputField } from './InputField';
 export { List, ListItem } from './List';
 export { LoadingTypes, Loading, StyledSpinner } from './Loading';

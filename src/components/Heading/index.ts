@@ -1,3 +1,4 @@
 import Heading from './component';
 
-export default Heading;
+export { Elements, Types } from './const';
+export { Heading };

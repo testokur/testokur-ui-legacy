@@ -1,6 +1,6 @@
 import React from 'react';
 import { text, select } from '@storybook/addon-knobs';
-import Heading from '.';
+import { Heading } from '.';
 import { SpacingsAfter } from '../../modules';
 import { Types, Elements } from './const';
 
