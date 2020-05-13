@@ -21,7 +21,7 @@ const component = (props: Props): JSX.Element => {
           title={item}
           value={index}
           onChange={onChange}
-          defaultChecked={index.toString() === value.toString()}
+          checked={index.toString() === value.toString()}
         />
       ))}
     </StyledTabContainer>

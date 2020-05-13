@@ -5,11 +5,11 @@ import { StyledTab, StyledInput, StyledSpan } from './styled';
 type Props = Testable & React.InputHTMLAttributes<HTMLInputElement>;
 
 const tab = (props: Props): JSX.Element => {
-  const { dataTestId, title, name, value, onChange, defaultChecked } = props;
+  const { dataTestId, title, name, value, onChange, checked } = props;
 
   return (
     <StyledTab data-testid={dataTestId}>
-      <StyledInput type="radio" name={name} value={value} onChange={onChange} defaultChecked={defaultChecked} />
+      <StyledInput type="radio" name={name} value={value} onChange={onChange} checked={checked} />
       <StyledSpan>{title}</StyledSpan>
     </StyledTab>
   );
