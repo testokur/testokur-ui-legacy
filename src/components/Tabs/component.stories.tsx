@@ -11,12 +11,6 @@ export const Default = (): JSX.Element => {
   const value = text('value', '1');
 
   return (
-    <Tabs
-      value={value}
-      name="default"
-      dataTestId="default"
-      onChange={action('change')}
-      items={['Title-0', 'Title-1', 'Title-2', 'Title-3', 'Title-4']}
-    />
+    <Tabs value={value} dataTestId="default" onChange={action('change')} items={['Title-0', 'Title-1', 'Title-2', 'Title-3', 'Title-4']} />
   );
 };
