@@ -2,8 +2,9 @@
   "name": "testokur-ui",
   "description": "testokur react components",
   "version": "1.0.0",
+  "sideEffects": false,
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/es/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/NazmiAltun/testokur-ui.git",
   "author": "Nazmi Altun <nazmialtun@windowslive.com>",
@@ -16,7 +17,7 @@
     "test": "jest --env=jsdom --passWithNoTests --coverage",
     "test:watch": "jest --watchAll --env=jsdom --passWithNoTests",
     "clean": "rimraf .rts2_cache_cjs .rts2_cache_esm dist public storybook-static *.log stats.*",
-    "build": "tsc --p tsconfig-build.json",
+    "build": "tsc && tsc --p ./tsconfig.es.json",
     "build-storybook": "build-storybook",
     "cypress": "cypress open -e DEV=true",
     "semantic-release": "semantic-release"
@@ -73,6 +74,9 @@
   "resolutions": {
     "@babel/preset-env": "^7.8.0"
   },
+  "files": [
+    "dist/"
+  ],
   "keywords": [
     "testokur",
     "components",

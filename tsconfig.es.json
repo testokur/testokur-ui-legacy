@@ -1,5 +1,9 @@
 {
   "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist/es",
+    "module": "esnext",
+  },
   "exclude": [
     "node_modules",
     "src/**/*.test.ts"
