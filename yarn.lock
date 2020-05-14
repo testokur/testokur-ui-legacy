@@ -14231,10 +14231,10 @@ test-exclude@^6.0.0:
     glob "^7.1.4"
     minimatch "^3.0.4"
 
-testokur-utils@^1.2.16:
-  version "1.2.16"
-  resolved "https://registry.yarnpkg.com/testokur-utils/-/testokur-utils-1.2.16.tgz#153f066e8327cabaabde04ecb5cc798c4dd51598"
-  integrity sha512-MZzYQc6wmYI4FfM6b7yqLW/YgDjJLO4XDyrJ/Q+zG+qzaBZgRiG+FvnsQDO8DDv+nGi/A8CGYopGir3gxqlIZA==
+testokur-utils@^1.2.18:
+  version "1.2.18"
+  resolved "https://registry.yarnpkg.com/testokur-utils/-/testokur-utils-1.2.18.tgz#58315d686f563aa9ad5a7dafeb72abbf01800ed1"
+  integrity sha512-FSk8LuRs4IyJWdFi6KjwzouRA75wvLzWdcFBbG8WTEaHEBd0JnhhCEgsLQ1RbtFBgu/0UfPVO+GerfJ/PHfwHg==
 
 text-extensions@^1.0.0:
   version "1.9.0"
