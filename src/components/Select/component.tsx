@@ -57,4 +57,9 @@ const component = (props: Props): JSX.Element => {
   );
 };
 
+component.defaultProps = {
+  elemSize: Sizes.Medium,
+  spaceAfter: SpacingsAfter.None,
+} as Props;
+
 export default component;
