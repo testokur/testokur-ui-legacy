@@ -7,6 +7,6 @@ export { InputField } from './InputField';
 export { List, ListItem } from './List';
 export { LoadingTypes, Loading, StyledSpinner } from './Loading';
 export { MaskedInputField, MaskingType } from './MaskedInputField';
-export { default as Select } from './Select';
+export * from './Select';
 export { default as Tabs } from './Tabs';
 export * from './Icon';

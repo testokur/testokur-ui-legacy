@@ -1,3 +1,4 @@
 import Select from './component';
+import SelectItem from './SelectItem';
 
-export default Select;
+export { Select, SelectItem };

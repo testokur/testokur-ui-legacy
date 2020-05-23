@@ -2,31 +2,20 @@ import * as React from 'react';
 import { Testable, SpacingsAfter, Sizes } from '../../modules';
 import { Label, SelectContainer, SelectPrefix, StyledCustomValue, SelectSuffix, StyledSelect } from './styled';
 import { ChevronDown } from '../Icon';
+import SelectItem from './SelectItem';
 
 type Props = Testable &
-React.SelectHTMLAttributes<HTMLSelectElement> & {
-  spaceAfter: SpacingsAfter;
-  elemSize: Sizes;
-  options: HTMLOptionElement[];
-  disabled?: boolean;
-  filled?: boolean;
-  customValueText?: string;
-};
+  React.SelectHTMLAttributes<HTMLSelectElement> & {
+    spaceAfter: SpacingsAfter;
+    elemSize: Sizes;
+    items: SelectItem[];
+    disabled?: boolean;
+    filled?: boolean;
+    customValueText?: string;
+  };
 
 const component = (props: Props): JSX.Element => {
-  const {
-    spaceAfter,
-    disabled,
-    elemSize: size,
-    prefix,
-    filled,
-    customValueText,
-    options,
-    onChange,
-    value,
-    placeholder,
-    dataTestId,
-  } = props;
+  const { spaceAfter, disabled, elemSize: size, prefix, filled, customValueText, items, onChange, value, placeholder, dataTestId } = props;
 
   return (
     <Label spaceAfter={spaceAfter} data-testid={dataTestId}>
@@ -54,9 +43,9 @@ const component = (props: Props): JSX.Element => {
               {placeholder}
             </option>
           )}
-          {options.map(option => (
-            <option key={`option-${option.value}`} value={option.value} disabled={option.disabled}>
-              {option.label}
+          {items.map(item => (
+            <option key={`option-${item.Value}`} value={item.Value}>
+              {item.Text}
             </option>
           ))}
         </StyledSelect>

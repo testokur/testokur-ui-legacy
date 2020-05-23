@@ -1,7 +1,7 @@
 import { text, boolean, select } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import Select from '.';
+import { Select, SelectItem } from '.';
 import { Sizes, SpacingsAfter } from '../../modules';
 
 export default {
@@ -16,15 +16,16 @@ export const Default = (): JSX.Element => {
   const filled = boolean('filled', false);
 
   const options = [
-    new Option('Zero-th item', '0', false, false),
-    new Option('First item', '1', false, false),
-    new Option('Second item', '2', false, false),
-    new Option('Third item', '3', false, false),
-    new Option('Fourth item', '4', false, false),
+    new SelectItem('0', 'Zero-th item'),
+    new SelectItem('1', 'First item'),
+    new SelectItem('2', 'Second item'),
+    new SelectItem('3', 'Third item'),
+    new SelectItem('4', 'Fourth item'),
   ];
+
   return (
     <Select
-      options={options}
+      items={options}
       onChange={action('changed')}
       placeholder={placeHolder}
       disabled={disabled}
