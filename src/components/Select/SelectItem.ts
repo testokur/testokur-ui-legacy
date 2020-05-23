@@ -1,10 +1,10 @@
 class SelectItem {
-  constructor(value: string, text: string) {
+  constructor(value: string | number, text: string) {
     this.Value = value;
     this.Text = text;
   }
 
-  readonly Value: string;
+  readonly Value: string | number;
 
   readonly Text: string;
 }
