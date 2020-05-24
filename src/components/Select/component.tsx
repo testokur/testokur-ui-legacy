@@ -5,14 +5,14 @@ import { ChevronDown } from '../Icons';
 import SelectItem from './SelectItem';
 
 type Props = Testable &
-  React.SelectHTMLAttributes<HTMLSelectElement> & {
-    spaceAfter: SpacingsAfter;
-    elemSize: Sizes;
-    items: SelectItem[];
-    disabled?: boolean;
-    filled?: boolean;
-    customValueText?: string;
-  };
+React.SelectHTMLAttributes<HTMLSelectElement> & {
+  spaceAfter: SpacingsAfter;
+  elemSize: Sizes;
+  items: SelectItem[];
+  disabled?: boolean;
+  filled?: boolean;
+  customValueText?: string;
+};
 
 const component = (props: Props): JSX.Element => {
   const { spaceAfter, disabled, elemSize: size, prefix, filled, customValueText, items, onChange, value, placeholder, dataTestId } = props;
