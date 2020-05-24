@@ -1,7 +1,7 @@
 import React from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import { Badge, BadgeTypes } from '.';
-import { Check } from '../Icon';
+import { Check } from '../Icons';
 
 export const Default = (): JSX.Element => {
   const type = select('Type', Object.values(BadgeTypes), BadgeTypes.Info);

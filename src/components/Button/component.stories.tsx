@@ -4,7 +4,7 @@ import { text, select } from '@storybook/addon-knobs';
 import Button from '.';
 import { Sizes } from '../../modules';
 import { Types } from './const';
-import { Remove, PlusCircle } from '../Icon';
+import { Remove, PlusCircle } from '../Icons';
 
 export const Default = (): JSX.Element => {
   const children = text('Children', 'Default button');

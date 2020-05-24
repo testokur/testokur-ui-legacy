@@ -9,4 +9,4 @@ export { LoadingTypes, Loading, StyledSpinner } from './Loading';
 export { MaskedInputField, MaskingType } from './MaskedInputField';
 export * from './Select';
 export { default as Tabs } from './Tabs';
-export * from './Icon';
+export * from './Icons';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Testable, SpacingsAfter, Sizes } from '../../modules';
 import { Label, SelectContainer, SelectPrefix, StyledCustomValue, SelectSuffix, StyledSelect } from './styled';
-import { ChevronDown } from '../Icon';
+import { ChevronDown } from '../Icons';
 import SelectItem from './SelectItem';
 
 type Props = Testable &
