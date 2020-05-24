@@ -1,3 +1,4 @@
 import Badge from './component';
+import { Types as BadgeTypes } from './const';
 
-export default Badge;
+export { Badge, BadgeTypes };
