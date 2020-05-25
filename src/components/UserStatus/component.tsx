@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Testable, Sizes } from '../../modules';
+import { isUndefined, isNil } from 'testokur-utils';
+import { Testable, Colors } from '../../modules';
 import { BadgeTypes, Badge } from '../Badge';
-import { Check } from '../Icons';
-import { isUndefined } from 'testokur-utils';
+import { Check, Expired, Cancelled, Time } from '../Icons';
 
 type Props = Testable & {
   active: boolean;
@@ -20,25 +20,21 @@ const component = (props: Props): JSX.Element => {
   const { active, expirationDate } = props;
   let status = Statuses.Active;
   let type: BadgeTypes = BadgeTypes.Success;
-  let icon = <Check />;
+  let icon = <Check color={Colors.Success} />;
 
-  if (active) {
-    if (!isUndefined(expirationDate) && expirationDate <= new Date()) {
-      status = Statuses.Expired;
-      type = BadgeTypes.Critical;
-      // icon = <Expired />;
-    }
+  if (active && !isUndefined(expirationDate) && expirationDate <= new Date()) {
+    status = Statuses.Expired;
+    type = BadgeTypes.Critical;
+    icon = <Expired color={Colors.Critical} />;
+  } else if (isNil(expirationDate)) {
+    status = Statuses.PendingForActivation;
+    type = BadgeTypes.Warning;
+    icon = <Time color={Colors.Warning} />;
+  } else if (!active && !isNil(expirationDate)) {
+    status = Statuses.Deactivated;
+    type = BadgeTypes.Critical;
+    icon = <Cancelled color={Colors.Critical} />;
   }
-
-  // if (props.active) {
-  //   return isUndefined(props.expirationDate) || props.expirationDate > new Date()
-  //     ? new Status(BadgeTypes.Success, <Check />, UserStatuses.Active)
-  //     : new Status(BadgeTypes.Critical, <HourglassFull />, UserStatuses.Expired);
-  // }
-
-  // return isNil(props.expirationDate)
-  //   ? new Status(BadgeTypes.Warning, <Pending />, UserStatuses.PendingForActivation)
-  //   : new Status(BadgeTypes.CriticalInverted, <Cancel />, UserStatuses.Deactivated);
 
   return (
     <Badge ariaLabel={status} icon={icon} type={type}>
@@ -47,11 +43,6 @@ const component = (props: Props): JSX.Element => {
   );
 };
 
-component.defaultProps = {
-  size: Sizes.Large,
-  active: false,
-} as Props;
-
-component.displayName = 'Button';
+component.displayName = 'UserStatus';
 
 export default component;

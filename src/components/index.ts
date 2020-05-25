@@ -1,6 +1,6 @@
 export * from './Badge';
 export { default as Button } from './Button';
-export { default as CheckBox } from './CheckBox';
+export { default as Checkbox } from './CheckBox';
 export { default as Divider } from './Divider';
 export * from './Heading';
 export { InputField } from './InputField';
@@ -10,3 +10,4 @@ export { MaskedInputField, MaskingType } from './MaskedInputField';
 export * from './Select';
 export { default as Tabs } from './Tabs';
 export * from './Icons';
+export { default as UserStatus } from './UserStatus';

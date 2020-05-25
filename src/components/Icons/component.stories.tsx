@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { ChevronDown, Email, Pending, ArrowRepeat, Exclamation } from '.';
-import Check from './Check';
+import { Check, Expired, ChevronDown, Email, Time, ArrowRepeat, Exclamation, Cancelled } from '.';
 import { Colors, Sizes } from '../../modules';
 
 export default {
@@ -19,8 +18,8 @@ export const EmailPrimary = (): JSX.Element => {
   return <Email size={Sizes.Large} color={Colors.Info} ariaLabel="Email" />;
 };
 
-export const PendingWarning = (): JSX.Element => {
-  return <Pending size={Sizes.Large} color={Colors.Warning} ariaLabel="Pending" />;
+export const TimeWarning = (): JSX.Element => {
+  return <Time size={Sizes.Large} color={Colors.Warning} ariaLabel="Time" />;
 };
 
 export const ArrowRepeatFailed = (): JSX.Element => {
@@ -29,4 +28,12 @@ export const ArrowRepeatFailed = (): JSX.Element => {
 
 export const ExclamationCritical = (): JSX.Element => {
   return <Exclamation size={Sizes.Large} color={Colors.Critical} ariaLabel="Exclamation" />;
+};
+
+export const ExpiredCritical = (): JSX.Element => {
+  return <Expired size={Sizes.Large} color={Colors.Critical} ariaLabel="Expired" />;
+};
+
+export const CancelledCritical = (): JSX.Element => {
+  return <Cancelled size={Sizes.Large} color={Colors.Critical} ariaLabel="Cancelled" />;
 };
