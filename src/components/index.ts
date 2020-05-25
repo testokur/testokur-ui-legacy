@@ -1,6 +1,6 @@
 export * from './Badge';
 export { default as Button } from './Button';
-export { default as Checkbox } from './CheckBox';
+export { default as CheckBox } from './CheckBox';
 export { default as Divider } from './Divider';
 export * from './Heading';
 export { InputField } from './InputField';
