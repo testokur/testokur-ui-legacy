@@ -10,4 +10,3 @@ export { MaskedInputField, MaskingType } from './MaskedInputField';
 export * from './Select';
 export { default as Tabs } from './Tabs';
 export * from './Icons';
-export { default as UserStatus } from './UserStatus';
