@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { isUndefined } from 'testokur-utils';
+import { Sizes, getSize } from '../../modules';
+import getFontSize from './getFontSize';
 
 export type StyledBadgeProps = {
   background: string;
@@ -25,17 +27,18 @@ export const StyledBadge = styled.div<StyledBadgeProps>`
   border: ${(props): string => (isUndefined(props.borderColor) ? '' : `1px solid ${props.borderColor}`)};
 `;
 
-export const IconContainer = styled.div`
+export const IconContainer = styled.div<{ size: Sizes }>`
   display: flex;
   flex-shrink: 0;
   margin: '0px 4px 0px 0px';
   svg {
-    width: ${(props): string => props.theme.size.widthIconSmall};
-    height: ${(props): string => props.theme.size.heightIconSmall};
+    width: ${(props): string => getSize(props.theme)(props.size)};
+    height: ${(props): string => getSize(props.theme)(props.size)};
   }
 `;
 
-export const StyledBadgeContent = styled.div`
+export const StyledBadgeContent = styled.div<{ size: Sizes }>`
   padding: 5px 0;
   line-height: 1;
+  font-size: ${(props): string => getFontSize(props.size, props.theme)};
 `;

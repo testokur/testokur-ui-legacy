@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { isUndefined, isNil } from 'testokur-utils';
-import { Testable, Colors } from '../../modules';
+import { Testable, Colors, Sizes } from '../../modules';
 import { BadgeTypes, Badge } from '../Badge';
 import { Check, Expired, Cancelled, Time } from '../Icons';
 
@@ -37,7 +37,7 @@ const component = (props: Props): JSX.Element => {
   }
 
   return (
-    <Badge ariaLabel={status} icon={icon} type={type}>
+    <Badge size={Sizes.Large} ariaLabel={status} icon={icon} type={type}>
       {status}
     </Badge>
   );
