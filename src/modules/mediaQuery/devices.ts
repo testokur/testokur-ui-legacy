@@ -1,10 +1,10 @@
 enum Devices {
-  LargeDesktop = 'largeDesktop',
-  Desktop = 'desktop',
-  Tablet = 'tablet',
-  LargeMobile = 'largeMobile',
-  MediumMobile = 'mediumMobile',
-  SmallMobile = 'smallMobile',
+  LargeDesktop = 'LargeDesktop',
+  Desktop = 'Desktop',
+  Tablet = 'Tablet',
+  LargeMobile = 'LargeMobile',
+  MediumMobile = 'MediumMobile',
+  SmallMobile = 'SmallMobile',
 }
 
 export default Devices;

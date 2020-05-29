@@ -1,9 +1,9 @@
 enum Queries {
-  LargeDesktop = 'largeDesktop',
-  Desktop = 'desktop',
-  Tablet = 'tablet',
-  LargeMobile = 'largeMobile',
-  MediumMobile = 'mediumMobile',
+  LargeDesktop = 'LargeDesktop',
+  Desktop = 'Desktop',
+  Tablet = 'Tablet',
+  LargeMobile = 'LargeMobile',
+  MediumMobile = 'MediumMobile',
 }
 
 export default Queries;

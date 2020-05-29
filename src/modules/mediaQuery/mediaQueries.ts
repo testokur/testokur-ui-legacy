@@ -1,6 +1,9 @@
 import { css, Interpolation, DefaultTheme, ThemeProps, FlattenInterpolation } from 'styled-components';
 import getBreakpointWidth from './getBreakPointWidth';
 import Queries from './queries';
+import Devices from './devices';
+
+type QueryFunction = (style: Interpolation<unknown>) => FlattenInterpolation<ThemeProps<DefaultTheme>>;
 
 const mediaQueries = Object.keys(Queries).reduce(
   (obj, name) => ({
@@ -16,4 +19,4 @@ const mediaQueries = Object.keys(Queries).reduce(
   {}
 );
 
-export default mediaQueries;
+export default mediaQueries as { [key in Devices]: QueryFunction };
