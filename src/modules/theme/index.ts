@@ -9,6 +9,7 @@ import globalStyle from './globalStyle';
 import { size, Size } from './size';
 import opacity, { Opacity } from './opacity';
 import { TestOkurTheme } from './TestOkurTheme';
+import breakPoints, { BreakPoints } from './breakPoints';
 
 export interface ThemeInput {
   palette: PaletteInput;
@@ -20,6 +21,7 @@ export interface ThemeInput {
   font: Font;
   size: Size;
   opacity: Opacity;
+  breakPoints: BreakPoints;
 }
 
 const createTheme = (options?: Partial<ThemeInput>): TestOkurTheme => {
@@ -38,6 +40,7 @@ const createTheme = (options?: Partial<ThemeInput>): TestOkurTheme => {
     font,
     size,
     opacity,
+    breakPoints,
   };
 };
 

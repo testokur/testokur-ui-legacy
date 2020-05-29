@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { device, convertHexToRgba } from '../../modules';
+import { convertHexToRgba } from '../../modules';
+import { getBreakPointWidth, Queries } from '../../modules/mediaQuery';
 
 type IconContainerProps = {
   checked?: boolean;
@@ -31,7 +32,7 @@ export const IconContainer = styled.div<IconContainerProps>`
   &:hover {
     background-color: ${(props): string => (props.checked ? props.theme.palette.blueDark : props.theme.colors.backgroundInput)};
   }
-  @media ${device.tablet} {
+  @media ${(props): string => getBreakPointWidth(Queries.Tablet, props.theme)} {
     border-radius: ${(props): string => props.theme.border.borderRadiusNormal};
   }
 `;
@@ -63,7 +64,7 @@ export const Label = styled.label<LabelProps>`
     !props.disabled && props.checked ? props.theme.palette.blueDark : props.theme.border.borderColorCheckboxRadioHover};
   }
 
-  @media ${device.mobileL} {
+  @media ${(props): string => getBreakPointWidth(Queries.LargeMobile, props.theme)} {
     ${IconContainer} {
       border-width: 1px;
     }

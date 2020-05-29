@@ -7,6 +7,7 @@ import { LineHeight } from './lineHeight';
 import { Font } from './font';
 import { Size } from './size';
 import { Opacity } from './opacity';
+import { BreakPoints } from './breakPoints';
 
 export interface TestOkurTheme {
   palette: Palette;
@@ -19,4 +20,5 @@ export interface TestOkurTheme {
   font: Font;
   size: Size;
   opacity: Opacity;
+  breakPoints: BreakPoints;
 }

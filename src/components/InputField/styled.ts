@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
-import { device, convertHexToRgba } from '../../modules';
+import { convertHexToRgba } from '../../modules';
+import { getBreakPointWidth, Queries } from '../../modules/mediaQuery';
 
 type LabelProps = {
   disabled?: boolean;
@@ -61,7 +62,7 @@ const sharedStyled = css<SharedStyledProps>`
     font-size: 1rem;
   }
 
-  @media ${device.tablet} {
+  @media ${(props): string => getBreakPointWidth(Queries.Tablet, props.theme)} {
     background-color: ${(props): string =>
     props.disabled ? props.theme.colors.backgroundInputDisabled : props.theme.colors.backgroundInput};
     border-radius: ${(props): string => props.theme.border.borderRadiusNormal};
