@@ -1,7 +1,7 @@
 import { css, DefaultTheme, ThemeProps, FlattenInterpolation } from 'styled-components';
 import { Devices, mediaQueries } from '../../modules';
 
-const getViewportHideStyles: (on: Devices[], block?: boolean | undefined) => FlattenInterpolation<ThemeProps<DefaultTheme>>[] = (
+const getViewportHideStyles: (on: Devices[], block?: boolean) => FlattenInterpolation<ThemeProps<DefaultTheme>>[] = (
   on: Devices[],
   block?: boolean
 ) => {

@@ -8,13 +8,12 @@ type QueryFunction = (style: Interpolation<unknown>) => FlattenInterpolation<The
 const mediaQueries = Object.keys(Queries).reduce(
   (obj, name) => ({
     ...obj,
-    [Queries[name as keyof typeof Queries]]: (style: Interpolation<unknown>): FlattenInterpolation<ThemeProps<DefaultTheme>> => {
-      return css`
+    [Queries[name as keyof typeof Queries]]: (style: Interpolation<unknown>): FlattenInterpolation<ThemeProps<DefaultTheme>> =>
+      css`
         @media ${({ theme }): string => getBreakpointWidth(Queries[name as keyof typeof Queries], theme)} {
           ${style};
         }
-      `;
-    },
+      `,
   }),
   {}
 );
