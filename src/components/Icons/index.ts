@@ -1,4 +1,6 @@
 export { default as ChevronDown } from './ChevronDown';
+export { default as ChevronLeft } from './ChevronLeft';
+export { default as ChevronRight } from './ChevronRight';
 export { default as Check } from './Check';
 export { default as Remove } from './Remove';
 export { default as AccountCircle } from './AccountCircle';
