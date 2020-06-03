@@ -39,7 +39,7 @@ export const Default = (): JSX.Element => {
   }
 
   return (
-    <Hide block={block} on={on}>
+    <Hide block={block} on={on} dataTestId="default">
       {children}
     </Hide>
   );
