@@ -3,9 +3,9 @@ import { HideProps, StyledHide } from './styled';
 import { Testable } from '../../modules';
 
 type Props = Testable &
-  HideProps & {
-    children?: React.ReactNode;
-  };
+HideProps & {
+  children?: React.ReactNode;
+};
 
 const component = (props: Props): JSX.Element => {
   const { dataTestId, children = <></>, on, block } = props;

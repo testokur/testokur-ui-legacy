@@ -23,7 +23,7 @@ const getViewportHideStyles: (on: Devices[], block?: boolean) => FlattenInterpol
     return css``;
   };
 
-  return Object.keys(Devices).map(mapFunc);
+  return Object.keys(Devices).reverse().map(mapFunc);
 };
 
 export default getViewportHideStyles;
