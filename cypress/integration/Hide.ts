@@ -16,7 +16,7 @@ describe('Hide', () => {
     it('should hide span when it is table and it should be hidden on tablets', () => {
       cy.changeKnob('tablet', 'true');
       cy.get('[data-testid="default"]').should('be.visible');
-      cy.viewport('ipad-2')
+      cy.viewport('ipad-2');
       cy.get('[data-testid="default"]').should('not.be.visible');
     });
   });
