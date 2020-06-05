@@ -1,3 +1,4 @@
 import Button from './component';
+import Props from './Props';
 
-export default Button;
+export { Button, Props as ButtonProps };

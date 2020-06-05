@@ -1,21 +1,10 @@
 import * as React from 'react';
 import { isUndefined } from 'testokur-utils';
-import { Testable, Sizes, SpacingsAfter } from '../../modules';
+import { Sizes, SpacingsAfter } from '../../modules';
 import { Types } from './const';
-import { StyledButton, StyledButtonContent, IconContainer, StyledButtonContentChildren, StyledButtonProps } from './styled';
-
+import { StyledButton, StyledButtonContent, IconContainer, StyledButtonContentChildren } from './styled';
 import { Loading, LoadingTypes } from '../Loading';
-
-type Props = Testable &
-StyledButtonProps &
-React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  loading?: boolean;
-  icon?: JSX.Element;
-  iconLeft?: JSX.Element;
-  iconRight?: JSX.Element;
-  ariaExpanded?: boolean;
-  ariaControls?: string;
-};
+import Props from './Props';
 
 const component = (props: Props): JSX.Element => {
   const {

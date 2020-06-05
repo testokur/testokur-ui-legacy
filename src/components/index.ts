@@ -1,5 +1,5 @@
 export * from './Badge';
-export { default as Button } from './Button';
+export * from './Button';
 export { default as CheckBox } from './CheckBox';
 export { default as Divider } from './Divider';
 export * from './Heading';

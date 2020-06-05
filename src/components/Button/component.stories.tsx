@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select } from '@storybook/addon-knobs';
-import Button from '.';
+import { Button } from '.';
 import { Sizes } from '../../modules';
 import { Types } from './const';
 import { Remove, PlusCircle } from '../Icons';
