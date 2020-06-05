@@ -5,3 +5,4 @@ export { default as convertHexToRgba } from './convertHexToRgba';
 export { Sizes, getSize, Colors, getColor, SpacingsAfter, getSpacing } from './common';
 export type { Func } from './common';
 export { Queries, Devices, getBreakPointWidth, mediaQueries } from './mediaQuery';
+export { transition, Durations } from './transition';
