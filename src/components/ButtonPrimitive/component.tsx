@@ -5,36 +5,26 @@ import ButtonPrimitiveIconContainer from './components/ButtonPrimitiveIconContai
 import ButtonPrimitiveContentChildren from './components/ButtonPrimitiveContentChildren';
 import { Loading, LoadingTypes } from '../Loading';
 import { ButtonProps } from '../Button';
+import { isUndefined } from 'testokur-utils';
 
 type IconProps = {
   width?: string;
   height?: string;
   leftMargin?: string;
   rightMargin?: string;
-}
+};
 
 type Props = ButtonProps & {
   icons?: IconProps;
-}
+};
 
 const ButtonPrimitive = React.forwardRef<HTMLButtonElement, Props>((props: Props, ref) => {
-  const {
-    loading,
-    disabled,
-    children,
-    iconLeft,
-    iconRight,
-    icons,
-  } = props;
+  const { loading, disabled, children, iconLeft, iconRight, icons } = props;
   const { width, height, leftMargin, rightMargin } = icons ?? {};
   const isDisabled = loading || disabled;
   const onlyIcon = Boolean(iconLeft && !children);
   return (
-    <StyledButtonPrimitive
-      forwardedRef={ref}
-      onlyIcon={onlyIcon}
-      disabled={isDisabled}
-    >
+    <StyledButtonPrimitive forwardedRef={ref} onlyIcon={onlyIcon} disabled={isDisabled}>
       {loading && <Loading type={LoadingTypes.ButtonLoader} />}
       <ButtonPrimitiveContent loading={loading}>
         {iconLeft && (
@@ -42,7 +32,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement, Props>((props: Props
             {iconLeft}
           </ButtonPrimitiveIconContainer>
         )}
-        {children && <ButtonPrimitiveContentChildren>{children}</ButtonPrimitiveContentChildren>}
+        {isUndefined(children) ? <></> : <ButtonPrimitiveContentChildren>{children}</ButtonPrimitiveContentChildren>}
         {iconRight && (
           <ButtonPrimitiveIconContainer width={width} height={height} margin={rightMargin}>
             {iconRight}
@@ -53,6 +43,6 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement, Props>((props: Props
   );
 });
 
-ButtonPrimitive.displayName = "ButtonPrimitive";
+ButtonPrimitive.displayName = 'ButtonPrimitive';
 
 export default ButtonPrimitive;
