@@ -1,4 +1,5 @@
 import { TestOkurTheme } from '../theme';
+import { isNil } from 'testokur-utils';
 
 export enum Durations {
   Slow = 'Slow',
@@ -11,6 +12,9 @@ type Transition = (theme: TestOkurTheme) => string;
 export const transition = (properties: string[], duration: Durations, timingFunction: string): Transition => (
   theme: TestOkurTheme
 ): string => {
+  if (isNil(theme?.duration)) {
+    return '';
+  }
   const tokens = {
     [Durations.Slow]: theme.duration.durationSlow,
     [Durations.Normal]: theme.duration.durationNormal,

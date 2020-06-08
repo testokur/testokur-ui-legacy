@@ -5,7 +5,7 @@ import { Testable, getSpacing, SpacingsAfter } from '../../modules';
 import { StyledButtonPrimitiveIconContainer } from './components/ButtonPrimitiveIconContainer';
 import { StyledSpinner } from '../Loading';
 
-type Props = Testable &
+export type Props = Testable &
 React.ButtonHTMLAttributes<HTMLButtonElement> &
 React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   asComponent?: keyof JSX.IntrinsicElements;
@@ -27,7 +27,7 @@ export type IconsPros = {
   foregroundActive: string;
 };
 
-type StyledProps = {
+export type StyledProps = {
   foreground?: string;
   spacingsAfter: SpacingsAfter;
   disabled?: boolean;
