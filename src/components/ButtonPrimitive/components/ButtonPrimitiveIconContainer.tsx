@@ -8,7 +8,9 @@ type StyledProps = {
   height?: string;
 };
 
-const StyledButtonPrimitiveIconContainer = styled(({ className, children }): JSX.Element => <div className={className}>{children}</div>)`
+export const StyledButtonPrimitiveIconContainer = styled(
+  ({ className, children }): JSX.Element => <div className={className}>{children}</div>
+)`
   ${({ margin, width, height }: StyledProps): FlattenInterpolation<ThemedStyledProps<TestOkurTheme, DefaultTheme>> => css`
     display: flex;
     flex-direction: row;
@@ -28,10 +30,8 @@ type Props = StyledProps & {
   children: React.ReactNode;
 };
 
-const ButtonPrimitiveIconContainer = ({ margin, width, height, children }: Props): JSX.Element => (
+export const ButtonPrimitiveIconContainer = ({ margin, width, height, children }: Props): JSX.Element => (
   <StyledButtonPrimitiveIconContainer margin={margin} width={width} height={height}>
     {children}
   </StyledButtonPrimitiveIconContainer>
 );
-
-export default ButtonPrimitiveIconContainer;
