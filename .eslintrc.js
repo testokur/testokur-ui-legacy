@@ -30,6 +30,12 @@ module.exports = {
       "rules": {
         "@typescript-eslint/explicit-function-return-type": ["error"]
       }
+    },
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
     }
   ]
 };

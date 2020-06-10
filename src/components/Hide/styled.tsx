@@ -9,6 +9,6 @@ export type HideProps = {
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const StyledHide = styled(({ on, block, ...rest }) => <span {...rest} />)<HideProps>`
-  ${(props): FlattenInterpolation<ThemeProps<DefaultTheme>> => getViewportHideStyles(props.on, props.block)};
+export const StyledHide = styled(({ on, block, ...props }) => <span {...props} />)<HideProps>`
+  ${(props: HideProps): FlattenInterpolation<ThemeProps<DefaultTheme>> => getViewportHideStyles(props.on, props.block)};
 `;

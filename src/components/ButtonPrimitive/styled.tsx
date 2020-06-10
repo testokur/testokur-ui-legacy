@@ -6,16 +6,16 @@ import { StyledButtonPrimitiveIconContainer } from './components/ButtonPrimitive
 import { StyledSpinner } from '../Loading';
 
 export type Props = Testable &
-  React.ButtonHTMLAttributes<HTMLButtonElement> &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    asComponent?: keyof JSX.IntrinsicElements;
-    submit?: boolean;
-    ariaExpanded?: boolean;
-    ariaControls?: string;
-    href?: string;
-    external?: boolean;
-    forwardedRef?: RefObject<HTMLAnchorElement> & RefObject<HTMLButtonElement>;
-  };
+React.ButtonHTMLAttributes<HTMLButtonElement> &
+React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  asComponent?: keyof JSX.IntrinsicElements;
+  submit?: boolean;
+  ariaExpanded?: boolean;
+  ariaControls?: string;
+  href?: string;
+  external?: boolean;
+  forwardedRef?: RefObject<HTMLAnchorElement> & RefObject<HTMLButtonElement>;
+};
 
 export type IconsPros = {
   width: string;
