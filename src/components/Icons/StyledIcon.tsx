@@ -4,9 +4,9 @@ import { isUndefined } from 'testokur-utils';
 import { Sizes, getSize, Colors, getColor } from '../../modules';
 
 type StyledIconProps = {
-  size: Sizes;
-  color: Colors;
-  customColor?: string;
+  readonly size: Sizes;
+  readonly color: Colors;
+  readonly customColor?: string;
 };
 
 const IconWithoutAtrrs = styled.svg<StyledIconProps>`

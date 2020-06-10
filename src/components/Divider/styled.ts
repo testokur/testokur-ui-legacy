@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { SpacingsAfter, getSpacing } from '../../modules';
 
 export type StyledDividerProps = {
-  spacingsAfter: SpacingsAfter;
+  readonly spacingsAfter: SpacingsAfter;
 };
 
 export const StyledDivider = styled.hr<StyledDividerProps>`

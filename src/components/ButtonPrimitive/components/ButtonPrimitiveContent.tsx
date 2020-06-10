@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import React from 'react';
 
 type Props = {
-  children: React.ReactNode;
-  loading?: boolean;
+  readonly children: React.ReactNode;
+  readonly loading?: boolean;
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const StyledButtonPrimitiveContent = styled(({ theme, loading, ...props }): JSX.Element => <div {...props} />) <Props>`
+const StyledButtonPrimitiveContent = styled(({ theme, loading, ...props }): JSX.Element => <div {...props} />)<Props>`
   visibility: ${(props): string => (props.loading ? 'hidden' : '')};
   height: 100%;
   display: flex;

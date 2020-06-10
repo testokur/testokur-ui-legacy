@@ -8,50 +8,50 @@ import { StyledSpinner } from '../Loading';
 export type Props = Testable &
 React.ButtonHTMLAttributes<HTMLButtonElement> &
 React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-  asComponent?: keyof JSX.IntrinsicElements;
-  submit?: boolean;
-  ariaExpanded?: boolean;
-  ariaControls?: string;
-  href?: string;
-  external?: boolean;
-  forwardedRef?: RefObject<HTMLAnchorElement> & RefObject<HTMLButtonElement>;
+  readonly asComponent?: keyof JSX.IntrinsicElements;
+  readonly submit?: boolean;
+  readonly ariaExpanded?: boolean;
+  readonly ariaControls?: string;
+  readonly href?: string;
+  readonly external?: boolean;
+  readonly forwardedRef?: RefObject<HTMLAnchorElement> & RefObject<HTMLButtonElement>;
 };
 
 export type IconsPros = {
-  width: string;
-  height: string;
-  leftMargin: string;
-  rightMargin: string;
-  foreground: string;
-  foregroundHover: string;
-  foregroundActive: string;
+  readonly width: string;
+  readonly height: string;
+  readonly leftMargin: string;
+  readonly rightMargin: string;
+  readonly foreground: string;
+  readonly foregroundHover: string;
+  readonly foregroundActive: string;
 };
 
 export type StyledProps = {
-  foreground?: string;
-  spacingsAfter: SpacingsAfter;
-  disabled?: boolean;
-  fullWidth?: boolean;
-  href?: string;
-  asComponent?: keyof JSX.IntrinsicElements;
-  circled?: boolean;
-  padding?: string;
-  background?: string;
-  fontWeight?: string;
-  fontSize?: string;
-  height?: string;
-  width?: string;
-  onlyIcon?: boolean;
-  icons?: IconsPros;
-  foregroundHover?: string;
-  foregroundActive?: string;
-  backgroundHover?: string;
-  backgroundActive?: string;
-  backgroundFocus?: string;
-  boxShadow?: string;
-  boxShadowHover?: string;
-  boxShadowFocus?: string;
-  boxShadowActive?: string;
+  readonly foreground?: string;
+  readonly spacingsAfter: SpacingsAfter;
+  readonly disabled?: boolean;
+  readonly fullWidth?: boolean;
+  readonly href?: string;
+  readonly asComponent?: keyof JSX.IntrinsicElements;
+  readonly circled?: boolean;
+  readonly padding?: string;
+  readonly background?: string;
+  readonly fontWeight?: string;
+  readonly fontSize?: string;
+  readonly height?: string;
+  readonly width?: string;
+  readonly onlyIcon?: boolean;
+  readonly icons?: IconsPros;
+  readonly foregroundHover?: string;
+  readonly foregroundActive?: string;
+  readonly backgroundHover?: string;
+  readonly backgroundActive?: string;
+  readonly backgroundFocus?: string;
+  readonly boxShadow?: string;
+  readonly boxShadowHover?: string;
+  readonly boxShadowFocus?: string;
+  readonly boxShadowActive?: string;
 };
 
 const StyledButtonPrimitive = styled(

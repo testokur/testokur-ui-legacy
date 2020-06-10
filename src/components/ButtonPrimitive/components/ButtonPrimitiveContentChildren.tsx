@@ -6,7 +6,7 @@ const StyledButtonPrimitiveContentChildren = styled.div`
 `;
 
 type Props = {
-  children: React.ReactNode;
+  readonly children: React.ReactNode;
 };
 
 const ButtonPrimitiveContentChildren = ({ children }: Props): JSX.Element => (

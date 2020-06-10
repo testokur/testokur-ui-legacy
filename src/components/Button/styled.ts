@@ -11,10 +11,10 @@ import getButtonBoxShadow from './getButtonBoxShadow';
 import getButtonSpacing from './getButtonSpacing';
 
 type IconContainerProps = {
-  size: Sizes;
-  type: Types;
-  onlyIcon: boolean;
-  bordered?: boolean;
+  readonly size: Sizes;
+  readonly type: Types;
+  readonly onlyIcon: boolean;
+  readonly bordered?: boolean;
 };
 
 export const IconContainer = styled.span<IconContainerProps>`
@@ -37,7 +37,7 @@ export const IconContainer = styled.span<IconContainerProps>`
 `;
 
 type StyledButtonContentProps = {
-  loading?: boolean;
+  readonly loading?: boolean;
 };
 
 export const StyledButtonContent = styled.span<StyledButtonContentProps>`
@@ -54,17 +54,17 @@ export const StyledButtonContentChildren = styled.span`
 `;
 
 export type StyledButtonProps = {
-  buttonType: Types;
-  size: Sizes;
-  fullWidth?: boolean;
-  width?: string;
-  onlyIcon: boolean;
-  bordered: boolean;
-  circled?: boolean;
-  disabled: boolean;
-  spaceAfter: SpacingsAfter;
-  hasRightIcon: boolean;
-  hasLeftIcon: boolean;
+  readonly buttonType: Types;
+  readonly size: Sizes;
+  readonly fullWidth?: boolean;
+  readonly width?: string;
+  readonly onlyIcon: boolean;
+  readonly bordered: boolean;
+  readonly circled?: boolean;
+  readonly disabled: boolean;
+  readonly spaceAfter: SpacingsAfter;
+  readonly hasRightIcon: boolean;
+  readonly hasLeftIcon: boolean;
 };
 
 export const StyledButton = styled.button<StyledButtonProps>`

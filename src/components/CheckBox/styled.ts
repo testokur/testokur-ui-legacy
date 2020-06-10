@@ -3,7 +3,7 @@ import { convertHexToRgba } from '../../modules';
 import { getBreakPointWidth, Queries } from '../../modules/mediaQuery';
 
 type IconContainerProps = {
-  checked?: boolean;
+  readonly checked?: boolean;
 };
 
 export const IconContainer = styled.div<IconContainerProps>`
@@ -38,8 +38,8 @@ export const IconContainer = styled.div<IconContainerProps>`
 `;
 
 type LabelProps = {
-  disabled?: boolean;
-  checked?: boolean;
+  readonly disabled?: boolean;
+  readonly checked?: boolean;
 };
 
 export const Label = styled.label<LabelProps>`

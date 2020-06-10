@@ -4,8 +4,8 @@ import getHeadingToken from './getHeadingToken';
 import { getSpacing, SpacingsAfter } from '../../modules';
 
 export type StyledHeadingProps = {
-  type: Types;
-  spacingsAfter: SpacingsAfter;
+  readonly type: Types;
+  readonly spacingsAfter: SpacingsAfter;
 };
 
 export const StyledHeading = styled.h1<StyledHeadingProps>`

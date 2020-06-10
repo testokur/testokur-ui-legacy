@@ -35,7 +35,7 @@ export const StyledLoaderCircle = styled.div`
 `;
 
 type StyledLoadingTextProps = {
-  type: Type;
+  readonly type: Type;
 };
 
 export const StyledLoadingText = styled.div<StyledLoadingTextProps>`
@@ -48,7 +48,7 @@ export const StyledLoadingText = styled.div<StyledLoadingTextProps>`
 `;
 
 type StyledSpinnerCircleProps = {
-  type: Type;
+  readonly type: Type;
 };
 
 export const StyledSpinnerCircle = styled.circle<StyledSpinnerCircleProps>`
@@ -61,7 +61,7 @@ export const StyledSpinnerCircle = styled.circle<StyledSpinnerCircleProps>`
 `;
 
 type StyledLoadingProps = {
-  type?: Type;
+  readonly type?: Type;
 };
 
 export const StyledLoading = styled.div<StyledLoadingProps>`

@@ -4,7 +4,7 @@ import { Sizes, getSize, convertHexToRgba, SpacingsAfter, getSpacing } from '../
 import { getColorForSelect, getColorForCustomValue } from './helpers';
 
 type LabelProps = {
-  spaceAfter: SpacingsAfter;
+  readonly spaceAfter: SpacingsAfter;
 };
 
 export const Label = styled.label<LabelProps>`
@@ -15,8 +15,8 @@ export const Label = styled.label<LabelProps>`
 `;
 
 type SelectSuffixProps = {
-  disabled?: boolean;
-  size: Sizes;
+  readonly disabled?: boolean;
+  readonly size: Sizes;
 };
 
 export const SelectSuffix = styled.div<SelectSuffixProps>`
@@ -49,7 +49,7 @@ export const SelectContainer = styled.div`
 `;
 
 type SelectPrefixProps = {
-  size: Sizes;
+  readonly size: Sizes;
 };
 
 export const SelectPrefix = styled.div<SelectPrefixProps>`
@@ -64,9 +64,9 @@ export const SelectPrefix = styled.div<SelectPrefixProps>`
 `;
 
 type StyledCustomValueProps = {
-  size: Sizes;
-  disabled?: boolean;
-  filled?: boolean;
+  readonly size: Sizes;
+  readonly disabled?: boolean;
+  readonly filled?: boolean;
 };
 
 export const StyledCustomValue = styled.div<StyledCustomValueProps>`
@@ -85,9 +85,9 @@ export const StyledCustomValue = styled.div<StyledCustomValueProps>`
 `;
 
 type StyledSelectProps = {
-  filled?: boolean;
-  elemSize: Sizes;
-  customValueText?: string;
+  readonly filled?: boolean;
+  readonly elemSize: Sizes;
+  readonly customValueText?: string;
 };
 
 export const StyledSelect = styled.select<StyledSelectProps>`

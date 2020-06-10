@@ -3,7 +3,7 @@ import { convertHexToRgba } from '../../modules';
 import { getBreakPointWidth, Queries } from '../../modules/mediaQuery';
 
 type LabelProps = {
-  disabled?: boolean;
+  readonly disabled?: boolean;
 };
 
 export const Label = styled.label<LabelProps>`
@@ -19,7 +19,7 @@ export const Label = styled.label<LabelProps>`
 `;
 
 type SharedStyledProps = {
-  disabled?: boolean;
+  readonly disabled?: boolean;
 };
 
 const sharedStyled = css<SharedStyledProps>`
@@ -91,7 +91,7 @@ export const Input = styled.input`
 `;
 
 type ContainerProps = {
-  hasRows: boolean;
+  readonly hasRows: boolean;
 };
 
 export const Container = styled.div<ContainerProps>`
@@ -101,8 +101,8 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 type TextAreaProps = {
-  fullHeight?: boolean;
-  disabled?: boolean;
+  readonly fullHeight?: boolean;
+  readonly disabled?: boolean;
 };
 
 export const TextArea = styled.textarea<TextAreaProps>`

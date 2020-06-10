@@ -4,8 +4,8 @@ import { Devices } from '../../modules';
 import getViewportHideStyles from './getViewportHideStyles';
 
 export type HideProps = {
-  on: Devices[];
-  block?: boolean;
+  readonly on: Devices[];
+  readonly block?: boolean;
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading

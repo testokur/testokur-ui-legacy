@@ -4,9 +4,9 @@ import { Sizes, getSize } from '../../modules';
 import getFontSize from './getFontSize';
 
 export type StyledBadgeProps = {
-  background: string;
-  foregroundColor: string;
-  borderColor?: string;
+  readonly background: string;
+  readonly foregroundColor: string;
+  readonly borderColor?: string;
 };
 
 export const StyledBadge = styled.div<StyledBadgeProps>`

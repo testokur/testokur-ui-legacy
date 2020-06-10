@@ -3,9 +3,9 @@ import styled, { css, FlattenInterpolation, DefaultTheme, ThemedStyledProps } fr
 import { transition, Durations, TestOkurTheme } from '../../../modules';
 
 type StyledProps = {
-  margin?: string;
-  width?: string;
-  height?: string;
+  readonly margin?: string;
+  readonly width?: string;
+  readonly height?: string;
 };
 
 export const StyledButtonPrimitiveIconContainer = styled(
