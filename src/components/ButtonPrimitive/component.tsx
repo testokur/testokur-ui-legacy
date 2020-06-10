@@ -80,7 +80,7 @@ const ButtonPrimitive = React.forwardRef<HTMLButtonElement, Props>((props: Props
         )}
         {isUndefined(children) ? <></> : <ButtonPrimitiveContentChildren>{children}</ButtonPrimitiveContentChildren>}
         {iconRight && (
-          <ButtonPrimitiveIconContainer width={width} height={height} margin={rightMargin}>
+          <ButtonPrimitiveIconContainer width={width} height={iconsHeight} margin={rightMargin}>
             {iconRight}
           </ButtonPrimitiveIconContainer>
         )}

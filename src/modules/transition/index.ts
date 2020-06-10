@@ -1,5 +1,5 @@
-import { TestOkurTheme } from '../theme';
 import { isNil } from 'testokur-utils';
+import { TestOkurTheme } from '../theme';
 
 export enum Durations {
   Slow = 'Slow',

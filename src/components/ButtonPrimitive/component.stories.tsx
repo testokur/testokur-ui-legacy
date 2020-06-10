@@ -26,7 +26,6 @@ export const Default = (): JSX.Element => {
   const foregroundActive = text('foregroundActive', '#faf333');
   const fullWidth = boolean('fullWidth', false);
   const height = text('height', '46px');
-  const href = text('href', '');
   const icons = object('icons', {
     width: '16px',
     height: '16px',
@@ -68,7 +67,6 @@ export const Default = (): JSX.Element => {
       foregroundActive={foregroundActive}
       fullWidth={fullWidth}
       height={height}
-      href={href}
       iconLeft={<ChevronLeft />}
       iconRight={<ChevronRight />}
       icons={icons}
