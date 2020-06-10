@@ -1,7 +1,33 @@
 // import { css } from 'styled-components';
 
-// type Props = {
+// export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
+// export type Align = "start" | "end" | "center" | "stretch";
+// export type Justify = "start" | "end" | "center" | "between" | "around";
+// export type Spacing =
+//   | "none"
+//   | "extraTight"
+//   | "tight"
+//   | "condensed"
+//   | "compact"
+//   | "natural"
+//   | "comfy"
+//   | "loose"
+//   | "extraLoose";
+
+// type MediaQueryProps = {
 //   readonly inline?: boolean;
+//   readonly direction?: Direction;
+//   readonly wrap?: boolean;
+//   readonly grow?: boolean;
+//   readonly shrink?: boolean;
+//   readonly basis?: string;
+//   readonly align?: Align;
+//   readonly justify?: Justify;
+//   readonly spacing?: Spacing;
+// }
+
+// type Props = {
+//   readonly [mediaQuery: string]: MediaQueryProps;
 // }
 
 // const getViewportFlexStyles = (viewport: string) => (props: Props) => {
@@ -27,5 +53,5 @@
 //     margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
 //   `;
 // };
-// // const getDisplay: GetDisplay = inline => isDefined(inline) && (inline ? "inline-flex" : "flex");
+
 // export default getViewportFlexStyles;
