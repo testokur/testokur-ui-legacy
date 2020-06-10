@@ -1,4 +1,4 @@
-import { isUndefined } from 'testokur-utils';
+import { isDefined } from 'testokur-utils';
 import { Sizes, TestOkurTheme } from '../../modules';
 import getSizeToken from './getSizeToken';
 import { Tokens } from './const';
@@ -7,7 +7,7 @@ const getWidth = (size: Sizes, theme: TestOkurTheme, fullWidth?: boolean, width?
   if (fullWidth) {
     return '100%';
   }
-  if (!isUndefined(width)) {
+  if (isDefined(width)) {
     return `${width}px`;
   }
 

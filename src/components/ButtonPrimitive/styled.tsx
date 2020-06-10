@@ -1,6 +1,6 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import React, { RefObject } from 'react';
-import { isUndefined } from 'testokur-utils';
+import { isDefined } from 'testokur-utils';
 import { Testable, getSpacing, SpacingsAfter } from '../../modules';
 import { StyledButtonPrimitiveIconContainer } from './components/ButtonPrimitiveIconContainer';
 import { StyledSpinner } from '../Loading';
@@ -72,7 +72,7 @@ const StyledButtonPrimitive = styled(
     role,
     children,
   }: Props) => {
-    const isButtonWithHref = asComponent === 'button' && !isUndefined(href);
+    const isButtonWithHref = asComponent === 'button' && isDefined(href);
     const Component = isButtonWithHref ? 'a' : (asComponent as 'a' | 'button');
     const buttonType = submit ? 'submit' : 'button';
 

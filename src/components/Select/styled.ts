@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { isUndefined } from 'testokur-utils';
+import { isDefined } from 'testokur-utils';
 import { Sizes, getSize, convertHexToRgba, SpacingsAfter, getSpacing } from '../../modules';
 import { getColorForSelect, getColorForCustomValue } from './helpers';
 
@@ -136,7 +136,7 @@ export const StyledSelect = styled.select<StyledSelectProps>`
   }
 
   ${(props): string | undefined => {
-    if (!isUndefined(props.customValueText)) {
+    if (isDefined(props.customValueText)) {
       return `&:-webkit-autofill,
       &:-internal-autofill-selected {
         -webkit-text-fill-color: transparent;

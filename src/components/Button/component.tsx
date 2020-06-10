@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { isUndefined } from 'testokur-utils';
+import { isUndefined, isDefined } from 'testokur-utils';
 import { Sizes, SpacingsAfter, Testable } from '../../modules';
 import { Types } from './const';
 import { StyledButton, StyledButtonContent, IconContainer, StyledButtonContentChildren, StyledButtonProps } from './styled';
@@ -41,10 +41,10 @@ const component = (props: Props): JSX.Element => {
     dataTestId,
   } = props;
 
-  const hasLeftIcon = !isUndefined(iconLeft) || !isUndefined(icon);
-  const hasRightIcon = !isUndefined(iconRight) || !isUndefined(icon);
+  const hasLeftIcon = isDefined(iconLeft) || isDefined(icon);
+  const hasRightIcon = isDefined(iconRight) || isDefined(icon);
   const sizeIcon = size === Sizes.Small ? Sizes.Small : Sizes.Medium;
-  const onlyIcon = (!isUndefined(iconLeft) && isUndefined(children)) ?? false;
+  const onlyIcon = (isDefined(iconLeft) && isUndefined(children)) ?? false;
   const isDisabled = (loading || disabled) ?? false;
 
   return (

@@ -1,4 +1,4 @@
-import { isUndefined } from 'testokur-utils';
+import { isDefined } from 'testokur-utils';
 import { TestOkurTheme } from '../../modules';
 
 export const getColorForCustomValue = (theme: TestOkurTheme, disabled?: boolean, filled?: boolean): string => {
@@ -13,7 +13,7 @@ export const getColorForCustomValue = (theme: TestOkurTheme, disabled?: boolean,
 };
 
 export const getColorForSelect = (theme: TestOkurTheme, filled?: boolean, customValueText?: string): string => {
-  if (!isUndefined(customValueText)) {
+  if (isDefined(customValueText)) {
     return 'transparent !important';
   }
   return filled ? theme.colors.colorTextInput : theme.palette.inkLight;
