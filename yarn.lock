@@ -2014,14 +2014,14 @@
     uuid "^3.3.2"
 
 "@storybook/addon-info@^5.3.17":
-  version "5.3.19"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-5.3.19.tgz#175af53ba54ddb8fe24b3c979206ffbbf42bc4f4"
-  integrity sha512-MiFLcyoOmwawquagQHkqiPHnvBOKrVaS/wnO1XyBvIHwkK+KN7CZ9l7HakA4SO76kugrY9OJYyi5YvEEdN6vww==
+  version "5.3.20"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-5.3.20.tgz#27198ede1189a720a758cb8f734e8a9362876056"
+  integrity sha512-oloLuAR7Tf1bpbX7URSql5J0zW/pPZgUB6B0bG6ygbclndsZjmSJaX3Iui4Imt8TT5mckfX4TmGnJROF1VzKoQ==
   dependencies:
-    "@storybook/addons" "5.3.19"
-    "@storybook/client-logger" "5.3.19"
-    "@storybook/components" "5.3.19"
-    "@storybook/theming" "5.3.19"
+    "@storybook/addons" "5.3.20"
+    "@storybook/client-logger" "5.3.20"
+    "@storybook/components" "5.3.20"
+    "@storybook/theming" "5.3.20"
     core-js "^3.0.1"
     global "^4.3.2"
     marksy "^8.0.0"
