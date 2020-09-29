@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     'max-len': ['error', { code: 140 }],
     "@typescript-eslint/explicit-function-return-type": "off",
+    'react/require-default-props': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
