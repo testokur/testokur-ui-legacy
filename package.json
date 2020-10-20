@@ -68,7 +68,7 @@
     "webpack": "^5.0.0"
   },
   "dependencies": {
-    "react": "^16.13.0",
+    "react": "^17.0.0",
     "styled-components": "^5.1.0",
     "testokur-utils": "^1.3.0"
   },
