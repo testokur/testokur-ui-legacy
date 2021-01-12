@@ -1980,16 +1980,16 @@
     "@sinonjs/commons" "^1.7.0"
 
 "@storybook/addon-actions@^6.1.0":
-  version "6.1.11"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.1.11.tgz#73e91cc95c45ea477cfd4f3603f6b95f5829eab6"
-  integrity sha512-J44XLx2G732OG7Az79Cpk5UlI5SyXHeQqdykwT/4IEQXSBXAYWSTIJJjpJdcjR/D+zpklab1QDSiWxCrKbe81A==
+  version "6.1.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.1.12.tgz#35abd8a34d95e2c7bf228de9d22426b6d56cce57"
+  integrity sha512-kVLFbnaa7/tBAWLKE44CPqjdVrm2hHBDdbBf/ycKwbKgfdS3KkieFfBNxPOdLm3c7Qur8Ze74y3v9qrdm6EMOA==
   dependencies:
-    "@storybook/addons" "6.1.11"
-    "@storybook/api" "6.1.11"
-    "@storybook/client-api" "6.1.11"
-    "@storybook/components" "6.1.11"
-    "@storybook/core-events" "6.1.11"
-    "@storybook/theming" "6.1.11"
+    "@storybook/addons" "6.1.12"
+    "@storybook/api" "6.1.12"
+    "@storybook/client-api" "6.1.12"
+    "@storybook/components" "6.1.12"
+    "@storybook/core-events" "6.1.12"
+    "@storybook/theming" "6.1.12"
     core-js "^3.0.1"
     fast-deep-equal "^3.1.1"
     global "^4.3.2"
